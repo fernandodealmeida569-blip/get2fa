@@ -19,7 +19,7 @@ def adv(code):
 
 TOOLS = [
 # ------------------------------------------------------------------ generator
-{"id": "gen", "scripts": ["totp.js", "qrcode.js", "tools.js"],
+{"key": "gen", "scripts": ["totp.js", "qrcode.js", "tools.js"],
  "en": {
   "path": "/2fa-key-generator",
   "title": "2FA Secret Key & QR Code Generator (TOTP) – Free, In Your Browser",
@@ -109,7 +109,7 @@ TOOLS = [
     <p>160 bits (32 caracteres Base32) é o recomendado pela RFC 4226 e o que a maioria dos serviços usa. 80 bits é o mínimo aceito por alguns apps antigos; 256 bits funciona nos apps modernos.</p>"""
  }},
 # ------------------------------------------------------------------ checker
-{"id": "check", "scripts": ["totp.js", "tools.js"],
+{"key": "check", "scripts": ["totp.js", "tools.js"],
  "en": {
   "path": "/check-2fa-code",
   "title": "Check a 2FA Code – Why Is My Authenticator Code Wrong? | Clock Check",
@@ -193,7 +193,7 @@ TOOLS = [
     <p>Ainda com problema? Leia <a href="/pt/guias/codigo-2fa-nao-funciona">Código 2FA não funciona: 7 motivos</a>.</p>"""
  }},
 # ------------------------------------------------------------------ reader
-{"id": "read", "scripts": ["totp.js", "qrread.js", "tools.js"],
+{"key": "read", "scripts": ["totp.js", "qrread.js", "tools.js"],
  "en": {
   "path": "/read-2fa-qr-code",
   "title": "Read a 2FA QR Code – Extract the Secret Key (Google Authenticator Export Too)",

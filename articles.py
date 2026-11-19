@@ -4,7 +4,7 @@
 ARTICLES = [
 # ---------------------------------------------------------------- 1
 {
- "id": "find-key",
+  "key": "find-key",
  "en": {
   "slug": "find-2fa-secret-key",
   "title": "Where to Find Your 2FA Secret Key (Google, Facebook, Instagram, Microsoft)",
@@ -78,7 +78,7 @@ ARTICLES = [
 },
 # ---------------------------------------------------------------- 2
 {
- "id": "instagram",
+  "key": "instagram",
  "en": {
   "slug": "instagram-2fa-authentication-app",
   "title": "How to Turn On Instagram 2FA with an Authentication App (and Get the Key)",
@@ -160,7 +160,7 @@ ARTICLES = [
 },
 # ---------------------------------------------------------------- 3
 {
- "id": "facebook",
+  "key": "facebook",
  "en": {
   "slug": "facebook-2fa-authentication-app",
   "title": "How to Set Up Facebook 2FA with an Authenticator App (Copy Key)",
@@ -226,7 +226,7 @@ ARTICLES = [
 },
 # ---------------------------------------------------------------- 4
 {
- "id": "transfer",
+  "key": "transfer",
  "en": {
   "slug": "transfer-google-authenticator-new-phone",
   "title": "How to Transfer Google Authenticator to a New Phone (and Extract the Keys)",
@@ -292,7 +292,7 @@ ARTICLES = [
 },
 # ---------------------------------------------------------------- 5
 {
- "id": "not-working",
+  "key": "not-working",
  "en": {
   "slug": "2fa-code-not-working",
   "title": "2FA Code Not Working? 7 Reasons and How to Fix Them",
@@ -360,7 +360,7 @@ ARTICLES = [
 },
 # ---------------------------------------------------------------- 6
 {
- "id": "lost-phone",
+  "key": "lost-phone",
  "en": {
   "slug": "lost-phone-2fa",
   "title": "Lost Your Phone with the Authenticator App? What to Do Now",
@@ -426,7 +426,7 @@ ARTICLES = [
 
 # ---------------------------------------------------------------- US-focused, English only
 def _us(slug, title, desc, h1, lead, body):
-    return {"id": slug, "en": {"slug": slug, "title": title, "desc": desc, "h1": h1, "lead": lead, "body": body}, "pt": None}
+    return {"key": slug, "en": {"slug": slug, "title": title, "desc": desc, "h1": h1, "lead": lead, "body": body}, "pt": None}
 
 _KEEP = """
 <h2>Keep a copy of the key</h2>
@@ -567,7 +567,7 @@ _KEEP_PT = """
 """
 
 def _pair(eid, en, pt):
-    return {"id": eid, "en": en, "pt": pt}
+    return {"key": eid, "en": en, "pt": pt}
 
 ARTICLES += [
 _pair("tiktok",
