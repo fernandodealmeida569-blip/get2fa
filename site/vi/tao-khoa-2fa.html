@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi" data-root="/" data-home="/vi/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tạo khóa bí mật 2FA và mã QR (TOTP) – Miễn phí, ngay trên trình duyệt | Get2FA</title>
+<meta name="description" content="Tạo khóa bí mật 2FA ngẫu nhiên, liên kết otpauth:// và mã QR cho Google Authenticator và mọi ứng dụng TOTP. Tạo trên thiết bị của bạn bằng Web Crypto.">
+<link rel="canonical" href="https://get2fa.online/vi/tao-khoa-2fa">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/2fa-key-generator">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/gerador-de-chave-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/generador-de-clave-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/tao-khoa-2fa">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/generator-kunci-2fa">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/2fa-schluessel-generator">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/2fa-key-generator">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Tạo khóa bí mật 2FA và mã QR (TOTP) – Miễn phí, ngay trên trình duyệt | Get2FA">
+<meta property="og:description" content="Tạo khóa bí mật 2FA ngẫu nhiên, liên kết otpauth:// và mã QR cho Google Authenticator và mọi ứng dụng TOTP. Tạo trên thiết bị của bạn bằng Web Crypto.">
+<meta property="og:url" content="https://get2fa.online/vi/tao-khoa-2fa">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Tạo khóa bí mật 2FA và mã QR", "url": "https://get2fa.online/vi/tao-khoa-2fa", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "vi", "description": "Tạo khóa bí mật 2FA ngẫu nhiên, liên kết otpauth:// và mã QR cho Google Authenticator và mọi ứng dụng TOTP. Tạo trên thiết bị của bạn bằng Web Crypto.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="gen">
+<header class="wrap top">
+  <a class="brand" href="/vi/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/vi/#tools">🧰 <span class="t">Công cụ</span></a>
+    <a class="pill" href="/vi/huong-dan/">📘 <span class="t">Hướng dẫn</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Tiếng Việt</span></summary><div class="langlist"><a href="/2fa-key-generator" hreflang="en" lang="en">English</a><a href="/pt/gerador-de-chave-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/generador-de-clave-2fa" hreflang="es" lang="es">Español</a><a href="/vi/tao-khoa-2fa" hreflang="vi" lang="vi" aria-current="true">Tiếng Việt</a><a href="/id/generator-kunci-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-schluessel-generator" hreflang="de" lang="de">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>Tạo khóa bí mật 2FA và mã QR</h1>
+    <p>Tạo khóa TOTP ngẫu nhiên, liên kết otpauth:// và mã QR mà mọi ứng dụng xác thực đều quét được. Phù hợp cho lập trình viên kiểm thử 2FA hoặc thiết lập ứng dụng riêng.</p>
+  </section>
+  
+  <section class="tool" aria-label="Trình tạo khóa">
+    <div class="grid2">
+      <label class="fld">Nhà phát hành (tên ứng dụng hoặc trang web)<input id="gIssuer" type="text" placeholder="UngDungCuaToi" autocomplete="off"></label>
+      <label class="fld">Tài khoản (tên người dùng hoặc email)<input id="gAccount" type="text" placeholder="lan@vidu.com" autocomplete="off"></label>
+    </div>
+    <div class="row">
+      <label class="fld inline">Độ dài khóa<select id="gBytes"><option value="10">80 bit (16 ký tự)</option><option value="20" selected>160 bit (32 ký tự, khuyến nghị)</option><option value="32">256 bit (52 ký tự)</option></select></label>
+      <span class="spacer"></span>
+      <button class="btn primary" id="gNew" type="button">Khóa mới</button>
+    </div>
+    <details class="adv">
+      <summary>Cài đặt nâng cao</summary>
+      <div class="adv-grid">
+        <label>Thuật toán<select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select></label>
+        <label>Số chữ số<select id="digits"><option>6</option><option>8</option></select></label>
+        <label>Chu kỳ<select id="period"><option value="30">30 s</option><option value="60">60 s</option></select></label>
+      </div>
+    </details>
+    <div class="genout">
+      <div class="qrbox" id="gQr" aria-label="QR code"></div>
+      <div class="genfields">
+        <div class="lbl">Khóa bí mật</div>
+        <div class="row tight"><code class="k big" id="gSecret"></code><button class="btn sm" id="gSecretCopy" type="button" data-copy="">Sao chép</button></div>
+        <div class="lbl">Liên kết otpauth://</div>
+        <textarea id="gUri" readonly spellcheck="false" rows="3"></textarea>
+        <div class="row tight"><button class="btn sm" id="gUriCopy" type="button" data-copy="">Sao chép liên kết</button><button class="btn sm" id="gDl" type="button">Tải mã QR (SVG)</button><a class="btn sm" id="gOpen" href="/vi/">Mở trong trình tạo mã</a></div>
+        <div class="lbl">Mã hiện tại <small id="gLeft"></small></div>
+        <div class="code" id="gCode">— — —</div>
+      </div>
+    </div>
+    <div class="hint">Khóa được tạo bằng bộ sinh số ngẫu nhiên an toàn của trình duyệt và không bao giờ rời khỏi trang này.</div>
+  </section>
+  <div class="ad-slot" data-label="Quảng cáo" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>Cách sử dụng</h2>
+    <ol class="steps"><li><b>Đặt tên</b>Nhập nhà phát hành (ứng dụng hoặc trang web) và tài khoản. Đây là tên hiển thị trong ứng dụng xác thực.</li><li><b>Quét hoặc sao chép</b>Quét mã QR bằng Google Authenticator, Microsoft Authenticator, 2FAS hoặc bất kỳ ứng dụng TOTP nào, hoặc sao chép liên kết otpauth://.</li><li><b>Kiểm tra mã</b>Mã hiện tại cập nhật trực tiếp để bạn xác nhận ứng dụng hiển thị cùng một số.</li></ol>
+    <h2>Liên kết otpauth:// là gì?</h2>
+    <p>Đây là định dạng chuẩn mà ứng dụng xác thực đọc từ mã QR: <code class="k">otpauth://totp/NhaPhatHanh:taikhoan?secret=KHOA&amp;issuer=NhaPhatHanh</code>. Các tham số tùy chọn đặt thuật toán, số chữ số và chu kỳ. Hầu hết dịch vụ dùng SHA-1, 6 chữ số và 30 giây, cũng là giá trị mặc định ở đây.</p>
+    <h2>Tạo khóa online có an toàn không?</h2>
+    <p>Khóa được tạo bằng <code class="k">crypto.getRandomValues</code> trong trình duyệt và không có gì được tải lên. Với hệ thống thật, hãy tạo khóa trên máy chủ của bạn và lưu dạng mã hóa; dùng công cụ này để thử nghiệm, làm mẫu hoặc cho tài khoản cá nhân.</p>
+    <h2>Nên chọn độ dài khóa nào?</h2>
+    <p>160 bit (32 ký tự Base32) là mức RFC 4226 khuyến nghị và được đa số dịch vụ dùng. 80 bit là mức tối thiểu một số ứng dụng cũ chấp nhận; 256 bit dùng được với ứng dụng hiện đại.</p>
+    <h2>Thêm công cụ 2FA miễn phí</h2>
+    <div class="features"><a class="feature" href="/vi/" style="text-decoration:none;color:inherit"><b>Mở công cụ tạo mã 2FA</b><span>Dán khóa bí mật 2FA để lấy ngay mã 6 số giống ứng dụng xác thực. Dùng được cho Google, Facebook, Instagram, Microsoft… Chạy 100% trong trình duyệt: khóa của bạn không bao giờ bị gửi đi.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/kiem-tra-ma-2fa" style="text-decoration:none;color:inherit"><b>Kiểm tra mã 2FA</b><span>Xem mã có khớp với khóa không và đồng hồ thiết bị có bị lệch không.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/doc-ma-qr-2fa" style="text-decoration:none;color:inherit"><b>Đọc mã QR 2FA</b><span>Lấy khóa bí mật từ mọi mã QR 2FA, kể cả mã xuất từ Google Authenticator.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Mã được tạo trên thiết bị của bạn. Chúng tôi không bao giờ thấy khóa của bạn.</div>
+    <nav><a href="/vi/tao-khoa-2fa">Tạo khóa và mã QR</a><a href="/vi/kiem-tra-ma-2fa">Kiểm tra mã 2FA</a><a href="/vi/doc-ma-qr-2fa">Đọc mã QR 2FA</a><a href="/vi/huong-dan/">Hướng dẫn</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Mã nguồn mở</a><a href="/vi/quyen-rieng-tu">Chính sách quyền riêng tư</a><a href="mailto:contact@get2fa.online">Liên hệ</a></nav>
+    <nav class="langs"><a href="/2fa-key-generator" hreflang="en" lang="en">English</a><a href="/pt/gerador-de-chave-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/generador-de-clave-2fa" hreflang="es" lang="es">Español</a><a href="/id/generator-kunci-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-schluessel-generator" hreflang="de" lang="de">Deutsch</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "Đã sao chép"};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/qrcode.js?v=641f983a" defer></script><script src="/assets/tools.js?v=890483ea" defer></script>
+</body>
+</html>

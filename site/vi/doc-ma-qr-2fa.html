@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi" data-root="/" data-home="/vi/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Đọc mã QR 2FA – Lấy khóa bí mật (kể cả mã xuất từ Google Authenticator) | Get2FA</title>
+<meta name="description" content="Tải lên hoặc dán ảnh chụp mã QR 2FA để lấy khóa bí mật và liên kết otpauth. Đọc được cả mã QR xuất từ Google Authenticator (otpauth-migration). Chạy trong trình duyệt.">
+<link rel="canonical" href="https://get2fa.online/vi/doc-ma-qr-2fa">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/read-2fa-qr-code">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/ler-qr-code-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/leer-codigo-qr-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/doc-ma-qr-2fa">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/baca-kode-qr-2fa">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/2fa-qr-code-lesen">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/read-2fa-qr-code">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Đọc mã QR 2FA – Lấy khóa bí mật (kể cả mã xuất từ Google Authenticator) | Get2FA">
+<meta property="og:description" content="Tải lên hoặc dán ảnh chụp mã QR 2FA để lấy khóa bí mật và liên kết otpauth. Đọc được cả mã QR xuất từ Google Authenticator (otpauth-migration). Chạy trong trình duyệt.">
+<meta property="og:url" content="https://get2fa.online/vi/doc-ma-qr-2fa">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Đọc mã QR 2FA và lấy khóa bí mật", "url": "https://get2fa.online/vi/doc-ma-qr-2fa", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "vi", "description": "Tải lên hoặc dán ảnh chụp mã QR 2FA để lấy khóa bí mật và liên kết otpauth. Đọc được cả mã QR xuất từ Google Authenticator (otpauth-migration). Chạy trong trình duyệt.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="read">
+<header class="wrap top">
+  <a class="brand" href="/vi/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/vi/#tools">🧰 <span class="t">Công cụ</span></a>
+    <a class="pill" href="/vi/huong-dan/">📘 <span class="t">Hướng dẫn</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Tiếng Việt</span></summary><div class="langlist"><a href="/read-2fa-qr-code" hreflang="en" lang="en">English</a><a href="/pt/ler-qr-code-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/leer-codigo-qr-2fa" hreflang="es" lang="es">Español</a><a href="/vi/doc-ma-qr-2fa" hreflang="vi" lang="vi" aria-current="true">Tiếng Việt</a><a href="/id/baca-kode-qr-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-qr-code-lesen" hreflang="de" lang="de">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>Đọc mã QR 2FA và lấy khóa bí mật</h1>
+    <p>Kéo, dán hoặc tải lên ảnh chụp mã QR 2FA. Bạn sẽ có khóa bí mật, nhà phát hành, tài khoản và cài đặt, kể cả từ mã xuất của Google Authenticator.</p>
+  </section>
+  
+  <section class="tool" aria-label="Đọc mã QR">
+    <div class="drop" id="rDrop" role="button" tabindex="0"><b>Kéo ảnh mã QR vào đây</b><span>hoặc bấm để chọn tệp · hoặc nhấn Ctrl+V để dán ảnh chụp</span></div>
+    <input type="file" id="rFile" accept="image/*" hidden>
+    <label class="fld">…hoặc dán liên kết otpauth:// hay otpauth-migration://<input id="rText" type="text" spellcheck="false" autocomplete="off" placeholder="otpauth-migration://offline?data=…"></label>
+    <div id="rOut" aria-live="polite"></div>
+    <div class="hint">Ảnh được đọc trên thiết bị của bạn và không bao giờ được tải lên.</div>
+  </section>
+  <div class="ad-slot" data-label="Quảng cáo" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>Khi nào công cụ này hữu ích?</h2>
+    <ul>
+    <li>Bạn có ảnh chụp mã QR 2FA và muốn lưu khóa vào trình quản lý mật khẩu.</li>
+    <li>Bạn đã xuất tài khoản từ Google Authenticator và muốn lấy khóa thật, không chỉ chuyển sang điện thoại khác.</li>
+    <li>Bạn là lập trình viên và muốn xem mã QR của ứng dụng thực sự chứa gì.</li>
+    </ul>
+    <h2>Mã xuất từ Google Authenticator</h2>
+    <p>Màn hình <em>Chuyển tài khoản → Xuất tài khoản</em> tạo mã QR theo định dạng đặc biệt <code class="k">otpauth-migration://</code> chứa nhiều tài khoản. Công cụ này giải mã và liệt kê từng tài khoản kèm khóa. Xem <a href="/vi/huong-dan/chuyen-google-authenticator-sang-dien-thoai-moi">cách chuyển Google Authenticator</a>.</p>
+    <h2>Quyền riêng tư</h2>
+    <p>Việc giải mã dùng trình đọc mã vạch có sẵn của trình duyệt hoặc một thư viện mã nguồn mở tải từ chính trang này. Hãy xóa ảnh chụp sau khi xong: ai có ảnh đều tạo được mã của bạn.</p>
+    <h2>Thêm công cụ 2FA miễn phí</h2>
+    <div class="features"><a class="feature" href="/vi/" style="text-decoration:none;color:inherit"><b>Mở công cụ tạo mã 2FA</b><span>Dán khóa bí mật 2FA để lấy ngay mã 6 số giống ứng dụng xác thực. Dùng được cho Google, Facebook, Instagram, Microsoft… Chạy 100% trong trình duyệt: khóa của bạn không bao giờ bị gửi đi.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/tao-khoa-2fa" style="text-decoration:none;color:inherit"><b>Tạo khóa và mã QR</b><span>Tạo khóa 2FA ngẫu nhiên và mã QR cho mọi ứng dụng xác thực.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/kiem-tra-ma-2fa" style="text-decoration:none;color:inherit"><b>Kiểm tra mã 2FA</b><span>Xem mã có khớp với khóa không và đồng hồ thiết bị có bị lệch không.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Mã được tạo trên thiết bị của bạn. Chúng tôi không bao giờ thấy khóa của bạn.</div>
+    <nav><a href="/vi/tao-khoa-2fa">Tạo khóa và mã QR</a><a href="/vi/kiem-tra-ma-2fa">Kiểm tra mã 2FA</a><a href="/vi/doc-ma-qr-2fa">Đọc mã QR 2FA</a><a href="/vi/huong-dan/">Hướng dẫn</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Mã nguồn mở</a><a href="/vi/quyen-rieng-tu">Chính sách quyền riêng tư</a><a href="mailto:contact@get2fa.online">Liên hệ</a></nav>
+    <nav class="langs"><a href="/read-2fa-qr-code" hreflang="en" lang="en">English</a><a href="/pt/ler-qr-code-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/leer-codigo-qr-2fa" hreflang="es" lang="es">Español</a><a href="/id/baca-kode-qr-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-qr-code-lesen" hreflang="de" lang="de">Deutsch</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "Đã sao chép", "copy": "Sao chép", "copyUri": "Sao chép liên kết otpauth", "openGen": "Xem mã", "issuer": "Nhà phát hành", "account": "Tài khoản", "secret": "Khóa bí mật", "settings": "Cài đặt", "found": "Tìm thấy {n} tài khoản.", "reading": "Đang đọc ảnh…", "qrNotFound": "Không tìm thấy mã QR 2FA trong ảnh. Hãy thử ảnh chụp rõ hơn, hiển thị toàn bộ mã.", "qrUnsupported": "Không tải được trình đọc QR. Kiểm tra kết nối rồi thử lại."};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/qrread.js?v=6d3efa47" defer></script><script src="/assets/tools.js?v=890483ea" defer></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de" data-root="/" data-home="/de/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2FA-QR-Code lesen – geheimen Schlüssel auslesen (auch Google-Authenticator-Export) | Get2FA</title>
+<meta name="description" content="Lade einen Screenshot eines 2FA-QR-Codes hoch oder füge ihn ein, um den geheimen Schlüssel und den otpauth-Link auszulesen. Liest auch Export-QR-Codes von Google Authenticator (otpauth-migration). Läuft im Browser.">
+<link rel="canonical" href="https://get2fa.online/de/2fa-qr-code-lesen">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/read-2fa-qr-code">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/ler-qr-code-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/leer-codigo-qr-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/doc-ma-qr-2fa">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/baca-kode-qr-2fa">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/2fa-qr-code-lesen">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/read-2fa-qr-code">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="2FA-QR-Code lesen – geheimen Schlüssel auslesen (auch Google-Authenticator-Export) | Get2FA">
+<meta property="og:description" content="Lade einen Screenshot eines 2FA-QR-Codes hoch oder füge ihn ein, um den geheimen Schlüssel und den otpauth-Link auszulesen. Liest auch Export-QR-Codes von Google Authenticator (otpauth-migration). Läuft im Browser.">
+<meta property="og:url" content="https://get2fa.online/de/2fa-qr-code-lesen">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "2FA-QR-Code lesen und geheimen Schlüssel erhalten", "url": "https://get2fa.online/de/2fa-qr-code-lesen", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "de", "description": "Lade einen Screenshot eines 2FA-QR-Codes hoch oder füge ihn ein, um den geheimen Schlüssel und den otpauth-Link auszulesen. Liest auch Export-QR-Codes von Google Authenticator (otpauth-migration). Läuft im Browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="read">
+<header class="wrap top">
+  <a class="brand" href="/de/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/de/#tools">🧰 <span class="t">Tools</span></a>
+    <a class="pill" href="/de/anleitungen/">📘 <span class="t">Anleitungen</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Deutsch</span></summary><div class="langlist"><a href="/read-2fa-qr-code" hreflang="en" lang="en">English</a><a href="/pt/ler-qr-code-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/leer-codigo-qr-2fa" hreflang="es" lang="es">Español</a><a href="/vi/doc-ma-qr-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/baca-kode-qr-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-qr-code-lesen" hreflang="de" lang="de" aria-current="true">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>2FA-QR-Code lesen und geheimen Schlüssel erhalten</h1>
+    <p>Ziehe, füge ein oder lade einen Screenshot eines 2FA-QR-Codes hoch. Du erhältst den geheimen Schlüssel, Anbieter, Konto und Einstellungen, sogar aus Export-Codes von Google Authenticator.</p>
+  </section>
+  
+  <section class="tool" aria-label="QR-Leser">
+    <div class="drop" id="rDrop" role="button" tabindex="0"><b>QR-Code-Bild hierher ziehen</b><span>oder klicken, um eine Datei zu wählen · oder Strg+V drücken, um einen Screenshot einzufügen</span></div>
+    <input type="file" id="rFile" accept="image/*" hidden>
+    <label class="fld">…oder einen otpauth://- oder otpauth-migration://-Link einfügen<input id="rText" type="text" spellcheck="false" autocomplete="off" placeholder="otpauth-migration://offline?data=…"></label>
+    <div id="rOut" aria-live="polite"></div>
+    <div class="hint">Das Bild wird auf deinem Gerät gelesen und nie hochgeladen.</div>
+  </section>
+  <div class="ad-slot" data-label="Anzeige" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>Wann ist das nützlich?</h2>
+    <ul>
+    <li>Du hast einen Screenshot eines 2FA-QR-Codes und willst den Schlüssel in einem Passwortmanager speichern.</li>
+    <li>Du hast Konten aus Google Authenticator exportiert und willst die eigentlichen Schlüssel, nicht nur eine Übertragung aufs neue Handy.</li>
+    <li>Du bist Entwickler und willst prüfen, was der QR-Code deiner App wirklich enthält.</li>
+    </ul>
+    <h2>Export-Codes von Google Authenticator</h2>
+    <p>Der Bildschirm <em>Konten übertragen → Konten exportieren</em> erzeugt QR-Codes in einem speziellen Format, <code class="k">otpauth-migration://</code>, das mehrere Konten enthält. Dieser Leser dekodiert es und listet jedes Konto mit seinem Schlüssel auf. Siehe <a href="/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen">Google Authenticator übertragen</a>.</p>
+    <h2>Datenschutz</h2>
+    <p>Das Dekodieren nutzt den eingebauten Barcode-Leser deines Browsers oder eine Open-Source-Bibliothek, die von dieser Website geladen wird. Lösche den Screenshot danach: Wer ihn hat, kann deine Codes erzeugen.</p>
+    <h2>Weitere kostenlose 2FA-Tools</h2>
+    <div class="features"><a class="feature" href="/de/" style="text-decoration:none;color:inherit"><b>2FA-Generator öffnen</b><span>Füge deinen geheimen 2FA-Schlüssel ein und erhalte sofort den 6-stelligen Code deiner Authenticator-App. Für Google, Facebook, Instagram, Microsoft und mehr. 100 % im Browser: Dein Schlüssel wird nie gesendet.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a><a class="feature" href="/de/2fa-schluessel-generator" style="text-decoration:none;color:inherit"><b>Schlüssel- und QR-Generator</b><span>Erstelle einen zufälligen 2FA-Schlüssel und seinen QR-Code für jede Authenticator-App.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a><a class="feature" href="/de/2fa-code-pruefen" style="text-decoration:none;color:inherit"><b>2FA-Code-Prüfer</b><span>Prüfe, ob ein Code zu deinem Schlüssel passt und ob deine Geräteuhr falsch geht.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes werden auf deinem Gerät erzeugt. Wir sehen deine Schlüssel nie.</div>
+    <nav><a href="/de/2fa-schluessel-generator">Schlüssel- und QR-Generator</a><a href="/de/2fa-code-pruefen">2FA-Code-Prüfer</a><a href="/de/2fa-qr-code-lesen">2FA-QR-Code-Leser</a><a href="/de/anleitungen/">Anleitungen</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Open Source</a><a href="/de/datenschutz">Datenschutz</a><a href="mailto:contact@get2fa.online">Kontakt</a></nav>
+    <nav class="langs"><a href="/read-2fa-qr-code" hreflang="en" lang="en">English</a><a href="/pt/ler-qr-code-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/leer-codigo-qr-2fa" hreflang="es" lang="es">Español</a><a href="/vi/doc-ma-qr-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/baca-kode-qr-2fa" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "Kopiert", "copy": "Kopieren", "copyUri": "otpauth-Link kopieren", "openGen": "Codes anzeigen", "issuer": "Anbieter", "account": "Konto", "secret": "Geheimer Schlüssel", "settings": "Einstellungen", "found": "{n} Konto/Konten gefunden.", "reading": "Bild wird gelesen…", "qrNotFound": "Kein 2FA-QR-Code im Bild gefunden. Versuche einen schärferen Screenshot, der den ganzen Code zeigt.", "qrUnsupported": "Der QR-Leser konnte nicht geladen werden. Prüfe deine Verbindung und versuche es erneut."};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/qrread.js?v=6d3efa47" defer></script><script src="/assets/tools.js?v=890483ea" defer></script>
+</body>
+</html>

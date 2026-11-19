@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de" data-root="/" data-home="/de/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2FA-Code-Generator – Authentifizierungscode online abrufen | Get2FA</title>
+<meta name="description" content="Füge deinen geheimen 2FA-Schlüssel ein und erhalte sofort den 6-stelligen Code deiner Authenticator-App. Für Google, Facebook, Instagram, Microsoft und mehr. 100 % im Browser: Dein Schlüssel wird nie gesendet.">
+<link rel="canonical" href="https://get2fa.online/de/">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="2FA-Code-Generator – Authentifizierungscode online abrufen | Get2FA">
+<meta property="og:description" content="Füge deinen geheimen 2FA-Schlüssel ein und erhalte sofort den 6-stelligen Code deiner Authenticator-App. Für Google, Facebook, Instagram, Microsoft und mehr. 100 % im Browser: Dein Schlüssel wird nie gesendet.">
+<meta property="og:url" content="https://get2fa.online/de/">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Get2FA", "url": "https://get2fa.online/de/", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "de", "description": "Füge deinen geheimen 2FA-Schlüssel ein und erhalte sofort den 6-stelligen Code deiner Authenticator-App. Für Google, Facebook, Instagram, Microsoft und mehr. 100 % im Browser: Dein Schlüssel wird nie gesendet.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ist Get2FA kostenlos?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Kostenlos und ohne Anmeldung. Die Seite finanziert sich über Werbung, die nie im Generator selbst erscheint."}}, {"@type": "Question", "name": "Ist der Code derselbe wie in Google Authenticator?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Jede App nach dem TOTP-Standard liefert für denselben Schlüssel zur selben Zeit denselben Code, darunter Google Authenticator, Microsoft Authenticator, Authy und 2FAS."}}, {"@type": "Question", "name": "Warum wird mein Code abgelehnt?", "acceptedAnswer": {"@type": "Answer", "text": "Meist liegt es an der Geräteuhr. TOTP-Codes hängen von der genauen Uhrzeit ab, also aktiviere automatisches Datum und Uhrzeit. Prüfe auch, ob du den ganzen Schlüssel kopiert hast und ob die Website 8 Stellen oder ein 60-Sekunden-Intervall nutzt (siehe Erweiterte Einstellungen)."}}, {"@type": "Question", "name": "Speichert ihr meine Schlüssel?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Schlüssel existieren nur im Speicher dieses Tabs und verschwinden beim Schließen. Wir nutzen keine Cookies oder Speicher für Schlüssel; nur das Design und die Auto-Kopieren-Option werden auf deinem Gerät gemerkt."}}, {"@type": "Question", "name": "Kann ich Codes für viele Konten gleichzeitig abrufen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Füge einen Schlüssel pro Zeile ein oder ganze Zeilen wie konto|passwort|SCHLÜSSEL. Du erhältst für jede Zeile einen Code und eine Liste im Format Zeile|Code zum Kopieren."}}, {"@type": "Question", "name": "Was ist ein geheimer 2FA-Schlüssel?", "acceptedAnswer": {"@type": "Answer", "text": "Ein zufälliger Code, meist 16–32 Zeichen aus A–Z und 2–7 (Base32), den eine Website beim Aktivieren der Zwei-Faktor-Authentifizierung mit deiner Authenticator-App teilt. Der QR-Code ist derselbe Schlüssel als Bild."}}, {"@type": "Question", "name": "Ich habe mein Handy verloren. Kann Get2FA meine Codes wiederherstellen?", "acceptedAnswer": {"@type": "Answer", "text": "Nur wenn du den geheimen Schlüssel gespeichert hast. Get2FA kann keine Schlüssel von einem anderen Gerät lesen. Ohne Schlüssel nutze die Backup-Codes des Dienstes oder dessen Kontowiederherstellung."}}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/de/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/de/#tools">🧰 <span class="t">Tools</span></a>
+    <a class="pill" href="/de/anleitungen/">📘 <span class="t">Anleitungen</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Deutsch</span></summary><div class="langlist"><a href="/" hreflang="en" lang="en">English</a><a href="/pt/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/" hreflang="de" lang="de" aria-current="true">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>2FA-Code aus dem geheimen Schlüssel erzeugen</h1>
+    <p>Füge einen 2FA-Schlüssel, einen <code class="k">otpauth://</code>-Link oder einen QR-Code ein und erhalte denselben 6-stelligen Code wie in deiner Authenticator-App. Schnell, kostenlos und nur auf deinem Gerät berechnet.</p>
+    <div class="trust"><span><i></i>Dein Schlüssel verlässt nie dein Gerät</span><span><i></i>Viele Schlüssel auf einmal</span><span><i></i>Funktioniert offline</span></div>
+  </section>
+
+  <section class="tool" aria-label="2FA">
+    <label class="lbl" for="secret">Geheimer 2FA-Schlüssel <small>einer pro Zeile</small></label>
+    <textarea id="secret" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="Geheimen Schlüssel einfügen, z. B.: JBSW Y3DP EHPK 3PXP
+oder mehrere Zeilen wie konto|passwort|SCHLÜSSEL"></textarea>
+    <div class="row">
+      <button class="btn" id="pasteBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg><span>Einfügen</span></button>
+      <button class="btn" id="qrBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg><span>QR-Bild lesen</span></button>
+      <input type="file" id="qrFile" accept="image/*" hidden>
+      <button class="btn" id="shareBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Link kopieren</span></button>
+      <span class="spacer"></span>
+      <button class="btn ghost" id="clearBtn" type="button">Leeren</button>
+    </div>
+    <div class="hint">Tipp: Füge einen Screenshot eines QR-Codes irgendwo auf der Seite ein oder ziehe ihn hinein. Auch Export-QR-Codes aus Google Authenticator funktionieren.</div>
+    <div class="hint" id="shareNote" hidden>Link kopiert. Der Schlüssel steht nach dem <b>#</b>, einem Teil, den Browser nie an einen Server senden. Wer den Link hat, kann aber deine Codes erzeugen.</div>
+    <details class="adv">
+      <summary>Erweiterte Einstellungen</summary>
+      <div class="adv-grid">
+        <label>Algorithmus<select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select></label>
+        <label>Stellen<select id="digits"><option>6</option><option>8</option></select></label>
+        <label>Intervall<select id="period"><option value="30">30 s</option><option value="60">60 s</option></select></label>
+      </div>
+      <label class="hint" style="display:flex;gap:8px;align-items:center;margin-top:10px"><input type="checkbox" id="autoCopy"> Code automatisch kopieren</label>
+    </details>
+    <div class="results" id="results" aria-live="polite"></div>
+    <div class="bulk" id="bulkWrap" hidden>
+      <div class="row"><label class="lbl" for="bulkOut" style="margin:0">Ergebnisse (Zeile|Code), bereit zum Einfügen in eine Tabelle</label><span class="spacer"></span>
+      <button class="btn primary" id="copyAllBtn" type="button">Alle kopieren</button></div>
+      <textarea id="bulkOut" readonly spellcheck="false" style="margin-top:8px"></textarea>
+    </div>
+  </section>
+
+  <div class="keep" id="keepBar" hidden><span>Nutzt du oft 2FA-Codes? Drücke <b>Strg+D</b> (<b>⌘D</b> auf dem Mac), um Get2FA als Lesezeichen zu speichern.</span><span class="spacer"></span><button class="btn sm primary" id="installBtn" type="button" hidden>App installieren</button><button class="btn sm ghost" id="keepOk" type="button">Verstanden</button></div>
+
+  <section class="content" id="tools">
+    <h2>Weitere kostenlose 2FA-Tools</h2>
+    <div class="features three"><a class="feature" href="/de/2fa-schluessel-generator" style="text-decoration:none;color:inherit"><b>Schlüssel- und QR-Generator</b><span>Erstelle einen zufälligen 2FA-Schlüssel und seinen QR-Code für jede Authenticator-App.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a><a class="feature" href="/de/2fa-code-pruefen" style="text-decoration:none;color:inherit"><b>2FA-Code-Prüfer</b><span>Prüfe, ob ein Code zu deinem Schlüssel passt und ob deine Geräteuhr falsch geht.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a><a class="feature" href="/de/2fa-qr-code-lesen" style="text-decoration:none;color:inherit"><b>2FA-QR-Code-Leser</b><span>Lies den geheimen Schlüssel aus jedem 2FA-QR-Code aus, auch aus Google-Authenticator-Exporten.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a></div>
+  </section>
+
+  <div class="ad-slot" data-label="Anzeige" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+
+  <article class="content">
+    <h2>So erhältst du deinen 2FA-Code</h2>
+    <ol class="steps"><li><b>Geheimen Schlüssel finden</b>Beim Aktivieren von 2FA zeigt die Website einen QR-Code und einen Textschlüssel (meist unter „Scannen nicht möglich?“). Bewahre ihn auf.</li><li><b>Oben einfügen</b>Füge den Schlüssel, den otpauth://-Link oder ein Bild des QR-Codes ein. Leerzeichen und Kleinbuchstaben sind egal.</li><li><b>Code kopieren</b>Klicke auf den Code, um ihn zu kopieren, und nutze ihn, bevor der Kreis abläuft. Alle 30 Sekunden erscheint ein neuer.</li></ol>
+
+    <h2>Warum Get2FA</h2>
+    <div class="features"><div class="feature"><b>Privat von Grund auf</b><span>Codes werden mit dem Web Crypto deines Browsers berechnet. Kein Schlüssel, Code oder Kontoname wird hochgeladen, protokolliert oder gespeichert.</span></div><div class="feature"><b>Massenmodus</b><span>Füge Hunderte Schlüssel oder Zeilen wie <code class="k">konto|passwort|SCHLÜSSEL</code> ein. Wir finden den Schlüssel in jeder Zeile und liefern eine kopierfertige Liste.</span></div><div class="feature"><b>Aktueller und nächster Code</b><span>Sieh die verbleibenden Sekunden und den nächsten Code, damit du nie einen fast abgelaufenen Code eintippst.</span></div><div class="feature"><b>QR-Codes und otpauth-Links</b><span>Ziehe einen QR-Screenshot hinein oder füge ihn ein, oder füge einen otpauth://-Link ein. Anbieter, Konto, Stellen und Intervall werden automatisch gelesen.</span></div><div class="feature"><b>Schnelle, private Links</b><span>Speichere get2fa.online/de/#DEINSCHLÜSSEL als Lesezeichen. Alles nach dem # bleibt in deinem Browser und erreicht nie unseren Server.</span></div><div class="feature"><b>Funktioniert überall</b><span>Smartphone oder Computer, hell oder dunkel, und nach dem Laden auch offline. SHA-1, SHA-256, SHA-512, 6 oder 8 Stellen.</span></div></div>
+
+    <h2>Vergleich</h2>
+    <div class="table-wrap"><table><thead><tr><th></th><th>Get2FA</th><th>Übliche 2FA-Seiten</th></tr></thead><tbody><tr><td>Schlüssel wird nur auf deinem Gerät verarbeitet</td><td class="yes">✓</td><td class="no">Oft unklar</td></tr><tr><td>Schlüssel steht nicht in der an den Server gesendeten Adresse</td><td class="yes">✓</td><td class="no">Oft im Pfad (/tok/SCHLÜSSEL)</td></tr><tr><td>Viele Schlüssel auf einmal</td><td class="yes">✓</td><td class="no">Manchmal</td></tr><tr><td>Zeigt nächsten Code und Restzeit</td><td class="yes">✓</td><td class="no">Selten</td></tr><tr><td>QR-Bild und otpauth://-Links</td><td class="yes">✓</td><td class="no">Selten</td></tr><tr><td>SHA-256/512, 8 Stellen, 60 s</td><td class="yes">✓</td><td class="no">Selten</td></tr><tr><td>Liest Export-QR von Google Authenticator</td><td class="yes">✓</td><td class="no">Nein</td></tr><tr><td>Funktioniert offline</td><td class="yes">✓</td><td class="no">Nein</td></tr></tbody></table></div>
+
+    <div class="ad-slot" data-label="Anzeige" data-slot="in-content"><!-- AdSense unit: in-content --></div>
+
+    <h2>Ist es sicher, einen 2FA-Schlüssel auf einer Website einzufügen?</h2>
+    <p>Ein geheimer 2FA-Schlüssel ist so sensibel wie ein Passwort: Wer ihn hat, kann deine Codes erzeugen. Deshalb rechnet Get2FA alles in deinem Browser mit dem Standardalgorithmus (RFC 6238) und sendet den Schlüssel nirgendwohin. Du kannst das prüfen: Öffne die Entwicklertools, wechsle zum Tab „Netzwerk“ und füge einen Schlüssel ein. Keine Anfrage enthält ihn.</p><p>Trotzdem ersetzt eine Website keine Authenticator-App. Für Konten, die du täglich nutzt, speichere den Schlüssel in Google Authenticator, Microsoft Authenticator, 2FAS, Aegis oder einem Passwortmanager, und nutze Get2FA an einem anderen Gerät, beim Handywechsel oder wenn du viele Konten verwaltest.</p>
+
+    <h2>Wo du deinen geheimen 2FA-Schlüssel findest</h2>
+    <h3>Google</h3><p>Google-Konto → Sicherheit → Bestätigung in zwei Schritten → Authenticator → Einrichten → „Scannen nicht möglich?“.</p><h3>Facebook</h3><p>Kontenübersicht → Passwort und Sicherheit → Zweistufige Authentifizierung → Authentifizierungs-App. Der Schlüssel steht unter dem QR-Code.</p><h3>Instagram</h3><p>Einstellungen → Kontenübersicht → Passwort und Sicherheit → Zweistufige Authentifizierung → Authentifizierungs-App → „Schlüssel kopieren“.</p><h3>Microsoft</h3><p>Sicherheit → Erweiterte Sicherheitsoptionen → Neue Anmeldemethode hinzufügen → Authentifizierungs-App → „Ich möchte eine andere App verwenden“ → „Bild kann nicht gescannt werden?“.</p><h3>Discord, X/Twitter, Amazon, GitHub</h3><p>Suche beim Einrichten einer Authenticator-App nach „Schlüssel manuell eingeben“ oder „Code kann nicht gescannt werden“. Dieser Text ist dein geheimer Schlüssel.</p>
+
+    <h2>2FA-Anleitungen</h2>
+    <div class="features"><a class="feature" href="/de/anleitungen/2fa-geheimen-schluessel-finden" style="text-decoration:none;color:inherit"><b>Wo du deinen geheimen 2FA-Schlüssel findest</b><span>Was ein geheimer 2FA-Schlüssel ist und wo du ihn beim Aktivieren der Zwei-Faktor-Authentifizierung bei Google, Facebook, Instagram, Microsoft und anderen findest.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Anleitung lesen →</span></a><a class="feature" href="/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen" style="text-decoration:none;color:inherit"><b>Google Authenticator auf ein neues Handy übertragen</b><span>Übertrage Google-Authenticator-Codes per Cloud-Synchronisierung oder Export-QR-Code auf ein neues Handy und lies die geheimen Schlüssel mit Get2FA aus dem Export-QR aus.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Anleitung lesen →</span></a><a class="feature" href="/de/anleitungen/2fa-code-funktioniert-nicht" style="text-decoration:none;color:inherit"><b>2FA-Code funktioniert nicht? So behebst du es</b><span>Dein Authenticator-Code wird immer wieder abgelehnt? Die häufigsten Ursachen, von der falschen Geräteuhr bis zum falschen Schlüssel, und wie du sie behebst.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Anleitung lesen →</span></a><a class="feature" href="/de/anleitungen/handy-verloren-authenticator" style="text-decoration:none;color:inherit"><b>Handy mit Authenticator verloren? Das ist zu tun</b><span>Handy mit deinen 2FA-Codes verloren, gestohlen oder zurückgesetzt? So kommst du mit gespeicherten Schlüsseln, Backup-Codes, Cloud-Sync oder Kontowiederherstellung wieder in deine Konten.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Anleitung lesen →</span></a></div>
+
+    <h2>Häufige Fragen</h2>
+    <div class="faq"><details><summary>Ist Get2FA kostenlos?</summary><p>Ja. Kostenlos und ohne Anmeldung. Die Seite finanziert sich über Werbung, die nie im Generator selbst erscheint.</p></details><details><summary>Ist der Code derselbe wie in Google Authenticator?</summary><p>Ja. Jede App nach dem TOTP-Standard liefert für denselben Schlüssel zur selben Zeit denselben Code, darunter Google Authenticator, Microsoft Authenticator, Authy und 2FAS.</p></details><details><summary>Warum wird mein Code abgelehnt?</summary><p>Meist liegt es an der Geräteuhr. TOTP-Codes hängen von der genauen Uhrzeit ab, also aktiviere automatisches Datum und Uhrzeit. Prüfe auch, ob du den ganzen Schlüssel kopiert hast und ob die Website 8 Stellen oder ein 60-Sekunden-Intervall nutzt (siehe Erweiterte Einstellungen).</p></details><details><summary>Speichert ihr meine Schlüssel?</summary><p>Nein. Schlüssel existieren nur im Speicher dieses Tabs und verschwinden beim Schließen. Wir nutzen keine Cookies oder Speicher für Schlüssel; nur das Design und die Auto-Kopieren-Option werden auf deinem Gerät gemerkt.</p></details><details><summary>Kann ich Codes für viele Konten gleichzeitig abrufen?</summary><p>Ja. Füge einen Schlüssel pro Zeile ein oder ganze Zeilen wie konto|passwort|SCHLÜSSEL. Du erhältst für jede Zeile einen Code und eine Liste im Format Zeile|Code zum Kopieren.</p></details><details><summary>Was ist ein geheimer 2FA-Schlüssel?</summary><p>Ein zufälliger Code, meist 16–32 Zeichen aus A–Z und 2–7 (Base32), den eine Website beim Aktivieren der Zwei-Faktor-Authentifizierung mit deiner Authenticator-App teilt. Der QR-Code ist derselbe Schlüssel als Bild.</p></details><details><summary>Ich habe mein Handy verloren. Kann Get2FA meine Codes wiederherstellen?</summary><p>Nur wenn du den geheimen Schlüssel gespeichert hast. Get2FA kann keine Schlüssel von einem anderen Gerät lesen. Ohne Schlüssel nutze die Backup-Codes des Dienstes oder dessen Kontowiederherstellung.</p></details></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes werden auf deinem Gerät erzeugt. Wir sehen deine Schlüssel nie.</div>
+    <nav><a href="/de/2fa-schluessel-generator">Schlüssel- und QR-Generator</a><a href="/de/2fa-code-pruefen">2FA-Code-Prüfer</a><a href="/de/2fa-qr-code-lesen">2FA-QR-Code-Leser</a><a href="/de/anleitungen/">Anleitungen</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Open Source</a><a href="/de/datenschutz">Datenschutz</a><a href="mailto:contact@get2fa.online">Kontakt</a></nav>
+    <nav class="langs"><a href="/" hreflang="en" lang="en">English</a><a href="/pt/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copy": "Kopieren", "copied": "Code kopiert", "autoCopied": "Neuer Code automatisch kopiert", "copiedAll": "Alle Codes kopiert", "next": "Nächster:", "key": "Schlüssel", "clickCopy": "Zum Kopieren klicken", "empty": "Deine Codes erscheinen hier, sobald du einen Schlüssel einfügst.", "invalid": "Kein gültiger 2FA-Schlüssel:", "hotp": "Zählerbasierte Schlüssel (HOTP) werden nicht unterstützt:", "noKey": "Füge zuerst einen Schlüssel ein", "linkCopied": "Link kopiert", "pasteManual": "Drücke Strg+V (oder ⌘V) zum Einfügen", "qrUnsupported": "Der QR-Leser konnte nicht geladen werden. Prüfe deine Verbindung oder füge den Schlüssel als Text ein.", "qrNotFound": "Kein 2FA-QR-Code im Bild gefunden", "qrAdded": "Schlüssel aus QR-Code hinzugefügt"};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script>
+<script src="/assets/qrread.js?v=6d3efa47" defer></script>
+<script src="/assets/app.js?v=2c8fc35e" defer></script>
+</body>
+</html>

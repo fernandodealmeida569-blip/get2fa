@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de" data-root="/" data-home="/de/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Authenticator auf ein neues Handy übertragen (und die Schlüssel auslesen) | Get2FA</title>
+<meta name="description" content="Übertrage Google-Authenticator-Codes per Cloud-Synchronisierung oder Export-QR-Code auf ein neues Handy und lies die geheimen Schlüssel mit Get2FA aus dem Export-QR aus.">
+<link rel="canonical" href="https://get2fa.online/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/transfer-google-authenticator-new-phone">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/guias/transferir-google-authenticator-novo-celular">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/guias/transferir-google-authenticator-nuevo-movil">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/huong-dan/chuyen-google-authenticator-sang-dien-thoai-moi">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/panduan/pindah-google-authenticator-ke-hp-baru">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/transfer-google-authenticator-new-phone">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Google Authenticator auf ein neues Handy übertragen (und die Schlüssel auslesen) | Get2FA">
+<meta property="og:description" content="Übertrage Google-Authenticator-Codes per Cloud-Synchronisierung oder Export-QR-Code auf ein neues Handy und lies die geheimen Schlüssel mit Get2FA aus dem Export-QR aus.">
+<meta property="og:url" content="https://get2fa.online/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Google Authenticator auf ein neues Handy übertragen", "description": "Übertrage Google-Authenticator-Codes per Cloud-Synchronisierung oder Export-QR-Code auf ein neues Handy und lies die geheimen Schlüssel mit Get2FA aus dem Export-QR aus.", "inLanguage": "de", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/de/"}, {"@type": "ListItem", "position": 2, "name": "Anleitungen", "item": "https://get2fa.online/de/anleitungen/"}, {"@type": "ListItem", "position": 3, "name": "Google Authenticator auf ein neues Handy übertragen", "item": "https://get2fa.online/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/de/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/de/#tools">🧰 <span class="t">Tools</span></a>
+    <a class="pill" href="/de/anleitungen/">📘 <span class="t">Anleitungen</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Deutsch</span></summary><div class="langlist"><a href="/guides/transfer-google-authenticator-new-phone" hreflang="en" lang="en">English</a><a href="/pt/guias/transferir-google-authenticator-novo-celular" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/transferir-google-authenticator-nuevo-movil" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/chuyen-google-authenticator-sang-dien-thoai-moi" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/pindah-google-authenticator-ke-hp-baru" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/google-authenticator-auf-neues-handy-uebertragen" hreflang="de" lang="de" aria-current="true">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/de/anleitungen/">← Alle Anleitungen</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">Google Authenticator auf ein neues Handy übertragen</h1>
+  <p class="lead">Es gibt zwei Wege, deine Codes umzuziehen: bei Google anmelden, damit sie synchronisiert werden, oder per QR-Code exportieren. Get2FA kann diesen Export-QR auch lesen und jeden geheimen Schlüssel anzeigen.</p>
+  <p class="hint">Aktualisiert 2026-11-19</p>
+  <div class="cta"><b>Hast du deinen geheimen Schlüssel? Hol dir jetzt deinen Code</b><a class="btn primary" href="/de/">2FA-Generator öffnen</a></div>
+  
+<h2>Weg 1: Cloud-Synchronisierung (am einfachsten)</h2>
+<ol>
+<li>Öffne auf dem alten Handy Google Authenticator und tippe auf dein Profilbild.</li>
+<li>Melde dich mit deinem Google-Konto an und aktiviere die Synchronisierung. Ein kleines Wolkensymbol bestätigt die Sicherung.</li>
+<li>Installiere auf dem neuen Handy Google Authenticator und melde dich mit demselben Google-Konto an. Deine Codes erscheinen automatisch.</li>
+</ol>
+<p>Die Synchronisierung ist bequem, aber deine 2FA-Schlüssel liegen dann in deinem Google-Konto. Schütze dieses Konto gut.</p>
+<h2>Weg 2: Konten exportieren (offline)</h2>
+<ol>
+<li>Öffne auf dem alten Handy das Menü und gehe zu <strong>Konten übertragen → Konten exportieren</strong>.</li>
+<li>Wähle die Konten aus und tippe auf <strong>Weiter</strong>. Die App zeigt einen oder mehrere QR-Codes.</li>
+<li>Gehe auf dem neuen Handy zu <strong>Konten übertragen → Konten importieren → QR-Code scannen</strong> und scanne jeden Code.</li>
+</ol>
+<p>Der Export funktioniert zwischen Android und iPhone in beide Richtungen.</p>
+<h2>Geheime Schlüssel aus dem Export-QR auslesen</h2>
+<p>Der Export-QR-Code nutzt ein spezielles Format (<code class="k">otpauth-migration://</code>), das andere Apps oft nicht lesen können. <a href="/de/">Get2FA</a> kann es: Mache einen Screenshot des Export-QR (auf einem Handy, dem du vertraust) und füge das Bild in Get2FA ein oder ziehe es hinein. Jedes Konto erscheint mit Namen und Live-Code, und die Liste zeigt den vollständigen <code class="k">otpauth://</code>-Link mit dem Schlüssel. Speichere sie in deinem Passwortmanager.</p>
+<p>Alles wird in deinem Browser dekodiert; Bild und Schlüssel werden nie hochgeladen. Lösche den Screenshot danach.</p>
+<h2>Das alte Handy nicht zu früh zurücksetzen</h2>
+<p>Teste einige Anmeldungen auf dem neuen Handy, bevor du das alte zurücksetzt. Geht etwas schief, wenn das alte Handy weg ist, brauchst du die Backup-Codes oder die Kontowiederherstellung der jeweiligen Website.</p>
+
+  <div class="ad-slot" data-label="Anzeige" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>Hast du deinen geheimen Schlüssel? Hol dir jetzt deinen Code</b><a class="btn primary" href="/de/">2FA-Generator öffnen</a></div>
+  <h2>Anleitungen</h2>
+  <ul><li><a href="/de/anleitungen/2fa-geheimen-schluessel-finden">Wo du deinen geheimen 2FA-Schlüssel findest</a></li><li><a href="/de/anleitungen/2fa-code-funktioniert-nicht">2FA-Code funktioniert nicht? So behebst du es</a></li><li><a href="/de/anleitungen/handy-verloren-authenticator">Handy mit Authenticator verloren? Das ist zu tun</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes werden auf deinem Gerät erzeugt. Wir sehen deine Schlüssel nie.</div>
+    <nav><a href="/de/2fa-schluessel-generator">Schlüssel- und QR-Generator</a><a href="/de/2fa-code-pruefen">2FA-Code-Prüfer</a><a href="/de/2fa-qr-code-lesen">2FA-QR-Code-Leser</a><a href="/de/anleitungen/">Anleitungen</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Open Source</a><a href="/de/datenschutz">Datenschutz</a><a href="mailto:contact@get2fa.online">Kontakt</a></nav>
+    <nav class="langs"><a href="/guides/transfer-google-authenticator-new-phone" hreflang="en" lang="en">English</a><a href="/pt/guias/transferir-google-authenticator-novo-celular" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/transferir-google-authenticator-nuevo-movil" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/chuyen-google-authenticator-sang-dien-thoai-moi" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/pindah-google-authenticator-ke-hp-baru" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>

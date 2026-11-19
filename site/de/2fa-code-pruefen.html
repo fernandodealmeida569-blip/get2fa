@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de" data-root="/" data-home="/de/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2FA-Code prüfen – Warum ist mein Authenticator-Code falsch? | Uhrzeit-Check | Get2FA</title>
+<meta name="description" content="Füge deinen 2FA-Schlüssel und den Code aus der App ein, um zu sehen, ob sie übereinstimmen, und prüfe, ob die Uhr deines Geräts falsch geht. Finde heraus, warum dein Code nicht funktioniert.">
+<link rel="canonical" href="https://get2fa.online/de/2fa-code-pruefen">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/check-2fa-code">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/verificar-codigo-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/comprobar-codigo-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/kiem-tra-ma-2fa">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/cek-kode-2fa">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/2fa-code-pruefen">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/check-2fa-code">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="2FA-Code prüfen – Warum ist mein Authenticator-Code falsch? | Uhrzeit-Check | Get2FA">
+<meta property="og:description" content="Füge deinen 2FA-Schlüssel und den Code aus der App ein, um zu sehen, ob sie übereinstimmen, und prüfe, ob die Uhr deines Geräts falsch geht. Finde heraus, warum dein Code nicht funktioniert.">
+<meta property="og:url" content="https://get2fa.online/de/2fa-code-pruefen">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "2FA-Code und Geräteuhr prüfen", "url": "https://get2fa.online/de/2fa-code-pruefen", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "de", "description": "Füge deinen 2FA-Schlüssel und den Code aus der App ein, um zu sehen, ob sie übereinstimmen, und prüfe, ob die Uhr deines Geräts falsch geht. Finde heraus, warum dein Code nicht funktioniert.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="check">
+<header class="wrap top">
+  <a class="brand" href="/de/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/de/#tools">🧰 <span class="t">Tools</span></a>
+    <a class="pill" href="/de/anleitungen/">📘 <span class="t">Anleitungen</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Deutsch</span></summary><div class="langlist"><a href="/check-2fa-code" hreflang="en" lang="en">English</a><a href="/pt/verificar-codigo-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/comprobar-codigo-2fa" hreflang="es" lang="es">Español</a><a href="/vi/kiem-tra-ma-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/cek-kode-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-code-pruefen" hreflang="de" lang="de" aria-current="true">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>2FA-Code und Geräteuhr prüfen</h1>
+    <p>Füge deinen geheimen Schlüssel und den Code aus deiner Authenticator-App ein. Wir sagen dir, ob er passt und ob die Uhr deines Geräts der Grund für abgelehnte Codes ist.</p>
+  </section>
+  
+  <section class="tool" aria-label="Prüfer">
+    <div class="note" id="cClock">Uhr wird geprüft…</div>
+    <label class="fld">Geheimer Schlüssel<textarea id="cSecret" rows="2" spellcheck="false" autocomplete="off" placeholder="JBSW Y3DP EHPK 3PXP"></textarea></label>
+    <div class="row">
+      <label class="fld inline">Code aus deiner App<input id="cCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="123456"></label>
+      <span class="spacer"></span>
+      <button class="btn primary" id="cCheck" type="button">Code prüfen</button>
+    </div>
+    <details class="adv">
+      <summary>Erweiterte Einstellungen</summary>
+      <div class="adv-grid">
+        <label>Algorithmus<select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select></label>
+        <label>Stellen<select id="digits"><option>6</option><option>8</option></select></label>
+        <label>Intervall<select id="period"><option value="30">30 s</option><option value="60">60 s</option></select></label>
+      </div>
+    </details>
+    <div class="note" id="cResult" aria-live="polite"></div>
+    <div class="hint" id="cNow"></div>
+  </section>
+  <div class="ad-slot" data-label="Anzeige" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>Was das Ergebnis bedeutet</h2>
+    <ul>
+    <li><b>Passt zum aktuellen Code:</b> Schlüssel und App sind in Ordnung. Lehnt die Website ihn trotzdem ab, hat sie vielleicht einen anderen Schlüssel (2FA wurde zurückgesetzt) oder der Code ist beim Eintippen abgelaufen.</li>
+    <li><b>Passt zu einem älteren oder neueren Code:</b> Eine der Uhren geht falsch. Aktiviere automatisches Datum und Uhrzeit auf dem Handy mit der Authenticator-App.</li>
+    <li><b>Keine Übereinstimmung:</b> Der Schlüssel gehört zu einem anderen Konto, wurde unvollständig kopiert, oder die Website nutzt 8 Stellen, 60 Sekunden oder SHA-256.</li>
+    </ul>
+    <h2>So funktioniert der Uhrzeit-Check</h2>
+    <p>Wir vergleichen die Zeit deines Geräts mit der Zeit, die unser Server bei einem normalen Seitenaufruf meldet. TOTP-Codes wechseln alle 30 Sekunden, daher reichen schon wenige Sekunden Abweichung, damit Codes scheitern.</p>
+    <p>Klappt es immer noch nicht? Lies <a href="/de/anleitungen/2fa-code-funktioniert-nicht">2FA-Code funktioniert nicht: 7 Gründe</a>.</p>
+    <h2>Weitere kostenlose 2FA-Tools</h2>
+    <div class="features"><a class="feature" href="/de/" style="text-decoration:none;color:inherit"><b>2FA-Generator öffnen</b><span>Füge deinen geheimen 2FA-Schlüssel ein und erhalte sofort den 6-stelligen Code deiner Authenticator-App. Für Google, Facebook, Instagram, Microsoft und mehr. 100 % im Browser: Dein Schlüssel wird nie gesendet.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a><a class="feature" href="/de/2fa-schluessel-generator" style="text-decoration:none;color:inherit"><b>Schlüssel- und QR-Generator</b><span>Erstelle einen zufälligen 2FA-Schlüssel und seinen QR-Code für jede Authenticator-App.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a><a class="feature" href="/de/2fa-qr-code-lesen" style="text-decoration:none;color:inherit"><b>2FA-QR-Code-Leser</b><span>Lies den geheimen Schlüssel aus jedem 2FA-QR-Code aus, auch aus Google-Authenticator-Exporten.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Öffnen →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes werden auf deinem Gerät erzeugt. Wir sehen deine Schlüssel nie.</div>
+    <nav><a href="/de/2fa-schluessel-generator">Schlüssel- und QR-Generator</a><a href="/de/2fa-code-pruefen">2FA-Code-Prüfer</a><a href="/de/2fa-qr-code-lesen">2FA-QR-Code-Leser</a><a href="/de/anleitungen/">Anleitungen</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Open Source</a><a href="/de/datenschutz">Datenschutz</a><a href="mailto:contact@get2fa.online">Kontakt</a></nav>
+    <nav class="langs"><a href="/check-2fa-code" hreflang="en" lang="en">English</a><a href="/pt/verificar-codigo-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/comprobar-codigo-2fa" hreflang="es" lang="es">Español</a><a href="/vi/kiem-tra-ma-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/cek-kode-2fa" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "Kopiert", "clockOk": "✓ Die Uhr deines Geräts stimmt (Abweichung unter 2 Sekunden).", "clockAhead": "⚠ Die Uhr deines Geräts geht etwa {n} s vor. Aktiviere automatisches Datum und Uhrzeit.", "clockBehind": "⚠ Die Uhr deines Geräts geht etwa {n} s nach. Aktiviere automatisches Datum und Uhrzeit.", "clockUnknown": "Deine Uhr konnte gerade nicht geprüft werden.", "badKey": "Das sieht nicht nach einem gültigen geheimen 2FA-Schlüssel aus.", "badCode": "Gib den {n}-stelligen Code aus deiner App ein.", "match": "✓ Der Code stimmt mit dem aktuellen Code überein. App und Schlüssel sind korrekt.", "matchPast": "⚠ Der Code passt zu einem Code von vor {s} s. Wahrscheinlich geht deine Geräteuhr nach, oder der Code war alt.", "matchFuture": "⚠ Der Code passt zu einem Code in {s} s. Das Gerät, das ihn erzeugt hat, geht vor.", "noMatch": "✗ Keine Übereinstimmung innerhalb von ±5 Minuten. Schlüssel, Konto oder Einstellungen (Stellen, Intervall, Algorithmus) sind verschieden.", "expected": "Aktueller Code für diesen Schlüssel:"};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/tools.js?v=890483ea" defer></script>
+</body>
+</html>

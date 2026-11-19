@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" data-root="/" data-home="/es/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generador de clave 2FA y código QR (TOTP) – Gratis, en tu navegador | Get2FA</title>
+<meta name="description" content="Genera una clave secreta 2FA aleatoria, su enlace otpauth:// y el código QR para Google Authenticator y cualquier app TOTP. Creada en tu dispositivo con Web Crypto.">
+<link rel="canonical" href="https://get2fa.online/es/generador-de-clave-2fa">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/2fa-key-generator">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/gerador-de-chave-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/generador-de-clave-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/tao-khoa-2fa">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/generator-kunci-2fa">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/2fa-schluessel-generator">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/2fa-key-generator">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Generador de clave 2FA y código QR (TOTP) – Gratis, en tu navegador | Get2FA">
+<meta property="og:description" content="Genera una clave secreta 2FA aleatoria, su enlace otpauth:// y el código QR para Google Authenticator y cualquier app TOTP. Creada en tu dispositivo con Web Crypto.">
+<meta property="og:url" content="https://get2fa.online/es/generador-de-clave-2fa">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Generador de clave 2FA y código QR", "url": "https://get2fa.online/es/generador-de-clave-2fa", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "es", "description": "Genera una clave secreta 2FA aleatoria, su enlace otpauth:// y el código QR para Google Authenticator y cualquier app TOTP. Creada en tu dispositivo con Web Crypto.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="gen">
+<header class="wrap top">
+  <a class="brand" href="/es/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/es/#tools">🧰 <span class="t">Herramientas</span></a>
+    <a class="pill" href="/es/guias/">📘 <span class="t">Guías</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Español</span></summary><div class="langlist"><a href="/2fa-key-generator" hreflang="en" lang="en">English</a><a href="/pt/gerador-de-chave-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/generador-de-clave-2fa" hreflang="es" lang="es" aria-current="true">Español</a><a href="/vi/tao-khoa-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/generator-kunci-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-schluessel-generator" hreflang="de" lang="de">Deutsch</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>Generador de clave 2FA y código QR</h1>
+    <p>Crea una clave TOTP aleatoria, el enlace otpauth:// y un código QR que cualquier app de autenticación puede escanear. Ideal para desarrolladores que prueban 2FA o configuran su propia app.</p>
+  </section>
+  
+  <section class="tool" aria-label="Generador">
+    <div class="grid2">
+      <label class="fld">Emisor (nombre de la app o del sitio)<input id="gIssuer" type="text" placeholder="MiApp" autocomplete="off"></label>
+      <label class="fld">Cuenta (usuario o correo)<input id="gAccount" type="text" placeholder="ana@ejemplo.com" autocomplete="off"></label>
+    </div>
+    <div class="row">
+      <label class="fld inline">Longitud de la clave<select id="gBytes"><option value="10">80 bits (16 caracteres)</option><option value="20" selected>160 bits (32 caracteres, recomendado)</option><option value="32">256 bits (52 caracteres)</option></select></label>
+      <span class="spacer"></span>
+      <button class="btn primary" id="gNew" type="button">Nueva clave</button>
+    </div>
+    <details class="adv">
+      <summary>Configuración avanzada</summary>
+      <div class="adv-grid">
+        <label>Algoritmo<select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select></label>
+        <label>Dígitos<select id="digits"><option>6</option><option>8</option></select></label>
+        <label>Periodo<select id="period"><option value="30">30 s</option><option value="60">60 s</option></select></label>
+      </div>
+    </details>
+    <div class="genout">
+      <div class="qrbox" id="gQr" aria-label="QR code"></div>
+      <div class="genfields">
+        <div class="lbl">Clave secreta</div>
+        <div class="row tight"><code class="k big" id="gSecret"></code><button class="btn sm" id="gSecretCopy" type="button" data-copy="">Copiar</button></div>
+        <div class="lbl">Enlace otpauth://</div>
+        <textarea id="gUri" readonly spellcheck="false" rows="3"></textarea>
+        <div class="row tight"><button class="btn sm" id="gUriCopy" type="button" data-copy="">Copiar enlace</button><button class="btn sm" id="gDl" type="button">Descargar QR (SVG)</button><a class="btn sm" id="gOpen" href="/es/">Abrir en el generador</a></div>
+        <div class="lbl">Código actual <small id="gLeft"></small></div>
+        <div class="code" id="gCode">— — —</div>
+      </div>
+    </div>
+    <div class="hint">La clave se crea con el generador aleatorio seguro de tu navegador y nunca sale de esta página.</div>
+  </section>
+  <div class="ad-slot" data-label="Publicidad" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>Cómo usarlo</h2>
+    <ol class="steps"><li><b>Ponle nombre</b>Escribe el emisor (tu app o sitio) y la cuenta. Son el nombre que se verá en la app de autenticación.</li><li><b>Escanea o copia</b>Escanea el código QR con Google Authenticator, Microsoft Authenticator, 2FAS o cualquier app TOTP, o copia el enlace otpauth://.</li><li><b>Comprueba el código</b>El código actual se actualiza en vivo, para que confirmes que la app muestra el mismo número.</li></ol>
+    <h2>¿Qué es un enlace otpauth://?</h2>
+    <p>Es el formato estándar que las apps de autenticación leen del código QR: <code class="k">otpauth://totp/Emisor:cuenta?secret=CLAVE&amp;issuer=Emisor</code>. Hay parámetros opcionales para el algoritmo, los dígitos y el periodo. Casi todos los servicios usan SHA-1, 6 dígitos y 30 segundos, que son los valores por defecto aquí.</p>
+    <h2>¿Es seguro generar claves online?</h2>
+    <p>Las claves se crean con <code class="k">crypto.getRandomValues</code> en tu navegador y no se sube nada. En sistemas en producción, genera las claves en tu propio servidor y guárdalas cifradas; usa esta herramienta para pruebas, prototipos o cuentas personales.</p>
+    <h2>¿Qué longitud de clave elegir?</h2>
+    <p>160 bits (32 caracteres Base32) es lo que recomienda la RFC 4226 y lo que usan la mayoría de servicios. 80 bits es el mínimo que aceptan algunas apps antiguas; 256 bits funciona en las apps modernas.</p>
+    <h2>Más herramientas 2FA gratis</h2>
+    <div class="features"><a class="feature" href="/es/" style="text-decoration:none;color:inherit"><b>Abrir el generador 2FA</b><span>Pega tu clave secreta 2FA y obtén al instante el código de 6 dígitos del autenticador. Funciona con Google, Facebook, Instagram, Microsoft y más. 100% en tu navegador: tu clave nunca se envía.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Abrir →</span></a><a class="feature" href="/es/comprobar-codigo-2fa" style="text-decoration:none;color:inherit"><b>Comprobador de código 2FA</b><span>Mira si un código coincide con tu clave y si el reloj de tu dispositivo está desfasado.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Abrir →</span></a><a class="feature" href="/es/leer-codigo-qr-2fa" style="text-decoration:none;color:inherit"><b>Lector de código QR 2FA</b><span>Extrae la clave secreta de cualquier QR 2FA, incluidas las exportaciones de Google Authenticator.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Abrir →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Los códigos se generan en tu dispositivo. Nunca vemos tus claves.</div>
+    <nav><a href="/es/generador-de-clave-2fa">Generador de clave y QR</a><a href="/es/comprobar-codigo-2fa">Comprobador de código 2FA</a><a href="/es/leer-codigo-qr-2fa">Lector de código QR 2FA</a><a href="/es/guias/">Guías</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Código abierto</a><a href="/es/privacidad">Política de privacidad</a><a href="mailto:contact@get2fa.online">Contacto</a></nav>
+    <nav class="langs"><a href="/2fa-key-generator" hreflang="en" lang="en">English</a><a href="/pt/gerador-de-chave-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/vi/tao-khoa-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/generator-kunci-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-schluessel-generator" hreflang="de" lang="de">Deutsch</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "Copiado"};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/qrcode.js?v=641f983a" defer></script><script src="/assets/tools.js?v=890483ea" defer></script>
+</body>
+</html>
