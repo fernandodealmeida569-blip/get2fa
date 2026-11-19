@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-root="/" data-home="/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Set Up GitHub 2FA with a TOTP App (Setup Key and Recovery Codes) | Get2FA</title>
+<meta name="description" content="Configure GitHub two-factor authentication with any TOTP app, find the setup key, save recovery codes and add the same key to more than one device.">
+<link rel="canonical" href="https://get2fa.online/guides/github-2fa-totp-app">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/github-2fa-totp-app">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/guias/github-2fa-app-totp">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/github-2fa-totp-app">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="How to Set Up GitHub 2FA with a TOTP App (Setup Key and Recovery Codes) | Get2FA">
+<meta property="og:description" content="Configure GitHub two-factor authentication with any TOTP app, find the setup key, save recovery codes and add the same key to more than one device.">
+<meta property="og:url" content="https://get2fa.online/guides/github-2fa-totp-app">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=1096387d">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to set up GitHub 2FA with a TOTP app", "description": "Configure GitHub two-factor authentication with any TOTP app, find the setup key, save recovery codes and add the same key to more than one device.", "inLanguage": "en", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/guides/github-2fa-totp-app", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://get2fa.online/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to set up GitHub 2FA with a TOTP app", "item": "https://get2fa.online/guides/github-2fa-totp-app"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/#tools">🧰 <span class="t">Tools</span></a>
+    <a class="pill" href="/guides/">📘 <span class="t">Guides</span></a>
+    <a class="pill" href="/pt/guias/github-2fa-app-totp" hreflang="pt-BR" lang="pt-BR">🌐 <span class="t">Português</span></a>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/guides/">← All guides</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">How to set up GitHub 2FA with a TOTP app</h1>
+  <p class="lead">GitHub requires 2FA for everyone who contributes code. It works with any TOTP app and shows the exact settings it uses, so it's one of the easiest services to set up.</p>
+  <p class="hint">Updated 2026-11-19</p>
+  <div class="cta"><b>Have your secret key? Get your code now</b><a class="btn primary" href="/">Open the 2FA generator</a></div>
+  
+<h2>Step by step</h2>
+<ol>
+<li>Click your profile picture → <strong>Settings</strong>.</li>
+<li>In the <em>Access</em> section, open <strong>Password and authentication</strong>.</li>
+<li>Click <strong>Enable two-factor authentication</strong>.</li>
+<li>Under the QR code, click <strong>setup key</strong> to see the TOTP secret. Save it.</li>
+<li>Add the key to your TOTP app (or <a href="/">Get2FA</a>) and type the code under <em>Verify the code from the app</em>.</li>
+<li>Download your <strong>recovery codes</strong> and store them safely, then click <strong>I have saved my recovery codes</strong>.</li>
+</ol>
+
+<h2>The settings GitHub uses</h2>
+<p>If you set up an app manually, GitHub's documentation lists: type TOTP, issuer GitHub, label <code class="k">GitHub:your-username</code>, algorithm SHA1, 6 digits and a 30-second period. These are the defaults in Get2FA.</p>
+
+<h2>More than one device</h2>
+<p>To use 2FA on several devices, scan the QR code with each of them during setup, or save the setup key and add it later. If 2FA is already on, you have to reconfigure the TOTP app in your security settings to see a new key.</p>
+
+<h2>Extra protection</h2>
+<p>After the TOTP app, you can add a security key, a passkey or GitHub Mobile as extra methods, so losing one device doesn't lock you out.</p>
+
+<h2>Keep a copy of the key</h2>
+<p>Before you scan the QR code, look for the option to see the key as text and save it in your password manager. If your phone is lost or replaced, you can paste that key into <a href="/">Get2FA</a> or a new authenticator app and get your codes back in seconds. Never share the key or a screenshot of the QR code: anyone who has it can generate your codes.</p>
+
+  <div class="ad-slot" data-label="Advertisement" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>Have your secret key? Get your code now</b><a class="btn primary" href="/">Open the 2FA generator</a></div>
+  <h2>Guides</h2>
+  <ul><li><a href="/guides/find-2fa-secret-key">Where to find your 2FA secret key</a></li><li><a href="/guides/instagram-2fa-authentication-app">How to turn on Instagram 2FA with an authentication app</a></li><li><a href="/guides/facebook-2fa-authentication-app">How to set up Facebook 2FA with an authenticator app</a></li><li><a href="/guides/transfer-google-authenticator-new-phone">How to transfer Google Authenticator to a new phone</a></li><li><a href="/guides/2fa-code-not-working">2FA code not working? Here's how to fix it</a></li><li><a href="/guides/lost-phone-2fa">Lost your phone with the authenticator app? What to do</a></li><li><a href="/guides/amazon-2fa-authenticator-app">How to set up Amazon Two-Step Verification with an authenticator app</a></li><li><a href="/guides/paypal-2fa-authenticator-app">How to turn on PayPal 2-step verification with an authenticator app</a></li><li><a href="/guides/coinbase-2fa-authenticator-app">How to set up Coinbase 2FA with an authenticator app</a></li><li><a href="/guides/discord-2fa-authenticator-app">How to enable Discord 2FA with an authenticator app</a></li><li><a href="/guides/x-twitter-2fa-authenticator-app">How to set up X (Twitter) 2FA with an authentication app</a></li><li><a href="/guides/tiktok-2fa-authenticator-app">How to set up TikTok 2-step verification with an authenticator app</a></li><li><a href="/guides/microsoft-account-2fa-authenticator-app">How to use any authenticator app with your Microsoft account</a></li><li><a href="/guides/binance-2fa-authenticator-app">How to enable Binance 2FA with an authenticator app</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes are generated on your device. We never see your keys.</div>
+    <nav><a href="/2fa-key-generator">Key & QR generator</a><a href="/check-2fa-code">2FA code checker</a><a href="/read-2fa-qr-code">2FA QR code reader</a><a href="/guides/">Guides</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Open source</a><a href="/privacy">Privacy policy</a><a href="mailto:contact@get2fa.online">Contact</a><a href="/pt/guias/github-2fa-app-totp">Português</a></nav>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>
