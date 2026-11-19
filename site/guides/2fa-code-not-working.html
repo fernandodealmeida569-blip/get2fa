@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-root="/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2FA Code Not Working? 7 Reasons and How to Fix Them | Get2FA</title>
+<meta name="description" content="Your authenticator code keeps being rejected? Learn the most common causes, from a wrong device clock to the wrong key, and how to fix each one.">
+<link rel="canonical" href="https://get2fa.online/guides/2fa-code-not-working">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/2fa-code-not-working">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/guias/codigo-2fa-nao-funciona">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/2fa-code-not-working">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="2FA Code Not Working? 7 Reasons and How to Fix Them | Get2FA">
+<meta property="og:description" content="Your authenticator code keeps being rejected? Learn the most common causes, from a wrong device clock to the wrong key, and how to fix each one.">
+<meta property="og:url" content="https://get2fa.online/guides/2fa-code-not-working">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=c57aa28d">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "2FA code not working? Here's how to fix it", "description": "Your authenticator code keeps being rejected? Learn the most common causes, from a wrong device clock to the wrong key, and how to fix each one.", "inLanguage": "en", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/guides/2fa-code-not-working", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://get2fa.online/guides/"}, {"@type": "ListItem", "position": 3, "name": "2FA code not working? Here's how to fix it", "item": "https://get2fa.online/guides/2fa-code-not-working"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/guides/">📘 <span class="t">Guides</span></a>
+    <a class="pill" href="/pt/guias/codigo-2fa-nao-funciona" hreflang="pt-BR" lang="pt-BR">🌐 <span class="t">Português</span></a>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/guides/">← All guides</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">2FA code not working? Here's how to fix it</h1>
+  <p class="lead">When a site says your 2FA code is invalid, the cause is almost always one of these. Start with the first: it solves most cases.</p>
+  <p class="hint">Updated 2026-11-19</p>
+  <div class="cta"><b>Have your secret key? Get your code now</b><a class="btn primary" href="/">Open the 2FA generator</a></div>
+  
+<h2>1. Your device's clock is off</h2>
+<p>TOTP codes are calculated from the current time. If your phone or computer clock is wrong by more than about 30 seconds, the code won't match. Turn on <strong>automatic date and time</strong> (and automatic time zone) in your device settings, then try a new code.</p>
+
+<h2>2. The code expired while you typed it</h2>
+<p>Each code lasts 30 seconds and some sites reject it right at the end. Wait for a fresh code. Get2FA shows the seconds left and the next code, so you can choose the right moment.</p>
+
+<h2>3. You're using the wrong key or account</h2>
+<p>If you set up 2FA more than once, only the last key is valid. Make sure the entry in your app belongs to the same account (look at the name and email) and that you copied the whole key without missing characters.</p>
+
+<h2>4. The site uses different settings</h2>
+<p>Almost every site uses 6 digits, 30 seconds and SHA-1. A few use 8 digits, 60 seconds or SHA-256. If the QR code has these settings, apps read them automatically. With a text key, set them in Get2FA's <em>Advanced settings</em>.</p>
+
+<h2>5. The key was typed wrong</h2>
+<p>Secret keys only use letters A–Z and numbers 2–7. The digits 0, 1, 8 and 9 never appear, so a “0” is really the letter O and a “1” is the letter I or L. Copy and paste instead of typing whenever you can.</p>
+
+<h2>6. The code was already used</h2>
+<p>Some sites accept each code only once. If you just used a code, wait for the next one.</p>
+
+<h2>7. 2FA was reset on the site</h2>
+<p>If you (or a support agent) turned 2FA off and on again, the old key no longer works. Use a backup code to sign in and set up the authenticator again.</p>
+
+<h2>Still locked out?</h2>
+<p>Use the backup or recovery codes the site gave you, or start the site's account recovery. See <a href="lost-phone-2fa">what to do if you lost your phone</a>.</p>
+
+  <div class="ad-slot" data-label="Advertisement" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>Have your secret key? Get your code now</b><a class="btn primary" href="/">Open the 2FA generator</a></div>
+  <h2>Guides</h2>
+  <ul><li><a href="/guides/find-2fa-secret-key">Where to find your 2FA secret key</a></li><li><a href="/guides/instagram-2fa-authentication-app">How to turn on Instagram 2FA with an authentication app</a></li><li><a href="/guides/facebook-2fa-authentication-app">How to set up Facebook 2FA with an authenticator app</a></li><li><a href="/guides/transfer-google-authenticator-new-phone">How to transfer Google Authenticator to a new phone</a></li><li><a href="/guides/lost-phone-2fa">Lost your phone with the authenticator app? What to do</a></li><li><a href="/guides/amazon-2fa-authenticator-app">How to set up Amazon Two-Step Verification with an authenticator app</a></li><li><a href="/guides/paypal-2fa-authenticator-app">How to turn on PayPal 2-step verification with an authenticator app</a></li><li><a href="/guides/coinbase-2fa-authenticator-app">How to set up Coinbase 2FA with an authenticator app</a></li><li><a href="/guides/discord-2fa-authenticator-app">How to enable Discord 2FA with an authenticator app</a></li><li><a href="/guides/x-twitter-2fa-authenticator-app">How to set up X (Twitter) 2FA with an authentication app</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes are generated on your device. We never see your keys.</div>
+    <nav><a href="/guides/">Guides</a><a href="/privacy">Privacy policy</a><a href="mailto:contact@get2fa.online">Contact</a><a href="/pt/guias/codigo-2fa-nao-funciona">Português</a></nav>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>
