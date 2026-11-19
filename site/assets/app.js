@@ -180,46 +180,8 @@
     else { var t = e.dataTransfer.getData('text'); if (t) { input.value = t; render(); } }
   });
 
-  /* QR decoding happens on this device: native BarcodeDetector when available,
-     otherwise the self-hosted jsQR library (loaded only when needed). */
-  var jsqrPromise = null;
-  function loadJsQR() {
-    if (window.jsQR) return Promise.resolve(window.jsQR);
-    if (!jsqrPromise) {
-      jsqrPromise = new Promise(function (ok, fail) {
-        var s = document.createElement('script');
-        s.src = (root.getAttribute('data-root') || '/') + 'assets/jsQR.js';
-        s.onload = function () { window.jsQR ? ok(window.jsQR) : fail(); };
-        s.onerror = function () { jsqrPromise = null; fail(); };
-        document.head.appendChild(s);
-      });
-    }
-    return jsqrPromise;
-  }
-  async function decodeImage(file) {
-    var bmp = await createImageBitmap(file);
-    if ('BarcodeDetector' in window) {
-      try {
-        var det = new window.BarcodeDetector({ formats: ['qr_code'] });
-        var codes = await det.detect(bmp);
-        if (codes.length) return codes.map(function (c) { return c.rawValue; });
-      } catch (e) { /* fall back to jsQR */ }
-    }
-    var jsQR = await loadJsQR();
-    var found = [];
-    // try the full image, then a downscaled copy (helps with very large screenshots)
-    var scales = [1, Math.min(1, 1000 / Math.max(bmp.width, bmp.height))];
-    for (var i = 0; i < scales.length && !found.length; i++) {
-      var w = Math.max(1, Math.round(bmp.width * scales[i])), h = Math.max(1, Math.round(bmp.height * scales[i]));
-      var c = document.createElement('canvas'); c.width = w; c.height = h;
-      var ctx = c.getContext('2d', { willReadFrequently: true });
-      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h); ctx.drawImage(bmp, 0, 0, w, h);
-      var img = ctx.getImageData(0, 0, w, h);
-      var r = jsQR(img.data, w, h, { inversionAttempts: 'attemptBoth' });
-      if (r && r.data) found.push(r.data);
-    }
-    return found;
-  }
+  /* QR decoding lives in qrread.js (shared with the QR reader page) */
+  function decodeImage(file) { return window.QRRead.decodeImage(file); }
 
   async function readQr(file) {
     var values;
@@ -250,4 +212,28 @@
 
   render(); fromHash(); start();
   if (!input.value) input.focus({ preventScroll: true });
+})();
+
+/* Keep users coming back: bookmark hint + install button (shown once, dismissible) */
+(function () {
+  var bar = document.getElementById('keepBar'); if (!bar) return;
+  var seen; try { seen = localStorage.getItem('q2fa.keep'); } catch (e) {}
+  var installBtn = document.getElementById('installBtn'), deferred = null;
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferred = e; installBtn.hidden = false;
+  });
+  installBtn.addEventListener('click', function () {
+    if (!deferred) return; deferred.prompt();
+    deferred.userChoice.finally(function () { deferred = null; installBtn.hidden = true; });
+  });
+  document.getElementById('keepOk').addEventListener('click', function () {
+    bar.hidden = true; try { localStorage.setItem('q2fa.keep', '1'); } catch (e) {}
+  });
+  // show after the first code is generated, so it never gets in the way
+  if (!seen) {
+    var obs = new MutationObserver(function () {
+      if (document.querySelector('#results .card:not(.err)')) { bar.hidden = false; obs.disconnect(); }
+    });
+    obs.observe(document.getElementById('results'), { childList: true });
+  }
 })();

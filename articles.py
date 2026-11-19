@@ -559,3 +559,220 @@ _us("x-twitter-2fa-authenticator-app",
 <p>Besides being limited to Premium accounts, text-message codes can be intercepted through SIM-swap attacks. An authentication app or security key is much harder to steal.</p>
 """ + _KEEP),
 ]
+
+# ---------------------------------------------------------------- batch 3 (EN + PT)
+_KEEP_PT = """
+<h2>Guarde uma cópia da chave</h2>
+<p>Antes de escanear o QR code, procure a opção de ver a chave em texto e guarde num gerenciador de senhas. Se o celular for perdido ou trocado, basta colar essa chave no <a href="/pt/">Get2FA</a> ou num app autenticador novo para ter os códigos de volta. Nunca compartilhe a chave nem prints do QR code: quem tem a chave consegue gerar seus códigos.</p>
+"""
+
+def _pair(eid, en, pt):
+    return {"id": eid, "en": en, "pt": pt}
+
+ARTICLES += [
+_pair("tiktok",
+ {"slug": "tiktok-2fa-authenticator-app",
+  "title": "How to Set Up TikTok 2-Step Verification with an Authenticator App",
+  "desc": "Turn on TikTok 2-step verification with an authenticator app in Settings and privacy, save the setup key and avoid getting locked out.",
+  "h1": "How to set up TikTok 2-step verification with an authenticator app",
+  "lead": "TikTok asks you to pick at least two verification methods. Choosing an authenticator app as one of them protects your account even if someone gets your password or your SMS.",
+  "body": """
+<h2>Step by step (TikTok app)</h2>
+<ol>
+<li>Open TikTok and tap <strong>Profile</strong> in the bottom right.</li>
+<li>Tap the menu (three lines) and choose <strong>Settings and privacy</strong>.</li>
+<li>Open <strong>Security &amp; permissions</strong> (called <em>Security</em> in some versions) and tap <strong>2-step verification</strong>.</li>
+<li>Select <strong>Authenticator app</strong> and one more method (email, phone or password). TikTok requires at least two.</li>
+<li>Tap <strong>Turn on</strong> and confirm your identity when asked.</li>
+<li>TikTok shows a QR code and a <strong>key</strong>. Copy and save the key before going on.</li>
+<li>Add the key to your authenticator app (or paste it into <a href="/">Get2FA</a>) and enter the 6-digit code.</li>
+</ol>
+
+<h2>Business and ads accounts</h2>
+<p>TikTok for Business (Ads Manager) has its own 2-step verification under <em>User settings → Account Security</em>, and it also accepts third-party authenticator apps. It's a separate setting from your personal TikTok account.</p>
+
+<h2>Code not accepted?</h2>
+<p>Set your phone's date and time to automatic and use a fresh code. See <a href="2fa-code-not-working">why 2FA codes don't work</a> or test it with the <a href="/check-2fa-code">2FA code checker</a>.</p>
+""" + _KEEP},
+ {"slug": "tiktok-verificacao-duas-etapas",
+  "title": "Como ativar a verificação em duas etapas do TikTok com app autenticador",
+  "desc": "Ative a verificação em duas etapas do TikTok com app autenticador em Configurações e privacidade, guarde a chave e evite perder o acesso.",
+  "h1": "Como ativar a verificação em duas etapas do TikTok com app autenticador",
+  "lead": "O TikTok pede para escolher pelo menos dois métodos de verificação. Usar um app autenticador como um deles protege a conta mesmo se alguém descobrir sua senha ou interceptar o SMS.",
+  "body": """
+<h2>Passo a passo (app do TikTok)</h2>
+<ol>
+<li>Abra o TikTok e toque em <strong>Perfil</strong>, no canto inferior direito.</li>
+<li>Toque no menu (três linhas) e escolha <strong>Configurações e privacidade</strong>.</li>
+<li>Abra <strong>Segurança e permissões</strong> (em algumas versões, só <em>Segurança</em>) e toque em <strong>Verificação em duas etapas</strong>.</li>
+<li>Selecione <strong>App autenticador</strong> e mais um método (e-mail, telefone ou senha). O TikTok exige pelo menos dois.</li>
+<li>Toque em <strong>Ativar</strong> e confirme sua identidade quando pedir.</li>
+<li>O TikTok mostra um QR code e uma <strong>chave</strong>. Copie e guarde a chave antes de continuar.</li>
+<li>Adicione a chave no seu app autenticador (ou cole no <a href="/pt/">Get2FA</a>) e digite o código de 6 dígitos.</li>
+</ol>
+
+<h2>Contas de anúncios e empresas</h2>
+<p>O TikTok for Business (Gerenciador de Anúncios) tem a própria verificação em duas etapas, em <em>Configurações do usuário → Segurança da conta</em>, e também aceita apps autenticadores. É uma configuração separada da sua conta pessoal.</p>
+
+<h2>O código não é aceito?</h2>
+<p>Deixe data e hora do celular no automático e use um código novo. Veja <a href="codigo-2fa-nao-funciona">por que o código 2FA não funciona</a> ou teste no <a href="/pt/verificar-codigo-2fa">verificador de código 2FA</a>.</p>
+""" + _KEEP_PT}),
+
+_pair("microsoft",
+ {"slug": "microsoft-account-2fa-authenticator-app",
+  "title": "How to Use Any Authenticator App with Your Microsoft Account (Outlook, Xbox)",
+  "desc": "Set up two-step verification on a personal Microsoft account (Outlook, Xbox, OneDrive) with Google Authenticator or any TOTP app instead of Microsoft Authenticator.",
+  "h1": "How to use any authenticator app with your Microsoft account",
+  "lead": "You don't have to use Microsoft Authenticator. Microsoft accounts work with any TOTP app, including Google Authenticator, 2FAS and Get2FA. The trick is a small link during setup.",
+  "body": """
+<h2>Step by step</h2>
+<ol>
+<li>Sign in at <strong>account.microsoft.com/security</strong>.</li>
+<li>Select <strong>Manage how I sign in</strong> (or <em>Advanced security options</em>).</li>
+<li>Choose <strong>Add a new way to sign in or verify</strong>, then <strong>Use an app</strong>.</li>
+<li>When Microsoft offers to install Microsoft Authenticator, select <strong>Set up a different Authenticator app</strong> / <strong>I want to use a different authenticator app</strong>.</li>
+<li>Microsoft shows a QR code. Use <strong>“I can't scan the bar code”</strong> to see the secret key and save it.</li>
+<li>Add the key to your app (or <a href="/">Get2FA</a>) and type the code to confirm.</li>
+<li>Back in security settings, turn on <strong>Two-step verification</strong> if it isn't on yet.</li>
+</ol>
+
+<h2>Before you turn it on</h2>
+<ul>
+<li>Microsoft recommends having three pieces of security info (for example an app, a phone number and an email) so you don't lose access.</li>
+<li>Some older apps and devices can't ask for a code. For those, Microsoft uses <strong>app passwords</strong>, created in the same security page.</li>
+</ul>
+
+<h2>Work or school accounts</h2>
+<p>For accounts managed by a company or school, setup happens at your organization's sign-in page and your administrator decides which apps are allowed.</p>
+""" + _KEEP},
+ {"slug": "conta-microsoft-autenticador",
+  "title": "Como usar qualquer app autenticador na conta Microsoft (Outlook, Xbox)",
+  "desc": "Ative a verificação em duas etapas na conta Microsoft pessoal (Outlook, Xbox, OneDrive) com Google Authenticator ou qualquer app TOTP, sem o Microsoft Authenticator.",
+  "h1": "Como usar qualquer app autenticador na conta Microsoft",
+  "lead": "Você não é obrigado a usar o Microsoft Authenticator. A conta Microsoft funciona com qualquer app TOTP, como Google Authenticator, 2FAS e Get2FA. O segredo é um link durante a configuração.",
+  "body": """
+<h2>Passo a passo</h2>
+<ol>
+<li>Entre em <strong>account.microsoft.com/security</strong>.</li>
+<li>Selecione <strong>Gerenciar como eu entro</strong> (ou <em>Opções de segurança avançadas</em>).</li>
+<li>Escolha <strong>Adicionar uma nova forma de entrar ou verificar</strong> e depois <strong>Usar um aplicativo</strong>.</li>
+<li>Quando a Microsoft sugerir instalar o Microsoft Authenticator, selecione <strong>Configurar um aplicativo autenticador diferente</strong> / <strong>Quero usar outro aplicativo</strong>.</li>
+<li>A Microsoft mostra um QR code. Use <strong>“Não consigo ler o código de barras”</strong> para ver a chave secreta e guarde.</li>
+<li>Adicione a chave no seu app (ou no <a href="/pt/">Get2FA</a>) e digite o código para confirmar.</li>
+<li>Nas configurações de segurança, ative a <strong>Verificação em duas etapas</strong> se ainda não estiver ligada.</li>
+</ol>
+
+<h2>Antes de ativar</h2>
+<ul>
+<li>A Microsoft recomenda ter três formas de verificação (por exemplo, app, telefone e e-mail) para não perder o acesso.</li>
+<li>Alguns apps e aparelhos antigos não pedem código. Para eles, a Microsoft usa <strong>senhas de aplicativo</strong>, criadas na mesma página de segurança.</li>
+</ul>
+
+<h2>Contas de trabalho ou escola</h2>
+<p>Em contas gerenciadas por empresa ou escola, a configuração é feita na página de login da organização, e o administrador define quais apps são permitidos.</p>
+""" + _KEEP_PT}),
+
+_pair("github",
+ {"slug": "github-2fa-totp-app",
+  "title": "How to Set Up GitHub 2FA with a TOTP App (Setup Key and Recovery Codes)",
+  "desc": "Configure GitHub two-factor authentication with any TOTP app, find the setup key, save recovery codes and add the same key to more than one device.",
+  "h1": "How to set up GitHub 2FA with a TOTP app",
+  "lead": "GitHub requires 2FA for everyone who contributes code. It works with any TOTP app and shows the exact settings it uses, so it's one of the easiest services to set up.",
+  "body": """
+<h2>Step by step</h2>
+<ol>
+<li>Click your profile picture → <strong>Settings</strong>.</li>
+<li>In the <em>Access</em> section, open <strong>Password and authentication</strong>.</li>
+<li>Click <strong>Enable two-factor authentication</strong>.</li>
+<li>Under the QR code, click <strong>setup key</strong> to see the TOTP secret. Save it.</li>
+<li>Add the key to your TOTP app (or <a href="/">Get2FA</a>) and type the code under <em>Verify the code from the app</em>.</li>
+<li>Download your <strong>recovery codes</strong> and store them safely, then click <strong>I have saved my recovery codes</strong>.</li>
+</ol>
+
+<h2>The settings GitHub uses</h2>
+<p>If you set up an app manually, GitHub's documentation lists: type TOTP, issuer GitHub, label <code class="k">GitHub:your-username</code>, algorithm SHA1, 6 digits and a 30-second period. These are the defaults in Get2FA.</p>
+
+<h2>More than one device</h2>
+<p>To use 2FA on several devices, scan the QR code with each of them during setup, or save the setup key and add it later. If 2FA is already on, you have to reconfigure the TOTP app in your security settings to see a new key.</p>
+
+<h2>Extra protection</h2>
+<p>After the TOTP app, you can add a security key, a passkey or GitHub Mobile as extra methods, so losing one device doesn't lock you out.</p>
+""" + _KEEP},
+ {"slug": "github-2fa-app-totp",
+  "title": "Como ativar o 2FA do GitHub com app TOTP (chave e códigos de recuperação)",
+  "desc": "Configure a autenticação de dois fatores do GitHub com qualquer app TOTP, encontre a chave de configuração, guarde os códigos de recuperação e use em mais de um aparelho.",
+  "h1": "Como ativar o 2FA do GitHub com app TOTP",
+  "lead": "O GitHub exige 2FA de todos que contribuem com código. Ele funciona com qualquer app TOTP e mostra exatamente as configurações que usa, então é um dos serviços mais fáceis de configurar.",
+  "body": """
+<h2>Passo a passo</h2>
+<ol>
+<li>Clique na sua foto de perfil → <strong>Settings</strong>.</li>
+<li>Na seção <em>Access</em>, abra <strong>Password and authentication</strong>.</li>
+<li>Clique em <strong>Enable two-factor authentication</strong>.</li>
+<li>Abaixo do QR code, clique em <strong>setup key</strong> para ver a chave TOTP. Guarde.</li>
+<li>Adicione a chave no seu app TOTP (ou no <a href="/pt/">Get2FA</a>) e digite o código em <em>Verify the code from the app</em>.</li>
+<li>Baixe os <strong>recovery codes</strong> (códigos de recuperação), guarde em lugar seguro e clique em <strong>I have saved my recovery codes</strong>.</li>
+</ol>
+
+<h2>As configurações que o GitHub usa</h2>
+<p>Para configurar um app manualmente, a documentação do GitHub informa: tipo TOTP, emissor GitHub, rótulo <code class="k">GitHub:seu-usuario</code>, algoritmo SHA1, 6 dígitos e período de 30 segundos. São os padrões do Get2FA.</p>
+
+<h2>Mais de um aparelho</h2>
+<p>Para usar o 2FA em vários aparelhos, escaneie o QR code com todos durante a configuração, ou guarde a chave e adicione depois. Se o 2FA já estiver ativo, é preciso reconfigurar o app TOTP nas configurações de segurança para ver uma chave nova.</p>
+
+<h2>Proteção extra</h2>
+<p>Depois do app TOTP, dá para adicionar chave de segurança, passkey ou o GitHub Mobile como métodos extras, para não perder o acesso se um aparelho sumir.</p>
+""" + _KEEP_PT}),
+
+_pair("binance",
+ {"slug": "binance-2fa-authenticator-app",
+  "title": "How to Enable Binance 2FA with an Authenticator App (Website and App)",
+  "desc": "Turn on Binance two-factor authentication with Google Authenticator or any TOTP app, save the setup key and fix codes that don't work.",
+  "h1": "How to enable Binance 2FA with an authenticator app",
+  "lead": "On a crypto exchange, 2FA is not optional: Binance requires it for withdrawals. An authenticator app is far safer than SMS. Here's how to set it up and keep a backup.",
+  "body": """
+<h2>On the Binance website</h2>
+<ol>
+<li>Log in, hover over the <strong>Profile</strong> icon and click <strong>Account</strong>.</li>
+<li>Go to <strong>Security</strong> and click <strong>Manage</strong> next to <strong>Authenticator App</strong>.</li>
+<li>Click <strong>Enable Authenticator App</strong>.</li>
+<li>Binance shows a QR code and a <strong>setup key</strong>. Don't click <em>Next</em> until you've saved the key.</li>
+<li>Add the key to your authenticator app (or <a href="/">Get2FA</a>), then enter the 6-digit code to finish.</li>
+</ol>
+
+<h2>On the Binance app</h2>
+<p>Tap the <strong>Account</strong> icon, tap the profile section at the top, go to <strong>Security</strong> and tap <strong>Authenticator App → Enable</strong>. The rest is the same.</p>
+
+<h2>Tips for crypto accounts</h2>
+<ul>
+<li>Binance suggests setting up Google Authenticator without linking it to your Google account, so a hacked Google account doesn't expose your exchange codes.</li>
+<li>If codes are rejected, Binance's own help points to the phone's date and time: set it to automatic.</li>
+<li>Store the key offline. Nobody from support will ever ask for it or for a 2FA code.</li>
+</ul>
+""" + _KEEP},
+ {"slug": "binance-2fa-app-autenticador",
+  "title": "Como ativar o 2FA da Binance com app autenticador (site e app)",
+  "desc": "Ative a autenticação de dois fatores da Binance com Google Authenticator ou qualquer app TOTP, guarde a chave e resolva códigos que não funcionam.",
+  "h1": "Como ativar o 2FA da Binance com app autenticador",
+  "lead": "Em corretora de cripto, o 2FA não é opcional: a Binance exige para saques. O app autenticador é muito mais seguro que SMS. Veja como ativar e guardar um backup.",
+  "body": """
+<h2>No site da Binance</h2>
+<ol>
+<li>Entre na conta, passe o mouse no ícone de <strong>Perfil</strong> e clique em <strong>Conta</strong>.</li>
+<li>Vá em <strong>Segurança</strong> e clique em <strong>Gerenciar</strong> ao lado de <strong>App autenticador</strong>.</li>
+<li>Clique em <strong>Ativar app autenticador</strong>.</li>
+<li>A Binance mostra um QR code e uma <strong>chave de configuração</strong>. Não clique em <em>Próximo</em> antes de guardar a chave.</li>
+<li>Adicione a chave no seu app autenticador (ou no <a href="/pt/">Get2FA</a>) e digite o código de 6 dígitos para concluir.</li>
+</ol>
+
+<h2>No app da Binance</h2>
+<p>Toque no ícone de <strong>Conta</strong>, toque na área do perfil no topo, vá em <strong>Segurança</strong> e toque em <strong>App autenticador → Ativar</strong>. O resto é igual.</p>
+
+<h2>Dicas para contas de cripto</h2>
+<ul>
+<li>A Binance sugere configurar o Google Authenticator sem vincular à sua conta Google, para que uma conta Google invadida não exponha os códigos da corretora.</li>
+<li>Se os códigos forem recusados, a própria ajuda da Binance aponta o relógio do celular: deixe data e hora no automático.</li>
+<li>Guarde a chave offline. Ninguém do suporte vai pedir a chave nem um código 2FA.</li>
+</ul>
+""" + _KEEP_PT}),
+]

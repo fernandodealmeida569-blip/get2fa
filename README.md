@@ -15,6 +15,12 @@ Paste a 2FA secret key, an `otpauth://` link or a QR code image and get the same
 - SHA-1, SHA-256 and SHA-512 · 6 or 8 digits · 30 or 60 seconds.
 - Works offline once loaded, light and dark mode, English and Portuguese.
 
+## Extra tools
+
+- [2FA key & QR code generator](https://get2fa.online/2fa-key-generator): random TOTP secret, otpauth link and QR code (QR encoder in `site/assets/qrcode.js`, no dependencies).
+- [2FA code checker](https://get2fa.online/check-2fa-code): tells you if a code matches and whether your device clock is off.
+- [2FA QR code reader](https://get2fa.online/read-2fa-qr-code): extracts keys from QR images, including Google Authenticator exports.
+
 ## Verify it yourself
 
 1. Open [get2fa.online](https://get2fa.online) and your browser's developer tools (F12) → **Network** tab.
@@ -35,6 +41,8 @@ node tests/totp.test.js
 site/            static website, ready to deploy (Cloudflare Pages, Netlify, GitHub Pages…)
   assets/totp.js TOTP/HOTP engine, Base32, otpauth and Google Authenticator export parsing
   assets/app.js  user interface
+  assets/qrcode.js QR encoder (byte mode, level M)
+  assets/qrread.js / tools.js  QR reader and extra tools
   assets/jsQR.js QR decoder (third party, loaded only when needed)
 build.py         generates the HTML pages (EN + PT) from the texts
 articles.py      the 2FA guides

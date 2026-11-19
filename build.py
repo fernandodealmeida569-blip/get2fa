@@ -84,7 +84,7 @@ L = {
           ("What is a 2FA secret key?", "It's a random code, usually 16 to 32 letters A–Z and numbers 2–7 (Base32), that a website shares with your authenticator when you turn on two-factor authentication. The QR code is just this key in picture form."),
           ("I lost my phone. Can Get2FA recover my codes?", "Only if you saved the secret key. Get2FA can't read keys from another device. If you don't have the key, use the backup codes the service gave you or its account recovery process.")],
   "foot": "Codes are generated on your device. We never see your keys.",
-  "privacyLink": "Privacy policy", "contactLink": "Contact", "guides": "Guides", "guidesPath": "/guides/", "guidesH": "2FA guides", "guidesLead": "Step-by-step help to set up, move and fix two-factor authentication.", "read": "Read guide →", "cta": "Have your secret key? Get your code now", "ctaBtn": "Open the 2FA generator", "updatedLbl": "Updated", "back": "← All guides",
+  "privacyLink": "Privacy policy", "contactLink": "Contact", "guides": "Guides", "guidesPath": "/guides/", "guidesH": "2FA guides", "guidesLead": "Step-by-step help to set up, move and fix two-factor authentication.", "read": "Read guide →", "cta": "Have your secret key? Get your code now", "ctaBtn": "Open the 2FA generator", "updatedLbl": "Updated", "back": "← All guides", "tools": "Tools", "toolsH": "More free 2FA tools", "openSource": "Open source", "keep": "Use 2FA codes often? Press <b>Ctrl+D</b> (<b>⌘D</b> on Mac) to bookmark Get2FA.", "keepInstall": "Install app", "keepOk": "Got it", "open": "Open →",
   "pv": {
    "title": "Privacy Policy | Get2FA", "h1": "Privacy policy", "updated": "Last updated:",
    "body": [
@@ -163,7 +163,7 @@ L = {
           ("O que é a chave secreta do 2FA?", "É um código aleatório, normalmente com 16 a 32 letras de A a Z e números de 2 a 7 (Base32), que o site compartilha com o seu autenticador quando você ativa a verificação em duas etapas. O QR code é só essa chave em forma de imagem."),
           ("Perdi meu celular. O Get2FA recupera meus códigos?", "Só se você tiver guardado a chave secreta. O Get2FA não consegue ler chaves de outro aparelho. Se você não tem a chave, use os códigos de backup que o serviço forneceu ou o processo de recuperação de conta.")],
   "foot": "Os códigos são gerados no seu aparelho. Nunca vemos suas chaves.",
-  "privacyLink": "Política de privacidade", "contactLink": "Contato", "guides": "Guias", "guidesPath": "/pt/guias/", "guidesH": "Guias de 2FA", "guidesLead": "Passo a passo para configurar, transferir e resolver problemas da verificação em duas etapas.", "read": "Ler guia →", "cta": "Já tem a chave secreta? Pegue seu código agora", "ctaBtn": "Abrir o gerador de 2FA", "updatedLbl": "Atualizado em", "back": "← Todos os guias",
+  "privacyLink": "Política de privacidade", "contactLink": "Contato", "guides": "Guias", "guidesPath": "/pt/guias/", "guidesH": "Guias de 2FA", "guidesLead": "Passo a passo para configurar, transferir e resolver problemas da verificação em duas etapas.", "read": "Ler guia →", "cta": "Já tem a chave secreta? Pegue seu código agora", "ctaBtn": "Abrir o gerador de 2FA", "updatedLbl": "Atualizado em", "back": "← Todos os guias", "tools": "Ferramentas", "toolsH": "Mais ferramentas 2FA grátis", "openSource": "Código aberto", "keep": "Usa códigos 2FA com frequência? Aperte <b>Ctrl+D</b> (<b>⌘D</b> no Mac) para salvar o Get2FA nos favoritos.", "keepInstall": "Instalar app", "keepOk": "Entendi", "open": "Abrir →",
   "pv": {
    "title": "Política de Privacidade | Get2FA", "h1": "Política de privacidade", "updated": "Atualizada em:",
    "body": [
@@ -198,7 +198,7 @@ def hreflang(kind):
 
 def head(t, title, desc, canonical, kind, extra=""):
     return f"""<!DOCTYPE html>
-<html lang="{t['lang']}" data-root="/">
+<html lang="{t['lang']}" data-root="/" data-home="{t['path']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -233,6 +233,7 @@ def header(t, alt=None):
     return f"""<header class="wrap top">
   <a class="brand" href="{home}">{LOGO}<span>{BRAND}</span></a>
   <nav class="nav">
+    <a class="pill" href="{t['path']}#tools">🧰 <span class="t">{t['tools']}</span></a>
     <a class="pill" href="{t['guidesPath']}">📘 <span class="t">{t['guides']}</span></a>
     <a class="pill" href="{href}" hreflang="{'pt-BR' if href.startswith('/pt/') else 'en'}" lang="{'pt-BR' if href.startswith('/pt/') else 'en'}">🌐 <span class="t">{name}</span></a>
     <button class="pill" id="themeBtn" type="button" aria-label="Theme">{ICON_MOON}</button>
@@ -245,7 +246,7 @@ def footer(t, alt=None):
     return f"""<footer>
   <div class="wrap">
     <div>© 2026 {BRAND}. {t['foot']}</div>
-    <nav><a href="{t['guidesPath']}">{t['guides']}</a><a href="{t['privacy']}">{t['privacyLink']}</a><a href="mailto:{CONTACT}">{t['contactLink']}</a><a href="{href}">{name}</a></nav>
+    <nav>{tool_links(t)}<a href="{t['guidesPath']}">{t['guides']}</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">{t['openSource']}</a><a href="{t['privacy']}">{t['privacyLink']}</a><a href="mailto:{CONTACT}">{t['contactLink']}</a><a href="{href}">{name}</a></nav>
   </div>
 </footer>"""
 
@@ -318,6 +319,51 @@ def page_article(code, a):
 </html>
 """
 
+from tools_pages import TOOLS
+
+def tool_code(t):
+    return "pt" if t["lang"] == "pt-BR" else "en"
+
+def tool_links(t):
+    c = tool_code(t)
+    return "".join(f'<a href="{x[c]["path"]}">{x[c]["card"]}</a>' for x in TOOLS)
+
+def tool_cards(code, skip=None):
+    t = L[code]
+    return "".join(f'<a class="feature" href="{x[code]["path"]}" style="text-decoration:none;color:inherit"><b>{x[code]["card"]}</b><span>{x[code]["cardDesc"]}</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">{t["open"]}</span></a>' for x in TOOLS if x["id"] != skip)
+
+def page_tool(code, x):
+    t = L[code]; d = x[code]; o = other(code)
+    canonical = SITE + d["path"]
+    ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": d["h1"], "url": canonical,
+          "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": t["lang"],
+          "description": d["desc"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
+    extra = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>'
+    i18n = json.dumps(d["i18n"], ensure_ascii=False)
+    scripts = "".join(f'<script src="/assets/{f}" defer></script>' for f in x["scripts"])
+    return head(t, d["title"] + " | " + BRAND, d["desc"], canonical, (x["en"]["path"], x["pt"]["path"]), extra) + f"""<body data-tool="{x['id']}">
+{header(t, x[o]["path"])}
+<main class="wrap">
+  <section class="hero">
+    <h1>{d['h1']}</h1>
+    <p>{d['sub']}</p>
+  </section>
+  {d['tool']()}
+  {ad(t, 'below-tool')}
+  <article class="content">
+    {d['content']}
+    <h2>{t['toolsH']}</h2>
+    <div class="features"><a class="feature" href="{t['path']}" style="text-decoration:none;color:inherit"><b>{t['ctaBtn']}</b><span>{t['desc']}</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">{t['open']}</span></a>{tool_cards(code, x['id'])}</div>
+  </article>
+</main>
+{footer(t, x[o]["path"])}
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={i18n};</script>
+{scripts}
+</body>
+</html>
+"""
+
 def page_home(code):
     t = L[code]
     canonical = SITE + t["path"]
@@ -376,6 +422,13 @@ def page_home(code):
     </div>
   </section>
 
+  <div class="keep" id="keepBar" hidden><span>{t['keep']}</span><span class="spacer"></span><button class="btn sm primary" id="installBtn" type="button" hidden>{t['keepInstall']}</button><button class="btn sm ghost" id="keepOk" type="button">{t['keepOk']}</button></div>
+
+  <section class="content" id="tools">
+    <h2>{t['toolsH']}</h2>
+    <div class="features three">{tool_cards(code)}</div>
+  </section>
+
   {ad(t, 'below-tool')}
 
   <article class="content">
@@ -407,6 +460,7 @@ def page_home(code):
 <div class="toast" id="toast" role="status"></div>
 <script>window.I18N={i18n};</script>
 <script src="/assets/totp.js" defer></script>
+<script src="/assets/qrread.js" defer></script>
 <script src="/assets/app.js" defer></script>
 </body>
 </html>
@@ -435,7 +489,7 @@ import hashlib
 def _ver(rel):
     try: return hashlib.md5(open(os.path.join(OUT, rel), "rb").read()).hexdigest()[:8]
     except OSError: return "1"
-ASSET_V = {a: _ver("assets/" + a) for a in ("style.css", "app.js", "totp.js")}
+ASSET_V = {a: _ver("assets/" + a) for a in ("style.css", "app.js", "totp.js", "qrread.js", "qrcode.js", "tools.js")}
 
 def w(rel, content):
     p = os.path.join(OUT, rel); os.makedirs(os.path.dirname(p), exist_ok=True)
@@ -452,13 +506,16 @@ for a in ARTICLES:
     if a.get("pt"):
         w("pt/guias/" + a["pt"]["slug"] + ".html", page_article("pt", a))
 w("pt/index.html", page_home("pt"))
+for x in TOOLS:
+    w(x["en"]["path"].lstrip("/") + ".html", page_tool("en", x))
+    w(x["pt"]["path"].lstrip("/") + ".html", page_tool("pt", x))
 w("privacy.html", page_privacy("en"))
 w("pt/privacidade.html", page_privacy("pt"))
 w("assets/icon.svg", LOGO.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"'))
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("ads.txt", "# Replace with your AdSense line, e.g.:\n# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\n")
 
-urls = [("/", "/pt/", "1.0"), ("/guides/", "/pt/guias/", "0.8")] + [(gpath("en", a), gpath("pt", a), "0.7") for a in ARTICLES] + [("/privacy", "/pt/privacidade", "0.3")]
+urls = [("/", "/pt/", "1.0")] + [(x["en"]["path"], x["pt"]["path"], "0.9") for x in TOOLS] + [("/guides/", "/pt/guias/", "0.8")] + [(gpath("en", a), gpath("pt", a), "0.7") for a in ARTICLES] + [("/privacy", "/pt/privacidade", "0.3")]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>',
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
 for en, pt, pr in urls:
@@ -481,8 +538,8 @@ w("manifest.webmanifest", json.dumps({
             {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=2))
 
 w("sw.js", """/* Get2FA offline cache. Only static files are cached; secrets are never involved. */
-const V = 'q2fa-v2';
-const FILES = ['/', '/pt/', '/assets/style.css', '/assets/totp.js', '/assets/app.js', '/assets/icon.svg'];
+const V = 'q2fa-v3';
+const FILES = ['/', '/pt/', '/assets/style.css', '/assets/totp.js', '/assets/app.js', '/assets/qrread.js', '/assets/icon.svg'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== V).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
