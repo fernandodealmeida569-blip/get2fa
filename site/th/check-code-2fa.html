@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th" data-root="/" data-home="/th/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เช็กรหัส 2FA – ทำไมรหัสยืนยันตัวตนไม่ถูกต้อง? | ตรวจนาฬิกา | Get2FA</title>
+<meta name="description" content="วางคีย์ 2FA และรหัสจากแอปเพื่อดูว่าตรงกันไหม และตรวจว่านาฬิกาอุปกรณ์คลาดเคลื่อนหรือไม่ หาสาเหตุที่รหัส 2FA ใช้ไม่ได้">
+<link rel="canonical" href="https://get2fa.online/th/check-code-2fa">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/check-2fa-code">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/verificar-codigo-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/comprobar-codigo-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/kiem-tra-ma-2fa">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/cek-kode-2fa">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/2fa-code-pruefen">
+<link rel="alternate" hreflang="th" href="https://get2fa.online/th/check-code-2fa">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/check-2fa-code">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="เช็กรหัส 2FA – ทำไมรหัสยืนยันตัวตนไม่ถูกต้อง? | ตรวจนาฬิกา | Get2FA">
+<meta property="og:description" content="วางคีย์ 2FA และรหัสจากแอปเพื่อดูว่าตรงกันไหม และตรวจว่านาฬิกาอุปกรณ์คลาดเคลื่อนหรือไม่ หาสาเหตุที่รหัส 2FA ใช้ไม่ได้">
+<meta property="og:url" content="https://get2fa.online/th/check-code-2fa">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "เช็กรหัส 2FA และนาฬิกาอุปกรณ์", "url": "https://get2fa.online/th/check-code-2fa", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "th", "description": "วางคีย์ 2FA และรหัสจากแอปเพื่อดูว่าตรงกันไหม และตรวจว่านาฬิกาอุปกรณ์คลาดเคลื่อนหรือไม่ หาสาเหตุที่รหัส 2FA ใช้ไม่ได้", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="check">
+<header class="wrap top">
+  <a class="brand" href="/th/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/th/#tools">🧰 <span class="t">เครื่องมือ</span></a>
+    <a class="pill" href="/th/khumue/">📘 <span class="t">คู่มือ</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">ไทย</span></summary><div class="langlist"><a href="/check-2fa-code" hreflang="en" lang="en">English</a><a href="/pt/verificar-codigo-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/comprobar-codigo-2fa" hreflang="es" lang="es">Español</a><a href="/vi/kiem-tra-ma-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/cek-kode-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-code-pruefen" hreflang="de" lang="de">Deutsch</a><a href="/th/check-code-2fa" hreflang="th" lang="th" aria-current="true">ไทย</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>เช็กรหัส 2FA และนาฬิกาอุปกรณ์</h1>
+    <p>วางคีย์ลับและรหัสที่แอปยืนยันตัวตนแสดง เราจะบอกว่าตรงกันไหม และนาฬิกาอุปกรณ์เป็นสาเหตุที่รหัสถูกปฏิเสธหรือไม่</p>
+  </section>
+  
+  <section class="tool" aria-label="เช็กรหัส">
+    <div class="note" id="cClock">กำลังตรวจนาฬิกา…</div>
+    <label class="fld">คีย์ลับ<textarea id="cSecret" rows="2" spellcheck="false" autocomplete="off" placeholder="JBSW Y3DP EHPK 3PXP"></textarea></label>
+    <div class="row">
+      <label class="fld inline">รหัสจากแอป<input id="cCode" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="123456"></label>
+      <span class="spacer"></span>
+      <button class="btn primary" id="cCheck" type="button">เช็กรหัส</button>
+    </div>
+    <details class="adv">
+      <summary>ตั้งค่าขั้นสูง</summary>
+      <div class="adv-grid">
+        <label>อัลกอริทึม<select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select></label>
+        <label>จำนวนหลัก<select id="digits"><option>6</option><option>8</option></select></label>
+        <label>ช่วงเวลา<select id="period"><option value="30">30 s</option><option value="60">60 s</option></select></label>
+      </div>
+    </details>
+    <div class="note" id="cResult" aria-live="polite"></div>
+    <div class="hint" id="cNow"></div>
+  </section>
+  <div class="ad-slot" data-label="โฆษณา" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>ผลลัพธ์หมายความว่าอะไร</h2>
+    <ul>
+    <li><b>ตรงกับรหัสปัจจุบัน:</b> คีย์และแอปถูกต้อง ถ้าเว็บไซต์ยังปฏิเสธ อาจเพราะเว็บใช้คีย์อื่น (มีการรีเซ็ต 2FA) หรือรหัสหมดอายุระหว่างพิมพ์</li>
+    <li><b>ตรงกับรหัสก่อนหน้าหรือถัดไป:</b> นาฬิกาเครื่องใดเครื่องหนึ่งคลาดเคลื่อน เปิดวันที่และเวลาอัตโนมัติบนมือถือที่ใช้แอปยืนยันตัวตน</li>
+    <li><b>ไม่ตรงกัน:</b> คีย์เป็นของบัญชีอื่น คัดลอกไม่ครบ หรือเว็บไซต์ใช้ 8 หลัก 60 วินาที หรือ SHA-256</li>
+    </ul>
+    <p>ยังมีปัญหาอยู่? อ่าน <a href="/th/khumue/code-2fa-chai-mai-dai">รหัส 2FA ใช้ไม่ได้: 7 สาเหตุ</a></p>
+    <h2>เครื่องมือ 2FA ฟรีอื่นๆ</h2>
+    <div class="features"><a class="feature" href="/th/" style="text-decoration:none;color:inherit"><b>เปิดตัวสร้างรหัส 2FA</b><span>วางคีย์ลับ 2FA แล้วรับรหัส 6 หลักได้ทันที เหมือนในแอปยืนยันตัวตน ใช้ได้กับ Google, Facebook, Instagram, Microsoft และอื่นๆ ทำงาน 100% ในเบราว์เซอร์ คีย์ของคุณไม่ถูกส่งออกไปไหน</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">เปิด →</span></a><a class="feature" href="/th/sang-key-2fa" style="text-decoration:none;color:inherit"><b>สร้างคีย์และคิวอาร์</b><span>สร้างคีย์ 2FA แบบสุ่มและคิวอาร์โค้ดสำหรับแอปยืนยันตัวตนทุกตัว</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">เปิด →</span></a><a class="feature" href="/th/an-qr-code-2fa" style="text-decoration:none;color:inherit"><b>อ่านคิวอาร์ 2FA</b><span>ดึงคีย์ลับจากคิวอาร์ 2FA ทุกแบบ รวมถึงคิวอาร์ส่งออกของ Google Authenticator</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">เปิด →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. รหัสสร้างบนอุปกรณ์ของคุณ เราไม่เคยเห็นคีย์ของคุณ</div>
+    <nav><a href="/th/sang-key-2fa">สร้างคีย์และคิวอาร์</a><a href="/th/check-code-2fa">เช็กรหัส 2FA</a><a href="/th/an-qr-code-2fa">อ่านคิวอาร์ 2FA</a><a href="/th/khumue/">คู่มือ</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">โอเพนซอร์ส</a><a href="/th/privacy">นโยบายความเป็นส่วนตัว</a><a href="mailto:contact@get2fa.online">ติดต่อ</a></nav>
+    <nav class="langs"><a href="/check-2fa-code" hreflang="en" lang="en">English</a><a href="/pt/verificar-codigo-2fa" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/comprobar-codigo-2fa" hreflang="es" lang="es">Español</a><a href="/vi/kiem-tra-ma-2fa" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/cek-kode-2fa" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/2fa-code-pruefen" hreflang="de" lang="de">Deutsch</a></nav>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "คัดลอกแล้ว", "clockOk": "✓ นาฬิกาอุปกรณ์ของคุณถูกต้อง (คลาดเคลื่อนไม่เกิน 2 วินาที)", "clockAhead": "⚠ นาฬิกาอุปกรณ์เร็วไปประมาณ {n} วินาที เปิดวันที่และเวลาอัตโนมัติ", "clockBehind": "⚠ นาฬิกาอุปกรณ์ช้าไปประมาณ {n} วินาที เปิดวันที่และเวลาอัตโนมัติ", "clockUnknown": "ตรวจนาฬิกาไม่ได้ในขณะนี้", "badKey": "ดูเหมือนไม่ใช่คีย์ลับ 2FA ที่ถูกต้อง", "badCode": "พิมพ์รหัส {n} หลักจากแอปของคุณ", "match": "✓ รหัสตรงกับรหัสปัจจุบัน แอปและคีย์ของคุณถูกต้อง", "matchPast": "⚠ รหัสตรงกับรหัสเมื่อ {s} วินาทีที่แล้ว นาฬิกาอุปกรณ์อาจช้า หรือรหัสเก่าแล้ว", "matchFuture": "⚠ รหัสตรงกับรหัสในอีก {s} วินาที อุปกรณ์ที่สร้างรหัสมีนาฬิกาเร็วเกินไป", "noMatch": "✗ ไม่ตรงกันภายใน ±5 นาที คีย์ บัญชี หรือการตั้งค่า (จำนวนหลัก ช่วงเวลา อัลกอริทึม) ต่างกัน", "expected": "รหัสปัจจุบันของคีย์นี้:"};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/tools.js?v=890483ea" defer></script>
+</body>
+</html>
