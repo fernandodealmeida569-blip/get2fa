@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-root="/" data-home="/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is TOTP? Meaning, How It Works and TOTP vs HOTP | Get2FA</title>
+<meta name="description" content="TOTP meaning explained: how time-based one-time passwords are generated from a secret key and the clock, TOTP vs HOTP, and how to generate a TOTP code.">
+<link rel="canonical" href="https://get2fa.online/guides/what-is-totp">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/what-is-totp">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/what-is-totp">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="What Is TOTP? Meaning, How It Works and TOTP vs HOTP | Get2FA">
+<meta property="og:description" content="TOTP meaning explained: how time-based one-time passwords are generated from a secret key and the clock, TOTP vs HOTP, and how to generate a TOTP code.">
+<meta property="og:url" content="https://get2fa.online/guides/what-is-totp">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "What is TOTP? (and TOTP vs HOTP)", "description": "TOTP meaning explained: how time-based one-time passwords are generated from a secret key and the clock, TOTP vs HOTP, and how to generate a TOTP code.", "inLanguage": "en", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/guides/what-is-totp", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://get2fa.online/guides/"}, {"@type": "ListItem", "position": 3, "name": "What is TOTP? (and TOTP vs HOTP)", "item": "https://get2fa.online/guides/what-is-totp"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/#tools">🧰 <span class="t">Tools</span></a>
+    <a class="pill" href="/guides/">📘 <span class="t">Guides</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">English</span></summary><div class="langlist"><a href="/guides/what-is-totp" hreflang="en" lang="en" aria-current="true">English</a><a href="/pt/guias/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/" hreflang="th" lang="th">ไทย</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/guides/">← All guides</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">What is TOTP? (and TOTP vs HOTP)</h1>
+  <p class="lead">TOTP stands for Time-based One-Time Password. It's the algorithm behind the 6-digit codes in Google Authenticator and almost every authenticator app, defined in RFC 6238.</p>
+  <p class="hint">Updated 2026-11-19</p>
+  <div class="cta"><b>Have your secret key? Get your code now</b><a class="btn primary" href="/">Open the 2FA generator</a></div>
+  
+<h2>TOTP meaning</h2>
+<p>A <strong>time-based one-time password</strong> is a short code calculated from two inputs: a <strong>shared secret key</strong> and the <strong>current time</strong>. The server and your app both know the key and the time, so they calculate the same code without talking to each other.</p>
+<h2>How a TOTP code is generated</h2>
+<ol>
+<li>Take the current Unix time and divide it by the period (usually 30 seconds). The whole number is the <em>counter</em>.</li>
+<li>Calculate HMAC-SHA1 (or SHA-256/SHA-512) of the counter using the secret key.</li>
+<li>Pick 4 bytes from the result (“dynamic truncation”) and turn them into a number.</li>
+<li>Keep the last 6 (or 8) digits. That's the code.</li>
+</ol>
+<p>Because the counter changes every 30 seconds, the code does too. That's why a wrong device clock makes codes fail.</p>
+<h2>TOTP vs HOTP</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th>TOTP</th><th>HOTP</th></tr></thead><tbody>
+<tr><td>Moving factor</td><td>Time (every 30 s)</td><td>A counter that goes up on each use</td></tr>
+<tr><td>Standard</td><td>RFC 6238</td><td>RFC 4226</td></tr>
+<tr><td>Code expires</td><td>Yes, after the period</td><td>No, until the next one is used</td></tr>
+<tr><td>Typical use</td><td>Authenticator apps, 2FA on websites</td><td>Hardware tokens with a button</td></tr>
+</tbody></table></div>
+<p>TOTP is really HOTP with the time as the counter, which makes codes short-lived and harder to reuse.</p>
+<h2>TOTP secret and QR code</h2>
+<p>The secret is usually a Base32 string (letters A–Z and digits 2–7). Sites share it as a QR code containing an <code class="k">otpauth://totp/…?secret=…</code> link, which can also set the algorithm, digits and period.</p>
+<h2>Generate a TOTP code</h2>
+<ul>
+<li><a href="/">Get2FA</a>: paste a TOTP secret and get the current code (and the next one), right in your browser.</li>
+<li><a href="/2fa-key-generator">TOTP key &amp; QR generator</a>: create a new secret and its QR code for testing.</li>
+<li><a href="/check-2fa-code">Code checker</a>: see whether a code matches a key and whether your clock is off.</li>
+</ul>
+
+  <div class="ad-slot" data-label="Advertisement" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>Have your secret key? Get your code now</b><a class="btn primary" href="/">Open the 2FA generator</a></div>
+  <h2>Guides</h2>
+  <ul><li><a href="/guides/what-is-2fa">What is 2FA (two-factor authentication)?</a></li><li><a href="/guides/find-2fa-secret-key">Where to find your 2FA secret key</a></li><li><a href="/guides/instagram-2fa-authentication-app">How to turn on Instagram 2FA with an authentication app</a></li><li><a href="/guides/facebook-2fa-authentication-app">How to set up Facebook 2FA with an authenticator app</a></li><li><a href="/guides/transfer-google-authenticator-new-phone">How to transfer Google Authenticator to a new phone</a></li><li><a href="/guides/2fa-code-not-working">2FA code not working? Here's how to fix it</a></li><li><a href="/guides/lost-phone-2fa">Lost your phone with the authenticator app? What to do</a></li><li><a href="/guides/facebook-6-digit-login-code">“Enter a 6-digit login code generated by an authentication app”: what to do</a></li><li><a href="/guides/fortnite-2fa">Fortnite 2FA: how to enable it at fortnite.com/2fa</a></li><li><a href="/guides/microsoft-authenticator-not-showing-code">Microsoft Authenticator not showing a code? Here's the fix</a></li><li><a href="/guides/amazon-2fa-authenticator-app">How to set up Amazon Two-Step Verification with an authenticator app</a></li><li><a href="/guides/paypal-2fa-authenticator-app">How to turn on PayPal 2-step verification with an authenticator app</a></li><li><a href="/guides/coinbase-2fa-authenticator-app">How to set up Coinbase 2FA with an authenticator app</a></li><li><a href="/guides/discord-2fa-authenticator-app">How to enable Discord 2FA with an authenticator app</a></li><li><a href="/guides/x-twitter-2fa-authenticator-app">How to set up X (Twitter) 2FA with an authentication app</a></li><li><a href="/guides/tiktok-2fa-authenticator-app">How to set up TikTok 2-step verification with an authenticator app</a></li><li><a href="/guides/microsoft-account-2fa-authenticator-app">How to use any authenticator app with your Microsoft account</a></li><li><a href="/guides/github-2fa-totp-app">How to set up GitHub 2FA with a TOTP app</a></li><li><a href="/guides/binance-2fa-authenticator-app">How to enable Binance 2FA with an authenticator app</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Codes are generated on your device. We never see your keys.</div>
+    <nav><a href="/2fa-key-generator">Key & QR generator</a><a href="/check-2fa-code">2FA code checker</a><a href="/read-2fa-qr-code">2FA QR code reader</a><a href="/guides/">Guides</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Open source</a><a href="/privacy">Privacy policy</a><a href="mailto:contact@get2fa.online">Contact</a></nav>
+    <nav class="langs"><a href="/pt/guias/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/" hreflang="th" lang="th">ไทย</a></nav>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>

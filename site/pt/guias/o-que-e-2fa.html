@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-root="/" data-home="/pt/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O que é 2FA? Autenticação de dois fatores explicada de forma simples | Get2FA</title>
+<meta name="description" content="O que significa 2FA, como funciona a autenticação de dois fatores, os tipos (SMS, app autenticador, chave de segurança) e por que ela protege suas contas.">
+<link rel="canonical" href="https://get2fa.online/pt/guias/o-que-e-2fa">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/what-is-2fa">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/guias/o-que-e-2fa">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/guias/que-es-2fa">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/huong-dan/2fa-la-gi">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/panduan/2fa-adalah">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/anleitungen/was-ist-2fa">
+<link rel="alternate" hreflang="th" href="https://get2fa.online/th/khumue/2fa-khue-arai">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/what-is-2fa">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="O que é 2FA? Autenticação de dois fatores explicada de forma simples | Get2FA">
+<meta property="og:description" content="O que significa 2FA, como funciona a autenticação de dois fatores, os tipos (SMS, app autenticador, chave de segurança) e por que ela protege suas contas.">
+<meta property="og:url" content="https://get2fa.online/pt/guias/o-que-e-2fa">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=6dc8b476">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "O que é 2FA (autenticação de dois fatores)?", "description": "O que significa 2FA, como funciona a autenticação de dois fatores, os tipos (SMS, app autenticador, chave de segurança) e por que ela protege suas contas.", "inLanguage": "pt-BR", "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/pt/guias/o-que-e-2fa", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/pt/"}, {"@type": "ListItem", "position": 2, "name": "Guias", "item": "https://get2fa.online/pt/guias/"}, {"@type": "ListItem", "position": 3, "name": "O que é 2FA (autenticação de dois fatores)?", "item": "https://get2fa.online/pt/guias/o-que-e-2fa"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/pt/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/pt/#tools">🧰 <span class="t">Ferramentas</span></a>
+    <a class="pill" href="/pt/guias/">📘 <span class="t">Guias</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Português</span></summary><div class="langlist"><a href="/guides/what-is-2fa" hreflang="en" lang="en">English</a><a href="/pt/guias/o-que-e-2fa" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a><a href="/es/guias/que-es-2fa" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/2fa-la-gi" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/2fa-adalah" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/was-ist-2fa" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/2fa-khue-arai" hreflang="th" lang="th">ไทย</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/pt/guias/">← Todos os guias</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">O que é 2FA (autenticação de dois fatores)?</h1>
+  <p class="lead">2FA, ou autenticação de dois fatores, significa que você precisa de duas coisas diferentes para entrar: algo que você sabe, como a senha, e algo que você tem, como o celular. Só a senha roubada já não basta.</p>
+  <p class="hint">Atualizado em 2026-11-19</p>
+  <div class="cta"><b>Já tem a chave secreta? Pegue seu código agora</b><a class="btn primary" href="/pt/">Abrir o gerador de 2FA</a></div>
+  
+<h2>O significado de 2FA em uma frase</h2>
+<p>A autenticação de dois fatores acrescenta uma segunda verificação depois da senha, normalmente um código curto que muda a cada poucos segundos, para que só quem tem o segundo fator consiga entrar.</p>
+<h2>Como o 2FA funciona</h2>
+<ol>
+<li>Você digita usuário e senha normalmente.</li>
+<li>O site pede uma segunda prova: um código de 6 dígitos, uma confirmação no celular ou uma chave de segurança.</li>
+<li>Só quando as duas estão certas você entra.</li>
+</ol>
+<p>Se alguém roubar ou adivinhar sua senha, ainda não consegue entrar sem o segundo fator.</p>
+<h2>Tipos de 2FA</h2>
+<ul>
+<li><strong>App autenticador (TOTP):</strong> apps como Google Authenticator, Microsoft Authenticator ou 2FAS geram um código novo de 6 dígitos a cada 30 segundos a partir de uma chave secreta. Funciona sem internet e é a opção mais comum.</li>
+<li><strong>Código por SMS ou e-mail:</strong> fácil, mas mais fraco. SMS pode ser interceptado ou desviado com clonagem de chip.</li>
+<li><strong>Notificação no celular:</strong> você aprova o login no próprio aparelho.</li>
+<li><strong>Chaves de segurança e passkeys:</strong> uma chave física ou a passkey do seu aparelho. É a opção mais forte contra golpes de phishing.</li>
+</ul>
+<h2>2FA, MFA e verificação em duas etapas</h2>
+<p>MFA (autenticação multifator) significa dois <em>ou mais</em> fatores, então o 2FA é o tipo mais comum de MFA. “Verificação em duas etapas” é o nome que Google, gov.br e outros usam para a mesma ideia.</p>
+<h2>De onde vem o código 2FA?</h2>
+<p>Com um app autenticador, o site entrega uma <strong>chave secreta</strong> (em forma de QR code). O app junta essa chave com o horário atual para calcular o código. Qualquer app com a mesma chave mostra o mesmo código, por isso você também pode <a href="/pt/">pegar o código 2FA online no Get2FA</a> se guardou a chave. Veja <a href="onde-encontrar-chave-secreta-2fa">onde encontrar a chave secreta</a>.</p>
+<h2>Vale a pena ativar o 2FA?</h2>
+<p>Sim, principalmente em e-mail, banco, cripto, redes sociais e jogos. Ative, guarde os códigos de backup que o site oferece e mantenha uma cópia da chave secreta num gerenciador de senhas, para que perder o celular não te deixe trancado para fora.</p>
+
+  <div class="ad-slot" data-label="Publicidade" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>Já tem a chave secreta? Pegue seu código agora</b><a class="btn primary" href="/pt/">Abrir o gerador de 2FA</a></div>
+  <h2>Guias</h2>
+  <ul><li><a href="/pt/guias/onde-encontrar-chave-secreta-2fa">Onde encontrar a chave secreta do 2FA</a></li><li><a href="/pt/guias/instagram-autenticacao-dois-fatores">Como ativar o 2FA do Instagram com app de autenticação</a></li><li><a href="/pt/guias/facebook-autenticacao-dois-fatores">Como ativar o 2FA do Facebook com app autenticador</a></li><li><a href="/pt/guias/transferir-google-authenticator-novo-celular">Como transferir o Google Authenticator para outro celular</a></li><li><a href="/pt/guias/codigo-2fa-nao-funciona">Código 2FA não funciona? Veja como resolver</a></li><li><a href="/pt/guias/perdi-celular-autenticador">Perdi o celular com o autenticador: o que fazer</a></li><li><a href="/pt/guias/fortnite-2fa">Fortnite 2FA: como ativar em fortnite.com/2fa</a></li><li><a href="/pt/guias/verificacao-duas-etapas-gov-br">Verificação em duas etapas (2FA) do gov.br</a></li><li><a href="/pt/guias/tiktok-verificacao-duas-etapas">Como ativar a verificação em duas etapas do TikTok com app autenticador</a></li><li><a href="/pt/guias/conta-microsoft-autenticador">Como usar qualquer app autenticador na conta Microsoft</a></li><li><a href="/pt/guias/github-2fa-app-totp">Como ativar o 2FA do GitHub com app TOTP</a></li><li><a href="/pt/guias/binance-2fa-app-autenticador">Como ativar o 2FA da Binance com app autenticador</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Os códigos são gerados no seu aparelho. Nunca vemos suas chaves.</div>
+    <nav><a href="/pt/gerador-de-chave-2fa">Gerador de chave e QR</a><a href="/pt/verificar-codigo-2fa">Verificador de código</a><a href="/pt/ler-qr-code-2fa">Leitor de QR code 2FA</a><a href="/pt/guias/">Guias</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Código aberto</a><a href="/pt/privacidade">Política de privacidade</a><a href="mailto:contact@get2fa.online">Contato</a></nav>
+    <nav class="langs"><a href="/guides/what-is-2fa" hreflang="en" lang="en">English</a><a href="/es/guias/que-es-2fa" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/2fa-la-gi" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/2fa-adalah" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/was-ist-2fa" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/2fa-khue-arai" hreflang="th" lang="th">ไทย</a></nav>
+  </div>
+</footer>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>
