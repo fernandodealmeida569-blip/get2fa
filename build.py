@@ -92,6 +92,9 @@ def header(t, alts=None):
   </nav>
 </header>"""
 
+from split_tool import SUGGEST
+LANG_HINT = "<script>(function(){try{if(localStorage.getItem('q2fa.lh'))return}catch(e){}var S=%s;var cur=(document.documentElement.lang||'en').slice(0,2).toLowerCase();var alts={};Array.prototype.forEach.call(document.querySelectorAll('link[rel=alternate][hreflang]'),function(l){var h=l.getAttribute('hreflang').slice(0,2).toLowerCase();if(h!=='x-')alts[h]=l.getAttribute('href')});var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);for(var i=0;i<pref.length;i++){var c=String(pref[i]).slice(0,2).toLowerCase();if(c===cur)return;if(alts[c]&&S[c]){var d=document.createElement('div');d.className='langhint';d.setAttribute('lang',c);var a=document.createElement('a');a.href=alts[c].replace(/^https:\\/\\/get2fa\\.online/,'');a.textContent=S[c]+' →';var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Close');b.textContent='×';b.onclick=function(){d.remove();try{localStorage.setItem('q2fa.lh','1')}catch(e){}};d.appendChild(a);d.appendChild(b);document.body.appendChild(d);return}}})();</script>" % json.dumps(SUGGEST, ensure_ascii=False)
+
 def footer(t, alts=None):
     langs = "".join(f'<a href="{(alts or {}).get(c) or L[c]["path"]}" hreflang="{L[c]["lang"]}" lang="{L[c]["lang"]}">{L[c]["langName"]}</a>' for c in LANGS if c != t["code"])
     return f"""<footer>
@@ -100,7 +103,8 @@ def footer(t, alts=None):
     <nav>{tool_links(t)}<a href="{t['guidesPath']}">{t['guides']}</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">{t['openSource']}</a><a href="{t['privacy']}">{t['privacyLink']}</a><a href="mailto:{CONTACT}">{t['contactLink']}</a></nav>
     <nav class="langs">{langs}</nav>
   </div>
-</footer>"""
+</footer>
+""" + LANG_HINT
 
 def ad(t, slot):
     return f'<div class="ad-slot" data-label="{t["ad"]}" data-slot="{slot}"><!-- AdSense unit: {slot} --></div>'
@@ -238,9 +242,17 @@ def tpl_read(t, u):
   </section>"""
 
 TPL = {"gen": tpl_gen, "check": tpl_check, "read": tpl_read}
+from split_tool import SPLIT, SUGGEST, tpl_split
+_split = {"key": "split", "scripts": ["totp.js", "tools.js"]}
+for _c in LANGS:
+    _d = dict(SPLIT[_c])
+    _d["tool"] = (lambda t, u: (lambda: tpl_split(t, u, adv_html)))(L[_c], _d["ui"])
+    _split[_c] = _d
+TOOLS.append(_split)
 for _c in NEW:
     _m = importlib.import_module("content_" + _c)
     for x in TOOLS:
+        if x["key"] not in _m.TOOLS: continue
         d = dict(_m.TOOLS[x["key"]])
         d["tool"] = (lambda f, t, u: (lambda: f(t, u)))(TPL[x["key"]], L[_c], d["ui"])
         x[_c] = d
@@ -349,7 +361,7 @@ def page_home(code):
 
   <section class="content" id="tools">
     <h2>{t['toolsH']}</h2>
-    <div class="features three">{tool_cards(code)}</div>
+    <div class="features four">{tool_cards(code)}</div>
   </section>
 
   {ad(t, 'below-tool')}
@@ -435,6 +447,40 @@ for c in LANGS:
             w(fname(gpath(c, a)), page_article(c, a))
     for x in TOOLS:
         w(fname(x[c]["path"]), page_tool(c, x))
+def page_404():
+    t = L["en"]
+    homes = "".join(f'<a class="pill" href="{L[c]["path"]}" lang="{L[c]["lang"]}">{L[c]["langName"]}</a> ' for c in LANGS)
+    tools = "".join(f'<li><a href="{x["en"]["path"]}">{x["en"]["card"]}</a></li>' for x in TOOLS)
+    return f"""<!DOCTYPE html>
+<html lang="en" data-root="/" data-home="/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | {BRAND}</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>try{{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}}catch(e){{}}</script>
+</head>
+<body>
+<header class="wrap top"><a class="brand" href="/">{LOGO}<span>{BRAND}</span></a></header>
+<main class="wrap content">
+  <section class="hero"><h1>404 – Page not found</h1><p>This page doesn't exist. Get your 2FA code on the home page, or pick your language:</p></section>
+  <p style="display:flex;flex-wrap:wrap;gap:8px">{homes}</p>
+  <div class="cta"><b>{t['cta']}</b><a class="btn primary" href="/">{t['ctaBtn']}</a></div>
+  <h2>{t['toolsH']}</h2><ul>{tools}</ul>
+  <p><a href="/guides/">{t['guidesH']}</a></p>
+</main>
+</body>
+</html>
+"""
+
+w("404.html", page_404())
+try:
+    from PIL import Image
+    Image.open(os.path.join(OUT, "assets/icon-192.png")).convert("RGBA").save(os.path.join(OUT, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
+except Exception as e:
+    print("favicon skipped:", e)
 w("assets/icon.svg", LOGO.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"'))
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("ads.txt", "# Replace with your AdSense line, e.g.:\n# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\n")
@@ -463,7 +509,7 @@ w("manifest.webmanifest", json.dumps({
             {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=2))
 
 w("sw.js", """/* Get2FA offline cache. Only static files are cached; secrets are never involved. */
-const V = 'q2fa-v4';
+const V = 'q2fa-v5';
 const FILES = ['/', '/pt/', '/assets/style.css', '/assets/totp.js', '/assets/app.js', '/assets/qrread.js', '/assets/icon.svg'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== V).map(x => caches.delete(x)))).then(() => self.clients.claim())); });

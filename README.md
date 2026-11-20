@@ -20,6 +20,7 @@ Paste a 2FA secret key, an `otpauth://` link or a QR code image and get the same
 - [2FA key & QR code generator](https://get2fa.online/2fa-key-generator): random TOTP secret, otpauth link and QR code (QR encoder in `site/assets/qrcode.js`, no dependencies).
 - [2FA code checker](https://get2fa.online/check-2fa-code): tells you if a code matches and whether your device clock is off.
 - [2FA QR code reader](https://get2fa.online/read-2fa-qr-code): extracts keys from QR images, including Google Authenticator exports.
+- [Account line splitter](https://get2fa.online/account-line-splitter): split `user|pass|2FA` lines, pick columns and append the current 2FA code.
 
 ## Verify it yourself
 
@@ -49,6 +50,7 @@ i18n_base.py     interface texts (EN, PT)
 lang_*.py        interface texts (ES, VI, ID, DE, TH)
 content_*.py     tool pages and guides (ES, VI, ID, DE, TH)
 new_articles.py  newer multilingual guides
+split_tool.py    account line splitter page (all languages)
 articles.py      the 2FA guides
 tests/           test vectors
 ```
