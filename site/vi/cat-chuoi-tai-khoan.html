@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi" data-root="/" data-home="/vi/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cắt chuỗi tài khoản – Tách uid|pass|2FA và lấy mã 2FA hàng loạt | Get2FA</title>
+<meta name="description" content="Cắt chuỗi tài khoản dạng uid|pass|2FA|mail: chọn và sắp xếp cột, đổi ký tự phân cách, xóa dòng trùng và thêm mã 2FA hiện tại vào từng dòng. Miễn phí, chạy trên trình duyệt.">
+<link rel="canonical" href="https://get2fa.online/vi/cat-chuoi-tai-khoan">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/account-line-splitter">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/separar-linhas-de-contas">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/separar-lineas-de-cuentas">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/cat-chuoi-tai-khoan">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/pemisah-baris-akun">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/kontozeilen-trennen">
+<link rel="alternate" hreflang="th" href="https://get2fa.online/th/yaek-khomun-banchi">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/account-line-splitter">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Cắt chuỗi tài khoản – Tách uid|pass|2FA và lấy mã 2FA hàng loạt | Get2FA">
+<meta property="og:description" content="Cắt chuỗi tài khoản dạng uid|pass|2FA|mail: chọn và sắp xếp cột, đổi ký tự phân cách, xóa dòng trùng và thêm mã 2FA hiện tại vào từng dòng. Miễn phí, chạy trên trình duyệt.">
+<meta property="og:url" content="https://get2fa.online/vi/cat-chuoi-tai-khoan">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=1993d84a">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Cắt chuỗi tài khoản (uid|pass|2FA)", "url": "https://get2fa.online/vi/cat-chuoi-tai-khoan", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "vi", "description": "Cắt chuỗi tài khoản dạng uid|pass|2FA|mail: chọn và sắp xếp cột, đổi ký tự phân cách, xóa dòng trùng và thêm mã 2FA hiện tại vào từng dòng. Miễn phí, chạy trên trình duyệt.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body data-tool="split">
+<header class="wrap top">
+  <a class="brand" href="/vi/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/vi/#tools">🧰 <span class="t">Công cụ</span></a>
+    <a class="pill" href="/vi/huong-dan/">📘 <span class="t">Hướng dẫn</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Tiếng Việt</span></summary><div class="langlist"><a href="/account-line-splitter" hreflang="en" lang="en">English</a><a href="/pt/separar-linhas-de-contas" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/separar-lineas-de-cuentas" hreflang="es" lang="es">Español</a><a href="/vi/cat-chuoi-tai-khoan" hreflang="vi" lang="vi" aria-current="true">Tiếng Việt</a><a href="/id/pemisah-baris-akun" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/kontozeilen-trennen" hreflang="de" lang="de">Deutsch</a><a href="/th/yaek-khomun-banchi" hreflang="th" lang="th">ไทย</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <h1>Cắt chuỗi tài khoản (uid|pass|2FA)</h1>
+    <p>Dán danh sách tài khoản, chọn cột cần lấy, đổi ký tự phân cách và thêm mã 2FA trực tiếp vào từng dòng. Không có gì được tải lên.</p>
+  </section>
+  
+  <section class="tool" aria-label="Cắt chuỗi">
+    <label class="lbl" for="sIn">Danh sách tài khoản</label>
+    <textarea id="sIn" spellcheck="false" autocomplete="off" rows="7" placeholder="uid1|pass1|JBSWY3DPEHPK3PXP|mail1@example.com
+uid2|pass2|KRSXG5CTMVRXEZLU|mail2@example.com"></textarea>
+    <div class="grid2">
+      <label class="fld">Ký tự phân cách đầu vào<select id="sDelim"><option value="auto">Tự động nhận diện</option><option value="pipe">| (gạch đứng)</option><option value="colon">: (hai chấm)</option><option value="semi">; (chấm phẩy)</option><option value="comma">, (dấu phẩy)</option><option value="tab">Tab</option><option value="space">Dấu cách</option></select></label>
+      <label class="fld">Ký tự phân cách đầu ra<select id="sOutDelim"><option value="pipe">| (gạch đứng)</option><option value="same">Giống đầu vào</option><option value="colon">: (hai chấm)</option><option value="semi">; (chấm phẩy)</option><option value="comma">, (dấu phẩy)</option><option value="tab">Tab</option><option value="space">Dấu cách</option></select></label>
+    </div>
+    <div class="lbl">Cột <small>bấm để chọn hoặc bỏ · 🔑 = khóa 2FA</small></div>
+    <div class="chips" id="sPrev"></div>
+    <label class="fld"><input id="sCols" type="text" spellcheck="false" autocomplete="off" placeholder="vd: 1,3 hoặc 1-2,4 (để trống = tất cả)"></label>
+    <div class="checks">
+      <label><input type="checkbox" id="sTrim" checked> Xóa khoảng trắng</label>
+      <label><input type="checkbox" id="sDedup"> Xóa dòng trùng</label>
+      <label><input type="checkbox" id="sCode"> Thêm cột mã 2FA hiện tại</label>
+    </div>
+    <details class="adv">
+      <summary>Cài đặt nâng cao</summary>
+      <div class="adv-grid">
+        <label>Thuật toán<select id="alg"><option>SHA1</option><option>SHA256</option><option>SHA512</option></select></label>
+        <label>Số chữ số<select id="digits"><option>6</option><option>8</option></select></label>
+        <label>Chu kỳ<select id="period"><option value="30">30 s</option><option value="60">60 s</option></select></label>
+      </div>
+    </details>
+    <div class="row"><label class="lbl" for="sOut" style="margin:0">Kết quả</label><span class="spacer"></span><small class="hint" id="sStat"></small></div>
+    <textarea id="sOut" readonly spellcheck="false" rows="7"></textarea>
+    <div class="row">
+      <button class="btn primary" id="sCopy" type="button">Sao chép kết quả</button>
+      <button class="btn" id="sDl" type="button">Tải .txt</button>
+      <span class="spacer"></span>
+      <button class="btn ghost" id="sClear" type="button">Xóa</button>
+    </div>
+    <div class="hint">Dữ liệu được xử lý trên thiết bị của bạn và không bao giờ được tải lên. Khi bật “mã 2FA”, mã tự cập nhật sau vài giây.</div>
+  </section>
+  <div class="ad-slot" data-label="Quảng cáo" data-slot="below-tool"><!-- AdSense unit: below-tool --></div>
+  <article class="content">
+    
+    <h2>Cách dùng</h2>
+    <ol class="steps"><li><b>Dán danh sách</b>Mỗi dòng một tài khoản, định dạng bất kỳ: <code class="k">uid|pass|2FA</code>, <code class="k">mail:pass</code>, CSV…</li><li><b>Chọn cột</b>Bấm vào các cột hoặc nhập thứ tự mong muốn, ví dụ <code class="k">3,1</code>.</li><li><b>Sao chép hoặc tải về</b>Chọn ký tự phân cách đầu ra và, nếu cần, thêm mã 2FA hiện tại vào từng dòng.</li></ol>
+    <h2>Công cụ làm được gì?</h2>
+    <ul>
+    <li>Chỉ giữ một số cột, ví dụ chỉ lấy khóa 2FA hoặc chỉ lấy mail.</li>
+    <li>Đổi thứ tự cột và chuyển ký tự phân cách (<code class="k">|</code>, <code class="k">:</code>, <code class="k">;</code>, dấu phẩy, tab).</li>
+    <li>Xóa dòng trùng và dòng trống.</li>
+    <li>Tự tìm khóa 2FA trong từng dòng và thêm mã 6 số đang có hiệu lực.</li>
+    </ul>
+    <h2>Quyền riêng tư</h2>
+    <p>Danh sách tài khoản thường chứa mật khẩu. Công cụ này chạy hoàn toàn trong trình duyệt: không có gì bạn dán vào bị gửi đi, ghi lại hay lưu trữ. Đóng tab khi xong. Chỉ cần lấy mã? Dùng <a href="/vi/">công cụ lấy mã 2FA</a>, cũng nhận cả dòng tài khoản.</p>
+    <h2>Thêm công cụ 2FA miễn phí</h2>
+    <div class="features"><a class="feature" href="/vi/" style="text-decoration:none;color:inherit"><b>Mở công cụ tạo mã 2FA</b><span>Lấy mã 2FA nhanh: dán khóa bí mật 2FA để có ngay mã 6 số giống ứng dụng xác thực. Dùng được cho Google, Facebook, Instagram, Microsoft… Chạy 100% trong trình duyệt: khóa của bạn không bao giờ bị gửi đi.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/tao-khoa-2fa" style="text-decoration:none;color:inherit"><b>Tạo khóa và mã QR</b><span>Tạo khóa 2FA ngẫu nhiên và mã QR cho mọi ứng dụng xác thực.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/kiem-tra-ma-2fa" style="text-decoration:none;color:inherit"><b>Kiểm tra mã 2FA</b><span>Xem mã có khớp với khóa không và đồng hồ thiết bị có bị lệch không.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a><a class="feature" href="/vi/doc-ma-qr-2fa" style="text-decoration:none;color:inherit"><b>Đọc mã QR 2FA</b><span>Lấy khóa bí mật từ mọi mã QR 2FA, kể cả mã xuất từ Google Authenticator.</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">Mở →</span></a></div>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Mã được tạo trên thiết bị của bạn. Chúng tôi không bao giờ thấy khóa của bạn.</div>
+    <nav><a href="/vi/tao-khoa-2fa">Tạo khóa và mã QR</a><a href="/vi/kiem-tra-ma-2fa">Kiểm tra mã 2FA</a><a href="/vi/doc-ma-qr-2fa">Đọc mã QR 2FA</a><a href="/vi/cat-chuoi-tai-khoan">Cắt chuỗi tài khoản</a><a href="/vi/huong-dan/">Hướng dẫn</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Mã nguồn mở</a><a href="/vi/quyen-rieng-tu">Chính sách quyền riêng tư</a><a href="mailto:contact@get2fa.online">Liên hệ</a></nav>
+    <nav class="langs"><a href="/account-line-splitter" hreflang="en" lang="en">English</a><a href="/pt/separar-linhas-de-contas" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/separar-lineas-de-cuentas" hreflang="es" lang="es">Español</a><a href="/id/pemisah-baris-akun" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/kontozeilen-trennen" hreflang="de" lang="de">Deutsch</a><a href="/th/yaek-khomun-banchi" hreflang="th" lang="th">ไทย</a></nav>
+  </div>
+</footer>
+<script>(function(){try{if(localStorage.getItem('q2fa.lh'))return}catch(e){}var S={"en": "View this page in English", "pt": "Ver esta página em Português", "es": "Ver esta página en Español", "vi": "Xem trang này bằng Tiếng Việt", "id": "Lihat halaman ini dalam Bahasa Indonesia", "de": "Diese Seite auf Deutsch ansehen", "th": "ดูหน้านี้เป็นภาษาไทย"};var cur=(document.documentElement.lang||'en').slice(0,2).toLowerCase();var alts={};Array.prototype.forEach.call(document.querySelectorAll('link[rel=alternate][hreflang]'),function(l){var h=l.getAttribute('hreflang').slice(0,2).toLowerCase();if(h!=='x-')alts[h]=l.getAttribute('href')});var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);for(var i=0;i<pref.length;i++){var c=String(pref[i]).slice(0,2).toLowerCase();if(c===cur)return;if(alts[c]&&S[c]){var d=document.createElement('div');d.className='langhint';d.setAttribute('lang',c);var a=document.createElement('a');a.href=alts[c].replace(/^https:\/\/get2fa\.online/,'');a.textContent=S[c]+' →';var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Close');b.textContent='×';b.onclick=function(){d.remove();try{localStorage.setItem('q2fa.lh','1')}catch(e){}};d.appendChild(a);d.appendChild(b);document.body.appendChild(d);return}}})();</script>
+<div class="toast" id="toast" role="status"></div>
+<script>window.I18N={"copied": "Đã sao chép", "stat": "{n} dòng · {c} cột", "detected": "phân cách"};</script>
+<script src="/assets/totp.js?v=ba8668a0" defer></script><script src="/assets/tools.js?v=606db1b7" defer></script>
+</body>
+</html>
