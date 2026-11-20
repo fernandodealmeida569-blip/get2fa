@@ -1,4 +1,4 @@
-/*! Get2FA extra tools: key + QR generator, code checker, QR reader. Everything runs on this device. */
+/*! Get2FA extra tools: key + QR generator, code checker, QR reader, line splitter. Everything runs on this device. */
 (function () {
   'use strict';
   var T = window.TOTP, L = window.I18N || {};
@@ -171,5 +171,92 @@
     $('#rText').addEventListener('input', function () {
       var v = this.value.trim(); if (/^otpauth/i.test(v)) show(v.split(/\s+/));
     });
+  }
+
+  /* ---------- 4. account line splitter ---------- */
+  if (tool === 'split') {
+    var inp = $('#sIn'), out = $('#sOut'), delIn = $('#sDelim'), delOut = $('#sOutDelim'), cols = $('#sCols'),
+        trim = $('#sTrim'), dedup = $('#sDedup'), addCode = $('#sCode'), prev = $('#sPrev'), stat = $('#sStat');
+    var DELIMS = { pipe: '|', colon: ':', semi: ';', comma: ',', tab: '\t', space: ' ' };
+    function detect(lines) {
+      var best = 'pipe', score = -1;
+      ['pipe', 'tab', 'semi', 'colon', 'comma', 'space'].forEach(function (k) {
+        var d = DELIMS[k], n = 0;
+        lines.slice(0, 50).forEach(function (l) { n += l.split(d).length - 1; });
+        if (k === 'colon') n = Math.floor(n * 0.6);
+        if (k === 'space') n = Math.floor(n * 0.4);
+        if (n > score) { score = n; best = k; }
+      });
+      return score > 0 ? best : 'pipe';
+    }
+    function parseCols(str, max) {
+      var r = [];
+      String(str || '').split(/[\s,;]+/).forEach(function (p) {
+        if (!p) return;
+        var m = p.match(/^(\d+)-(\d+)$/);
+        if (m) { for (var a = +m[1]; a <= +m[2]; a++) r.push(a); }
+        else if (/^\d+$/.test(p)) r.push(+p);
+      });
+      r = r.filter(function (n) { return n >= 1 && n <= max; });
+      return r.length ? r : null;
+    }
+    var timer;
+    async function run() {
+      var raw = inp.value.split(/\r?\n/);
+      var lines = raw.map(function (l) { return trim.checked ? l.trim() : l; }).filter(function (l) { return l.trim() !== ''; });
+      if (dedup.checked) { var seen = new Set(); lines = lines.filter(function (l) { if (seen.has(l)) return false; seen.add(l); return true; }); }
+      var dk = delIn.value === 'auto' ? detect(lines) : delIn.value;
+      var d = DELIMS[dk] || '|', od = DELIMS[delOut.value] || (delOut.value === 'same' ? d : '|');
+      var auto = delIn.value === 'auto';
+      var rows = lines.map(function (l) { var p = l.split(auto ? (DELIMS[detect([l])] || d) : d); return trim.checked ? p.map(function (x) { return x.trim(); }) : p; });
+      var max = rows.reduce(function (m, r) { return Math.max(m, r.length); }, 0);
+      var pick = parseCols(cols.value, max);
+      /* preview of the first line */
+      if (rows.length) {
+        prev.innerHTML = rows[0].map(function (c, i) {
+          var on = !pick || pick.indexOf(i + 1) >= 0;
+          var isKey = T.isBase32(T.clean(c), 16);
+          return '<button type="button" class="chip' + (on ? ' on' : '') + '" data-col="' + (i + 1) + '" title="' + esc(c) + '"><b>' + (i + 1) + '</b> ' + esc(c.length > 18 ? c.slice(0, 16) + '…' : c) + (isKey ? ' 🔑' : '') + '</button>';
+        }).join('');
+      } else prev.innerHTML = '';
+      var now = Date.now(), o = opts();
+      var res = await Promise.all(rows.map(async function (r) {
+        var sel = pick ? pick.map(function (n) { return r[n - 1] == null ? '' : r[n - 1]; }) : r.slice();
+        if (addCode.checked) {
+          var key = null;
+          for (var i = r.length - 1; i >= 0; i--) { var c = T.clean(r[i]); if (T.isBase32(c, 16)) { key = c; break; } }
+          var code = '';
+          if (key) { try { code = await T.totp(key, { algorithm: o.algorithm, digits: o.digits, period: o.period, time: now }); } catch (e) {} }
+          sel.push(code);
+        }
+        return sel.join(od);
+      }));
+      out.value = res.join('\n');
+      stat.textContent = (L.stat || '{n} · {c}').replace('{n}', rows.length).replace('{c}', max) + (delIn.value === 'auto' && rows.length ? ' · ' + (L.detected || '') + ' ' + (dk === 'tab' ? 'Tab' : dk === 'space' ? '␣' : DELIMS[dk]) : '');
+    }
+    function later() { clearTimeout(timer); timer = setTimeout(run, 120); }
+    [inp, cols].forEach(function (el) { el.addEventListener('input', later); });
+    [delIn, delOut, trim, dedup, addCode, $('#alg'), $('#digits'), $('#period')].forEach(function (el) { if (el) el.addEventListener('change', run); });
+    prev.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-col]'); if (!b) return;
+      var n = +b.getAttribute('data-col');
+      var all = Array.prototype.map.call(prev.querySelectorAll('[data-col]'), function (x) { return +x.getAttribute('data-col'); });
+      var cur = parseCols(cols.value, 999) || all.slice();
+      cur = cur.indexOf(n) >= 0 ? cur.filter(function (x) { return x !== n; }) : cur.concat([n]);
+      var sorted = cur.slice().sort(function (a, b) { return a - b; }).join(',') === all.join(',');
+      cols.value = sorted ? '' : cur.join(',');
+      run();
+    });
+    $('#sCopy').addEventListener('click', function () { if (out.value) copy(out.value, L.copied); });
+    $('#sDl').addEventListener('click', function () {
+      if (!out.value) return;
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([out.value + '\n'], { type: 'text/plain' }));
+      a.download = 'accounts.txt'; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    });
+    $('#sClear').addEventListener('click', function () { inp.value = ''; cols.value = ''; run(); inp.focus(); });
+    setInterval(function () { if (addCode.checked && inp.value) run(); }, 5000);
+    run();
   }
 })();

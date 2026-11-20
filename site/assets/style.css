@@ -184,3 +184,15 @@ code.k.big{font-size:17px;padding:6px 10px;word-break:break-all}
 .langlist a:hover{background:var(--bg)}
 .langlist a[aria-current]{font-weight:600;color:var(--accent)}
 footer nav.langs{width:100%;gap:12px;font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{border:1px solid var(--border);background:var(--surface);color:var(--muted);border-radius:999px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip b{color:var(--text);margin-right:2px}
+.chip.on{border-color:var(--accent);color:var(--text);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;margin:10px 0}
+.checks label{display:flex;gap:6px;align-items:center;font-size:14px}
+.langhint{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:40;display:flex;gap:10px;align-items:center;max-width:calc(100% - 24px);padding:10px 12px 10px 16px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 10px 30px rgba(0,0,0,.15);font-size:14px}
+.langhint a{font-weight:600}
+.langhint button{border:0;background:none;color:var(--muted);font-size:18px;cursor:pointer;line-height:1}
+.features.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.features.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.features.four{grid-template-columns:1fr}}
