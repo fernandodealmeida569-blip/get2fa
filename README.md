@@ -1,6 +1,6 @@
 # Get2FA: 2FA code generator that runs in your browser
 
-**Live site: [get2fa.online](https://get2fa.online)** · [Português](https://get2fa.online/pt/) · [Español](https://get2fa.online/es/) · [Tiếng Việt](https://get2fa.online/vi/) · [Bahasa Indonesia](https://get2fa.online/id/) · [Deutsch](https://get2fa.online/de/)
+**Live site: [get2fa.online](https://get2fa.online)** · [Português](https://get2fa.online/pt/) · [Español](https://get2fa.online/es/) · [Tiếng Việt](https://get2fa.online/vi/) · [Bahasa Indonesia](https://get2fa.online/id/) · [Deutsch](https://get2fa.online/de/) · [ไทย](https://get2fa.online/th/)
 
 Paste a 2FA secret key, an `otpauth://` link or a QR code image and get the same 6-digit code your authenticator app shows. Everything is computed on your device with the browser's built-in Web Crypto API. **Your secret key is never sent to any server.**
 
@@ -13,7 +13,7 @@ Paste a 2FA secret key, an `otpauth://` link or a QR code image and get the same
 - **Google Authenticator export.** Reads `otpauth-migration://` export QR codes and shows every account with its key.
 - **Private links.** `get2fa.online/#YOURKEY`: the part after `#` is never sent to the server.
 - SHA-1, SHA-256 and SHA-512 · 6 or 8 digits · 30 or 60 seconds.
-- Works offline once loaded, light and dark mode, available in English, Portuguese, Spanish, Vietnamese, Indonesian and German.
+- Works offline once loaded, light and dark mode, available in English, Portuguese, Spanish, Vietnamese, Indonesian, German and Thai.
 
 ## Extra tools
 
@@ -46,8 +46,9 @@ site/            static website, ready to deploy (Cloudflare Pages, Netlify, Git
   assets/jsQR.js QR decoder (third party, loaded only when needed)
 build.py         generates the HTML pages in every language
 i18n_base.py     interface texts (EN, PT)
-lang_*.py        interface texts (ES, VI, ID, DE)
-content_*.py     tool pages and guides (ES, VI, ID, DE)
+lang_*.py        interface texts (ES, VI, ID, DE, TH)
+content_*.py     tool pages and guides (ES, VI, ID, DE, TH)
+new_articles.py  newer multilingual guides
 articles.py      the 2FA guides
 tests/           test vectors
 ```

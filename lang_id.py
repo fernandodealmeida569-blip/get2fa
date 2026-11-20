@@ -3,7 +3,7 @@ CONTACT = "contact@get2fa.online"
 T = {
  "lang": "id", "path": "/id/", "root": "/", "privacy": "/id/privasi", "guidesPath": "/id/panduan/",
  "langName": "Bahasa Indonesia", "ogLocale": "id_ID",
- "title": "Generator Kode 2FA – Dapatkan Kode Autentikasi Online | Get2FA",
+ "title": "2FA Auth Online – Generator Kode 2FA dari Kunci Rahasia | Get2FA",
  "desc": "Tempel kunci rahasia 2FA dan langsung dapatkan kode 6 digit seperti di aplikasi autentikator. Bisa untuk Google, Facebook, Instagram, Microsoft, dan lainnya. 100% di browser: kunci Anda tidak pernah dikirim.",
  "h1": "Dapatkan kode 2FA dari kunci rahasia",
  "sub": "Tempel kunci 2FA, tautan <code class=\"k\">otpauth://</code>, atau kode QR untuk mendapatkan kode 6 digit yang sama dengan aplikasi autentikator Anda. Cepat, gratis, dan dihitung hanya di perangkat Anda.",

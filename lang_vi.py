@@ -3,9 +3,9 @@ CONTACT = "contact@get2fa.online"
 T = {
  "lang": "vi", "path": "/vi/", "root": "/", "privacy": "/vi/quyen-rieng-tu", "guidesPath": "/vi/huong-dan/",
  "langName": "Tiếng Việt", "ogLocale": "vi_VN",
- "title": "Lấy mã 2FA online từ khóa bí mật – Trình tạo mã xác thực 2 lớp | Get2FA",
- "desc": "Dán khóa bí mật 2FA để lấy ngay mã 6 số giống ứng dụng xác thực. Dùng được cho Google, Facebook, Instagram, Microsoft… Chạy 100% trong trình duyệt: khóa của bạn không bao giờ bị gửi đi.",
- "h1": "Lấy mã 2FA từ khóa bí mật",
+ "title": "Lấy mã 2FA online – Check mã 2FA từ khóa bí mật | Get2FA",
+ "desc": "Lấy mã 2FA nhanh: dán khóa bí mật 2FA để có ngay mã 6 số giống ứng dụng xác thực. Dùng được cho Google, Facebook, Instagram, Microsoft… Chạy 100% trong trình duyệt: khóa của bạn không bao giờ bị gửi đi.",
+ "h1": "Lấy mã 2FA từ khóa bí mật (2FA code)",
  "sub": "Dán khóa 2FA, liên kết <code class=\"k\">otpauth://</code> hoặc mã QR để nhận đúng mã 6 số mà ứng dụng xác thực hiển thị. Nhanh, miễn phí và chỉ tính trên thiết bị của bạn.",
  "trust": ["Khóa không bao giờ rời khỏi thiết bị", "Nhiều khóa cùng lúc", "Dùng được khi không có mạng"],
  "label": "Khóa bí mật 2FA", "labelSmall": "mỗi dòng một khóa",

@@ -19,8 +19,8 @@ ICON_MOON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke=
 
 from i18n_base import L
 import importlib
-LANGS = ["en", "pt", "es", "vi", "id", "de"]
-NEW = ["es", "vi", "id", "de"]
+LANGS = ["en", "pt", "es", "vi", "id", "de", "th"]
+NEW = ["es", "vi", "id", "de", "th"]
 for _c in NEW:
     L[_c] = importlib.import_module("lang_" + _c).T
 L["en"]["langName"], L["en"]["ogLocale"] = "English", "en_US"
@@ -106,6 +106,8 @@ def ad(t, slot):
     return f'<div class="ad-slot" data-label="{t["ad"]}" data-slot="{slot}"><!-- AdSense unit: {slot} --></div>'
 
 from articles import ARTICLES
+import new_articles as _na
+ARTICLES = [_na.WHAT_IS] + ARTICLES[:6] + [_na.FB_CODE, _na.FORTNITE, _na.TOTP, _na.MS_AUTH, _na.GOVBR] + ARTICLES[6:]
 
 def gpath(code, a):
     return L[code]["guidesPath"] + a[code]["slug"] if a.get(code) else None
@@ -243,7 +245,7 @@ for _c in NEW:
         d["tool"] = (lambda f, t, u: (lambda: f(t, u)))(TPL[x["key"]], L[_c], d["ui"])
         x[_c] = d
     for a in ARTICLES:
-        a[_c] = _m.GUIDES.get(a["key"])
+        a[_c] = a.get(_c) or _m.GUIDES.get(a["key"])
 
 def tool_links(t):
     c = t["code"]

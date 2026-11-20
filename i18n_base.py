@@ -84,7 +84,7 @@ L = {
  },
  "pt": {
   "lang": "pt-BR", "path": "/pt/", "root": "/", "privacy": "/pt/privacidade",
-  "title": "Gerador de Código 2FA – Pegue seu código do autenticador online | Get2FA",
+  "title": "Gerador de Código 2FA Online – 2FA Tools grátis para pegar o código | Get2FA",
   "desc": "Cole a chave secreta 2FA e receba na hora o código de 6 dígitos do autenticador. Funciona com Google, Facebook, Instagram, Microsoft e outros. 100% no seu navegador: sua chave nunca é enviada.",
   "h1": "Pegue seu código 2FA a partir da chave secreta",
   "sub": "Cole a chave 2FA, um link <code class=\"k\">otpauth://</code> ou um QR code e receba o mesmo código de 6 dígitos do seu app autenticador. Rápido, grátis e calculado só no seu aparelho.",

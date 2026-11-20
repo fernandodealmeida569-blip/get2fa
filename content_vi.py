@@ -27,9 +27,9 @@ TOOLS = {
     <p>160 bit (32 ký tự Base32) là mức RFC 4226 khuyến nghị và được đa số dịch vụ dùng. 80 bit là mức tối thiểu một số ứng dụng cũ chấp nhận; 256 bit dùng được với ứng dụng hiện đại.</p>"""},
 "check": {
  "path": "/vi/kiem-tra-ma-2fa",
- "title": "Kiểm tra mã 2FA – Vì sao mã xác thực bị sai? | Kiểm tra đồng hồ",
+ "title": "Check mã 2FA – Kiểm tra mã 2FA đúng hay sai và đồng hồ thiết bị",
  "desc": "Dán khóa 2FA và mã ứng dụng hiển thị để xem có khớp không, đồng thời kiểm tra đồng hồ thiết bị có bị lệch. Tìm ra lý do mã xác thực không hoạt động.",
- "h1": "Kiểm tra mã 2FA và đồng hồ thiết bị",
+ "h1": "Check mã 2FA và đồng hồ thiết bị",
  "sub": "Dán khóa bí mật và mã mà ứng dụng xác thực hiển thị. Chúng tôi cho bạn biết mã có khớp không, và đồng hồ thiết bị có phải là lý do mã bị từ chối.",
  "card": "Kiểm tra mã 2FA", "cardDesc": "Xem mã có khớp với khóa không và đồng hồ thiết bị có bị lệch không.",
  "i18n": {"copied": "Đã sao chép", "clockOk": "✓ Đồng hồ thiết bị của bạn chính xác (lệch dưới 2 giây).",
