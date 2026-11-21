@@ -1,0 +1,76 @@
+{
+ "name": {
+  "message": "Get2FA – 2FA Code Generator (TOTP Authenticator)"
+ },
+ "desc": {
+  "message": "Get 2FA codes from a secret key or a QR code on the page. Private: keys never leave your browser. Free and open source."
+ },
+ "scanMenu": {
+  "message": "Get2FA: scan 2FA QR code on this page"
+ },
+ "scanPage": {
+  "message": "Scan a 2FA QR code shown on this page"
+ },
+ "scanShort": {
+  "message": "Scan QR"
+ },
+ "placeholder": {
+  "message": "Paste a 2FA secret key or otpauth:// link"
+ },
+ "add": {
+  "message": "Add"
+ },
+ "accounts": {
+  "message": "Saved"
+ },
+ "empty": {
+  "message": "Paste a key above or scan a QR code to get your 2FA code."
+ },
+ "privacy": {
+  "message": "Keys stay in this browser. Nothing is sent."
+ },
+ "openSite": {
+  "message": "get2fa.online"
+ },
+ "copy": {
+  "message": "Click to copy"
+ },
+ "copied": {
+  "message": "Code copied"
+ },
+ "next": {
+  "message": "Next:"
+ },
+ "save": {
+  "message": "Save"
+ },
+ "saved": {
+  "message": "Saved in this browser"
+ },
+ "remove": {
+  "message": "Remove"
+ },
+ "addedN": {
+  "message": "Added $COUNT$ key(s)",
+  "placeholders": {
+   "count": {
+    "content": "$1"
+   }
+  }
+ },
+ "invalid": {
+  "message": "That doesn't look like a valid 2FA key."
+ },
+ "already": {
+  "message": "This key is already listed."
+ },
+ "scanning": {
+  "message": "Scanning the page…"
+ },
+ "noQr": {
+  "message": "No 2FA QR code found on the visible part of the page."
+ },
+ "scanFailed": {
+  "message": "Couldn't capture this page. Try another tab or paste the key."
+ }
+}

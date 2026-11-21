@@ -1,0 +1,76 @@
+{
+ "name": {
+  "message": "Get2FA – ตัวสร้างรหัส 2FA (TOTP Authenticator)"
+ },
+ "desc": {
+  "message": "รับรหัส 2FA จากคีย์ลับหรือคิวอาร์โค้ดบนหน้าเว็บ เป็นส่วนตัว: คีย์ไม่ออกจากเบราว์เซอร์ ฟรีและโอเพนซอร์ส"
+ },
+ "scanMenu": {
+  "message": "Get2FA: สแกนคิวอาร์ 2FA บนหน้านี้"
+ },
+ "scanPage": {
+  "message": "สแกนคิวอาร์โค้ด 2FA ที่แสดงบนหน้านี้"
+ },
+ "scanShort": {
+  "message": "สแกน QR"
+ },
+ "placeholder": {
+  "message": "วางคีย์ลับ 2FA หรือลิงก์ otpauth://"
+ },
+ "add": {
+  "message": "เพิ่ม"
+ },
+ "accounts": {
+  "message": "ที่บันทึกไว้"
+ },
+ "empty": {
+  "message": "วางคีย์ด้านบนหรือสแกนคิวอาร์โค้ดเพื่อรับรหัส 2FA"
+ },
+ "privacy": {
+  "message": "คีย์อยู่ในเบราว์เซอร์นี้เท่านั้น ไม่มีการส่งออก"
+ },
+ "openSite": {
+  "message": "get2fa.online"
+ },
+ "copy": {
+  "message": "คลิกเพื่อคัดลอก"
+ },
+ "copied": {
+  "message": "คัดลอกรหัสแล้ว"
+ },
+ "next": {
+  "message": "ถัดไป:"
+ },
+ "save": {
+  "message": "บันทึก"
+ },
+ "saved": {
+  "message": "บันทึกในเบราว์เซอร์นี้แล้ว"
+ },
+ "remove": {
+  "message": "ลบ"
+ },
+ "addedN": {
+  "message": "เพิ่ม $COUNT$ คีย์แล้ว",
+  "placeholders": {
+   "count": {
+    "content": "$1"
+   }
+  }
+ },
+ "invalid": {
+  "message": "ดูเหมือนไม่ใช่คีย์ 2FA ที่ถูกต้อง"
+ },
+ "already": {
+  "message": "คีย์นี้อยู่ในรายการแล้ว"
+ },
+ "scanning": {
+  "message": "กำลังสแกนหน้า…"
+ },
+ "noQr": {
+  "message": "ไม่พบคิวอาร์ 2FA ในส่วนที่มองเห็นของหน้า"
+ },
+ "scanFailed": {
+  "message": "จับภาพหน้านี้ไม่ได้ ลองแท็บอื่นหรือวางคีย์แทน"
+ }
+}

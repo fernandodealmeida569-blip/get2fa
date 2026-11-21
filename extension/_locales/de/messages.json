@@ -1,0 +1,76 @@
+{
+ "name": {
+  "message": "Get2FA – 2FA-Code-Generator (TOTP-Authenticator)"
+ },
+ "desc": {
+  "message": "2FA-Codes aus einem geheimen Schlüssel oder QR-Code auf der Seite. Privat: Schlüssel bleiben im Browser. Kostenlos, Open Source."
+ },
+ "scanMenu": {
+  "message": "Get2FA: 2FA-QR-Code auf dieser Seite scannen"
+ },
+ "scanPage": {
+  "message": "Einen auf dieser Seite angezeigten 2FA-QR-Code scannen"
+ },
+ "scanShort": {
+  "message": "QR scannen"
+ },
+ "placeholder": {
+  "message": "2FA-Schlüssel oder otpauth://-Link einfügen"
+ },
+ "add": {
+  "message": "Hinzufügen"
+ },
+ "accounts": {
+  "message": "Gespeichert"
+ },
+ "empty": {
+  "message": "Füge oben einen Schlüssel ein oder scanne einen QR-Code, um deinen 2FA-Code zu erhalten."
+ },
+ "privacy": {
+  "message": "Schlüssel bleiben in diesem Browser. Nichts wird gesendet."
+ },
+ "openSite": {
+  "message": "get2fa.online"
+ },
+ "copy": {
+  "message": "Zum Kopieren klicken"
+ },
+ "copied": {
+  "message": "Code kopiert"
+ },
+ "next": {
+  "message": "Nächster:"
+ },
+ "save": {
+  "message": "Speichern"
+ },
+ "saved": {
+  "message": "In diesem Browser gespeichert"
+ },
+ "remove": {
+  "message": "Entfernen"
+ },
+ "addedN": {
+  "message": "$COUNT$ Schlüssel hinzugefügt",
+  "placeholders": {
+   "count": {
+    "content": "$1"
+   }
+  }
+ },
+ "invalid": {
+  "message": "Das sieht nicht nach einem gültigen 2FA-Schlüssel aus."
+ },
+ "already": {
+  "message": "Dieser Schlüssel ist schon in der Liste."
+ },
+ "scanning": {
+  "message": "Seite wird gescannt…"
+ },
+ "noQr": {
+  "message": "Kein 2FA-QR-Code im sichtbaren Teil der Seite gefunden."
+ },
+ "scanFailed": {
+  "message": "Diese Seite konnte nicht erfasst werden. Versuche einen anderen Tab oder füge den Schlüssel ein."
+ }
+}

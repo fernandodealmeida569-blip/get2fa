@@ -22,6 +22,10 @@ Paste a 2FA secret key, an `otpauth://` link or a QR code image and get the same
 - [2FA QR code reader](https://get2fa.online/read-2fa-qr-code): extracts keys from QR images, including Google Authenticator exports.
 - [Account line splitter](https://get2fa.online/account-line-splitter): split `user|pass|2FA` lines, pick columns and append the current 2FA code.
 
+## Browser extension
+
+The `extension/` folder is a Chrome extension (Manifest V3): paste a key or right-click a page to scan its 2FA QR code. Keys you save stay in `chrome.storage.local`; nothing is sent anywhere. Permissions: `storage`, `activeTab`, `contextMenus`. See [extension/PRIVACY.md](extension/PRIVACY.md).
+
 ## Verify it yourself
 
 1. Open [get2fa.online](https://get2fa.online) and your browser's developer tools (F12) → **Network** tab.

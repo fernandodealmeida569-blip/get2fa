@@ -1,0 +1,76 @@
+{
+ "name": {
+  "message": "Get2FA – Lấy mã 2FA (Trình tạo mã TOTP)"
+ },
+ "desc": {
+  "message": "Lấy mã 2FA từ khóa bí mật hoặc mã QR trên trang. Riêng tư: khóa không rời khỏi trình duyệt. Miễn phí, mã nguồn mở."
+ },
+ "scanMenu": {
+  "message": "Get2FA: quét mã QR 2FA trên trang này"
+ },
+ "scanPage": {
+  "message": "Quét mã QR 2FA đang hiển thị trên trang này"
+ },
+ "scanShort": {
+  "message": "Quét QR"
+ },
+ "placeholder": {
+  "message": "Dán khóa bí mật 2FA hoặc liên kết otpauth://"
+ },
+ "add": {
+  "message": "Thêm"
+ },
+ "accounts": {
+  "message": "Đã lưu"
+ },
+ "empty": {
+  "message": "Dán khóa ở trên hoặc quét mã QR để lấy mã 2FA."
+ },
+ "privacy": {
+  "message": "Khóa chỉ nằm trong trình duyệt này. Không gửi đi đâu."
+ },
+ "openSite": {
+  "message": "get2fa.online"
+ },
+ "copy": {
+  "message": "Bấm để sao chép"
+ },
+ "copied": {
+  "message": "Đã sao chép mã"
+ },
+ "next": {
+  "message": "Tiếp theo:"
+ },
+ "save": {
+  "message": "Lưu"
+ },
+ "saved": {
+  "message": "Đã lưu trong trình duyệt này"
+ },
+ "remove": {
+  "message": "Xóa"
+ },
+ "addedN": {
+  "message": "Đã thêm $COUNT$ khóa",
+  "placeholders": {
+   "count": {
+    "content": "$1"
+   }
+  }
+ },
+ "invalid": {
+  "message": "Đây không phải khóa 2FA hợp lệ."
+ },
+ "already": {
+  "message": "Khóa này đã có trong danh sách."
+ },
+ "scanning": {
+  "message": "Đang quét trang…"
+ },
+ "noQr": {
+  "message": "Không tìm thấy mã QR 2FA ở phần đang hiển thị của trang."
+ },
+ "scanFailed": {
+  "message": "Không chụp được trang này. Hãy thử tab khác hoặc dán khóa."
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "name": {
+  "message": "Get2FA – Generator Kode 2FA (Autentikator TOTP)"
+ },
+ "desc": {
+  "message": "Dapatkan kode 2FA dari kunci rahasia atau kode QR di halaman. Privat: kunci tidak keluar dari browser. Gratis dan open source."
+ },
+ "scanMenu": {
+  "message": "Get2FA: pindai kode QR 2FA di halaman ini"
+ },
+ "scanPage": {
+  "message": "Pindai kode QR 2FA yang tampil di halaman ini"
+ },
+ "scanShort": {
+  "message": "Pindai QR"
+ },
+ "placeholder": {
+  "message": "Tempel kunci rahasia 2FA atau tautan otpauth://"
+ },
+ "add": {
+  "message": "Tambah"
+ },
+ "accounts": {
+  "message": "Tersimpan"
+ },
+ "empty": {
+  "message": "Tempel kunci di atas atau pindai kode QR untuk mendapatkan kode 2FA."
+ },
+ "privacy": {
+  "message": "Kunci tetap di browser ini. Tidak ada yang dikirim."
+ },
+ "openSite": {
+  "message": "get2fa.online"
+ },
+ "copy": {
+  "message": "Klik untuk menyalin"
+ },
+ "copied": {
+  "message": "Kode disalin"
+ },
+ "next": {
+  "message": "Berikutnya:"
+ },
+ "save": {
+  "message": "Simpan"
+ },
+ "saved": {
+  "message": "Disimpan di browser ini"
+ },
+ "remove": {
+  "message": "Hapus"
+ },
+ "addedN": {
+  "message": "$COUNT$ kunci ditambahkan",
+  "placeholders": {
+   "count": {
+    "content": "$1"
+   }
+  }
+ },
+ "invalid": {
+  "message": "Itu bukan kunci 2FA yang valid."
+ },
+ "already": {
+  "message": "Kunci ini sudah ada di daftar."
+ },
+ "scanning": {
+  "message": "Memindai halaman…"
+ },
+ "noQr": {
+  "message": "Tidak ada kode QR 2FA di bagian halaman yang terlihat."
+ },
+ "scanFailed": {
+  "message": "Halaman ini tidak bisa ditangkap. Coba tab lain atau tempel kuncinya."
+ }
+}

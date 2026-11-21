@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get2FA</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="https://get2fa.online/" target="_blank" rel="noopener"><img src="icons/icon32.png" alt="" width="22" height="22"><span>Get2FA</span></a>
+  <button id="scanBtn" class="ghost" type="button" data-i18n-title="scanPage">📷 <span data-i18n="scanShort"></span></button>
+</header>
+<main>
+  <div class="add">
+    <textarea id="input" rows="2" spellcheck="false" autocomplete="off" data-i18n-placeholder="placeholder"></textarea>
+    <button id="addBtn" class="primary" type="button" data-i18n="add"></button>
+  </div>
+  <div id="msg" class="msg" role="status" aria-live="polite"></div>
+  <section id="temp"></section>
+  <h2 id="savedH" data-i18n="accounts"></h2>
+  <section id="list"></section>
+  <p id="empty" class="empty" data-i18n="empty"></p>
+</main>
+<footer>
+  <span data-i18n="privacy"></span>
+  <a href="https://get2fa.online/" target="_blank" rel="noopener" data-i18n="openSite"></a>
+</footer>
+<script src="lib/totp.js"></script>
+<script src="lib/jsQR.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

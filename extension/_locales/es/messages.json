@@ -1,0 +1,76 @@
+{
+ "name": {
+  "message": "Get2FA – Generador de códigos 2FA (Autenticador TOTP)"
+ },
+ "desc": {
+  "message": "Obtén códigos 2FA de una clave secreta o de un código QR en la página. Privado: las claves no salen del navegador. Gratis y abierto."
+ },
+ "scanMenu": {
+  "message": "Get2FA: leer el código QR 2FA de esta página"
+ },
+ "scanPage": {
+  "message": "Leer un código QR 2FA que aparece en esta página"
+ },
+ "scanShort": {
+  "message": "Leer QR"
+ },
+ "placeholder": {
+  "message": "Pega una clave secreta 2FA o enlace otpauth://"
+ },
+ "add": {
+  "message": "Añadir"
+ },
+ "accounts": {
+  "message": "Guardadas"
+ },
+ "empty": {
+  "message": "Pega una clave arriba o lee un código QR para ver tu código 2FA."
+ },
+ "privacy": {
+  "message": "Las claves se quedan en este navegador. No se envía nada."
+ },
+ "openSite": {
+  "message": "get2fa.online"
+ },
+ "copy": {
+  "message": "Haz clic para copiar"
+ },
+ "copied": {
+  "message": "Código copiado"
+ },
+ "next": {
+  "message": "Siguiente:"
+ },
+ "save": {
+  "message": "Guardar"
+ },
+ "saved": {
+  "message": "Guardada en este navegador"
+ },
+ "remove": {
+  "message": "Quitar"
+ },
+ "addedN": {
+  "message": "$COUNT$ clave(s) añadida(s)",
+  "placeholders": {
+   "count": {
+    "content": "$1"
+   }
+  }
+ },
+ "invalid": {
+  "message": "Eso no parece una clave 2FA válida."
+ },
+ "already": {
+  "message": "Esa clave ya está en la lista."
+ },
+ "scanning": {
+  "message": "Leyendo la página…"
+ },
+ "noQr": {
+  "message": "No se encontró ningún código QR 2FA en la parte visible de la página."
+ },
+ "scanFailed": {
+  "message": "No se pudo capturar esta página. Prueba otra pestaña o pega la clave."
+ }
+}
