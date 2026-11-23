@@ -72,5 +72,8 @@
  },
  "scanFailed": {
   "message": "Não foi possível capturar esta página. Tente outra aba ou cole a chave."
+ },
+ "hotp": {
+  "message": "Chaves por contador (HOTP) não são suportadas."
  }
 }

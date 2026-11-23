@@ -72,5 +72,8 @@
  },
  "scanFailed": {
   "message": "Diese Seite konnte nicht erfasst werden. Versuche einen anderen Tab oder füge den Schlüssel ein."
+ },
+ "hotp": {
+  "message": "Zählerbasierte Schlüssel (HOTP) werden nicht unterstützt."
  }
 }

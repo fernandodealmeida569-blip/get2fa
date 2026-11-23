@@ -72,5 +72,8 @@
  },
  "scanFailed": {
   "message": "Couldn't capture this page. Try another tab or paste the key."
+ },
+ "hotp": {
+  "message": "Counter-based (HOTP) keys are not supported."
  }
 }

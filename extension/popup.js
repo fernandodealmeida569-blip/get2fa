@@ -103,9 +103,10 @@
 
   /* ---------- actions ---------- */
   function addEntries(list) {
-    var added = 0; addEntries.dup = 0;
+    var added = 0; addEntries.dup = 0; addEntries.hotp = 0;
     list.forEach(function (e) {
       if (e.error || !e.secret) return;
+      if (e.type && e.type !== 'totp') { addEntries.hotp++; return; } /* counter-based keys would show wrong codes */
       var n = norm(e), key = id(n);
       if (saved.some(function (s) { return id(s) === key; }) || temp.some(function (s) { return id(s) === key; })) { addEntries.dup++; return; }
       temp.unshift(n); added++;
@@ -119,7 +120,7 @@
     var bad = parsed.filter(function (e) { return e.error; }).length;
     var n = addEntries(parsed);
     if (n) { $('#input').value = ''; note(msg('addedN', String(n)), 'ok'); }
-    else note(addEntries.dup ? msg('already') : msg('invalid'), 'bad');
+    else note(addEntries.dup ? msg('already') : addEntries.hotp ? msg('hotp') : msg('invalid'), 'bad');
     render();
     if (n === 1 && temp[0]) { var c = await T.totp(temp[0].secret, temp[0]); copy(c); }
   }
@@ -166,14 +167,14 @@
       var entries = [];
       texts.forEach(function (t) { T.parseInput(t).forEach(function (e) { entries.push(e); }); });
       var n = addEntries(entries);
-      if (n) note(msg('addedN', String(n)), 'ok'); else note(addEntries.dup ? msg('already') : texts.length ? msg('invalid') : msg('noQr'), 'bad');
+      if (n) note(msg('addedN', String(n)), 'ok'); else note(addEntries.dup ? msg('already') : addEntries.hotp ? msg('hotp') : texts.length ? msg('invalid') : msg('noQr'), 'bad');
       render();
     } catch (e) { note(msg('scanFailed'), 'bad'); }
   }
   $('#scanBtn').addEventListener('click', async function () {
     if (!hasChrome) return;
     try {
-      var shot = await chrome.tabs.captureVisibleTab(null, { format: 'png' });
+      var shot = await chrome.tabs.captureVisibleTab(null, { format: 'jpeg', quality: 92 });
       await scanShot(shot);
     } catch (e) { note(msg('scanFailed'), 'bad'); }
   });

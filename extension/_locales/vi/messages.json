@@ -72,5 +72,8 @@
  },
  "scanFailed": {
   "message": "Không chụp được trang này. Hãy thử tab khác hoặc dán khóa."
+ },
+ "hotp": {
+  "message": "Không hỗ trợ khóa theo bộ đếm (HOTP)."
  }
 }

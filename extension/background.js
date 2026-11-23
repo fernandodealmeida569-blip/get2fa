@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (info.menuItemId !== 'g2fa-scan' || !tab) return;
   try {
-    const shot = await chrome.tabs.captureVisibleTab(tab.windowId, { format: 'png' });
+    const shot = await chrome.tabs.captureVisibleTab(tab.windowId, { format: 'jpeg', quality: 92 }) /* JPEG keeps big screens under the session-storage limit */;
     await chrome.storage.session.set({ shot });
   } catch (e) {
     await chrome.storage.session.set({ shot: null, shotError: String(e && e.message || e) });

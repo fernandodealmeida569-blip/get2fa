@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generates the Get2FA static site (EN, PT, ES, VI, ID, DE) into ./site"""
+"""Generates the Get2FA static site (EN, PT, ES, VI, ID, DE, TH) into ./site"""
 import json, os, html
 
 SITE = "https://get2fa.online"
@@ -27,6 +27,11 @@ L["en"]["langName"], L["en"]["ogLocale"] = "English", "en_US"
 L["pt"]["langName"], L["pt"]["ogLocale"] = "Português", "pt_BR"
 for _c in LANGS:
     L[_c]["code"] = _c
+
+EXT_URL = "https://chromewebstore.google.com/detail/comadcaaonchplkbblkbonkdonhpalcm"
+_EXT = {'en': ('Get2FA for Chrome: your codes one click away, and scan any 2FA QR code with a right-click.', 'Add to Chrome', 'Chrome extension'), 'pt': ('Get2FA para Chrome: seus códigos a um clique, e leia qualquer QR code 2FA com o botão direito.', 'Adicionar ao Chrome', 'Extensão do Chrome'), 'es': ('Get2FA para Chrome: tus códigos a un clic, y lee cualquier código QR 2FA con el botón derecho.', 'Añadir a Chrome', 'Extensión de Chrome'), 'vi': ('Get2FA cho Chrome: lấy mã chỉ với một cú nhấp, quét mọi mã QR 2FA bằng chuột phải.', 'Thêm vào Chrome', 'Tiện ích Chrome'), 'id': ('Get2FA untuk Chrome: kode Anda cukup satu klik, dan pindai kode QR 2FA apa pun dengan klik kanan.', 'Tambahkan ke Chrome', 'Ekstensi Chrome'), 'de': ('Get2FA für Chrome: deine Codes mit einem Klick, und jeden 2FA-QR-Code per Rechtsklick scannen.', 'Zu Chrome hinzufügen', 'Chrome-Erweiterung'), 'th': ('Get2FA สำหรับ Chrome: รับรหัสได้ในคลิกเดียว และสแกนคิวอาร์ 2FA ด้วยการคลิกขวา', 'เพิ่มใน Chrome', 'ส่วนขยาย Chrome')}
+for _c in LANGS:
+    L[_c]["extText"], L[_c]["extBtn"], L[_c]["extLink"] = _EXT[_c]
 
 
 THEME_JS = """<script>
@@ -100,7 +105,7 @@ def footer(t, alts=None):
     return f"""<footer>
   <div class="wrap">
     <div>© 2026 {BRAND}. {t['foot']}</div>
-    <nav>{tool_links(t)}<a href="{t['guidesPath']}">{t['guides']}</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">{t['openSource']}</a><a href="{t['privacy']}">{t['privacyLink']}</a><a href="mailto:{CONTACT}">{t['contactLink']}</a></nav>
+    <nav>{tool_links(t)}<a href="{t['guidesPath']}">{t['guides']}</a><a href="{EXT_URL}" rel="noopener">{t['extLink']}</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">{t['openSource']}</a><a href="{t['privacy']}">{t['privacyLink']}</a><a href="mailto:{CONTACT}">{t['contactLink']}</a></nav>
     <nav class="langs">{langs}</nav>
   </div>
 </footer>
@@ -362,6 +367,7 @@ def page_home(code):
   <section class="content" id="tools">
     <h2>{t['toolsH']}</h2>
     <div class="features four">{tool_cards(code)}</div>
+    <div class="cta ext"><b>{t['extText']}</b><a class="btn primary" href="{EXT_URL}" target="_blank" rel="noopener">{t['extBtn']}</a></div>
   </section>
 
   {ad(t, 'below-tool')}
@@ -508,26 +514,38 @@ w("manifest.webmanifest", json.dumps({
             {"src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
             {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, indent=2))
 
+_SW_FILES = [L[c]["path"] for c in LANGS] + ["/assets/" + f for f in ("style.css", "totp.js", "app.js", "qrread.js", "icon.svg")]
 w("sw.js", """/* Get2FA offline cache. Only static files are cached; secrets are never involved. */
-const V = 'q2fa-v5';
-const FILES = ['/', '/pt/', '/assets/style.css', '/assets/totp.js', '/assets/app.js', '/assets/qrread.js', '/assets/icon.svg'];
+const V = 'q2fa-v6';
+const FILES = %s;
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== V).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
   const u = new URL(e.request.url);
-  if (e.request.method !== 'GET' || u.origin !== location.origin) return;
-  e.respondWith(fetch(e.request).then(r => { const c = r.clone(); caches.open(V).then(x => x.put(e.request, c)); return r; })
-    .catch(() => caches.match(e.request, { ignoreSearch: true }).then(r => r || caches.match('/'))));
+  if (e.request.method !== 'GET' || u.origin !== location.origin || u.pathname.startsWith('/cdn-cgi/')) return;
+  e.respondWith(fetch(e.request).then(r => {
+    /* keep only good same-origin answers: no error pages, no redirects */
+    if (r.ok && r.type === 'basic') { const c = r.clone(); caches.open(V).then(x => x.put(e.request, c)); }
+    return r;
+  }).catch(() => caches.match(e.request, { ignoreSearch: true })
+    .then(r => r || (e.request.mode === 'navigate' ? caches.match('/') : Response.error()))));
 });
-""")
+""" % json.dumps(_SW_FILES))
 
 # Netlify / Cloudflare Pages headers (security + clean URLs)
+# The CSP makes the privacy promise enforceable: scripts can only talk to this origin.
+# (static.cloudflareinsights.com = Cloudflare Web Analytics beacon, which posts to /cdn-cgi/rum on this origin.)
+# When AdSense is added, this line has to be relaxed for the pages that show ads.
+CSP = ("default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; "
+       "connect-src 'self' https://cloudflareinsights.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; "
+       "object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'")
 w("_headers", """/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: """ + CSP + """
 
 /assets/*
   Cache-Control: public, max-age=604800

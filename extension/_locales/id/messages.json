@@ -72,5 +72,8 @@
  },
  "scanFailed": {
   "message": "Halaman ini tidak bisa ditangkap. Coba tab lain atau tempel kuncinya."
+ },
+ "hotp": {
+  "message": "Kunci berbasis penghitung (HOTP) tidak didukung."
  }
 }

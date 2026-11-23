@@ -47,5 +47,15 @@ function b32(buf) {
   assert.ok(T.parseLine('not a key!').error);
   passed += 4;
 
+  // Space-separated account lines must not be glued into one fake key
+  assert.strictEqual(T.parseLine('john secret JBSWY3DPEHPK3PXP').secret, 'JBSWY3DPEHPK3PXP');
+  assert.strictEqual(T.parseLine('john@x.com pass123 JBSWY3DPEHPK3PXP').secret, 'JBSWY3DPEHPK3PXP');
+  assert.strictEqual(T.parseLine('jbsw y3dp ehpk 3pxp abcd efgh ijkl mnop').secret, 'JBSWY3DPEHPK3PXPABCDEFGHIJKLMNOP');
+  assert.strictEqual(T.parseLine('JBSW Y3DPE HPK3PXP').secret, 'JBSWY3DPEHPK3PXP');
+  // Out-of-range settings in a URI are clamped instead of producing garbage
+  const odd = T.parseUri('otpauth://totp/X:a?secret=JBSWY3DPEHPK3PXP&period=-5&digits=99');
+  assert.strictEqual(odd.digits, 10); assert.strictEqual(odd.period, 1);
+  passed += 6;
+
   console.log(`All ${passed} checks passed.`);
 })().catch((e) => { console.error(e); process.exit(1); });

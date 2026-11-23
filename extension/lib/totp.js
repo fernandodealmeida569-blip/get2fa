@@ -58,6 +58,8 @@
     return hotp(secret, counterAt(t, period), opts);
   }
 
+  function clamp(n, lo, hi) { return Math.min(hi, Math.max(lo, n)); }
+
   /* Parse an otpauth:// URI */
   function parseUri(uri) {
     var u = new URL(uri.trim());
@@ -72,8 +74,8 @@
       issuer: issuer,
       account: account,
       algorithm: (p.get('algorithm') || 'SHA1').toUpperCase(),
-      digits: parseInt(p.get('digits'), 10) || 6,
-      period: parseInt(p.get('period'), 10) || 30
+      digits: clamp(parseInt(p.get('digits'), 10) || 6, 4, 10),
+      period: clamp(parseInt(p.get('period'), 10) || 30, 1, 86400)
     };
   }
 
@@ -93,16 +95,35 @@
       } catch (err) { /* fall through */ }
       return { raw: raw, error: true };
     }
-    var whole = clean(raw);
-    if (isBase32(whole) && !/[|;,:\t]/.test(raw)) return { raw: raw, secret: whole, label: '', algorithm: 'SHA1', digits: 6, period: 30 };
+    var whole = clean(raw), i, c;
+    if (isBase32(whole) && !/[|;,:\t]/.test(raw)) {
+      /* A key typed in groups ("JBSW Y3DP EHPK 3PXP") has chunks of equal length.
+         Anything else with a key-like word in it ("john secret JBSWY3DPEHPK3PXP") is an account line. */
+      var toks = raw.split(/\s+/);
+      var len0 = toks[0].length;
+      var grouped = toks.every(function (x, n) { return n === toks.length - 1 ? x.length <= len0 : x.length === len0; });
+      if (toks.length > 1 && !grouped) {
+        for (i = toks.length - 1; i >= 0; i--) {
+          c = clean(toks[i]);
+          if (isBase32(c, 16)) return { raw: raw, secret: c, label: i > 0 ? toks[0] : '', algorithm: 'SHA1', digits: 6, period: 30 };
+        }
+      }
+      return { raw: raw, secret: whole, label: '', algorithm: 'SHA1', digits: 6, period: 30 };
+    }
 
     var parts = raw.split(/[|;,\t]|:(?!\/\/)|\s{2,}/).map(function (s) { return s.trim(); }).filter(Boolean);
-    for (var i = parts.length - 1; i >= 0; i--) {
-      var c = clean(parts[i]);
+    for (i = parts.length - 1; i >= 0; i--) {
+      c = clean(parts[i]);
       if (isBase32(c, 16)) {
         var rest = parts.slice(0, i).concat(parts.slice(i + 1));
         return { raw: raw, secret: c, label: rest[0] || '', algorithm: 'SHA1', digits: 6, period: 30 };
       }
+    }
+    /* last resort: single spaces as separators ("mail@x.com pass KEY") */
+    var words = raw.split(/[|;,\s]+|:(?!\/\/)/).filter(Boolean);
+    for (i = words.length - 1; i >= 0; i--) {
+      c = clean(words[i]);
+      if (isBase32(c, 16)) return { raw: raw, secret: c, label: i > 0 ? words[0] : '', algorithm: 'SHA1', digits: 6, period: 30 };
     }
     return { raw: raw, error: true };
   }
