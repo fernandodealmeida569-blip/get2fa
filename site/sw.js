@@ -1,6 +1,6 @@
 /* Get2FA offline cache. Only static files are cached; secrets are never involved. */
-const V = 'q2fa-v6';
-const FILES = ["/", "/pt/", "/es/", "/vi/", "/id/", "/de/", "/th/", "/assets/style.css", "/assets/totp.js", "/assets/app.js", "/assets/qrread.js", "/assets/icon.svg"];
+const V = 'q2fa-v7';
+const FILES = ["/", "/pt/", "/es/", "/vi/", "/id/", "/de/", "/th/", "/fr/", "/ru/", "/tr/", "/ja/", "/ko/", "/zh/", "/hi/", "/ar/", "/bn/", "/km/", "/assets/style.css", "/assets/totp.js", "/assets/app.js", "/assets/qrread.js", "/assets/icon.svg"];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== V).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

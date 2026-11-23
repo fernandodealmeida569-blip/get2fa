@@ -180,6 +180,11 @@ code.k.big{font-size:17px;padding:6px 10px;word-break:break-all}
 .langmenu>summary{list-style:none}
 .langmenu>summary::-webkit-details-marker{display:none}
 .langlist{position:absolute;right:0;top:calc(100% + 6px);z-index:30;min-width:180px;padding:6px;border:1px solid var(--border);border-radius:14px;background:var(--surface);box-shadow:0 10px 30px rgba(0,0,0,.12);display:flex;flex-direction:column}
+.langlist{max-height:70vh;overflow-y:auto}
+[dir=rtl] .langlist{right:auto;left:0}
+[dir=rtl] .code,[dir=rtl] .nv,[dir=rtl] .name,[dir=rtl] textarea,[dir=rtl] code,[dir=rtl] #bulkOut{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] textarea{text-align:left}
+[dir=rtl] .nv{display:inline-block}
 .langlist a{padding:8px 12px;border-radius:9px;color:var(--text);text-decoration:none;font-size:14px}
 .langlist a:hover{background:var(--bg)}
 .langlist a[aria-current]{font-weight:600;color:var(--accent)}
