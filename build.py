@@ -6,7 +6,7 @@ SITE = "https://get2fa.online"
 BRAND = "Get2FA"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "site")
 CONTACT = "contact@get2fa.online"
-UPDATED = "2026-11-19"
+UPDATED = "2026-11-23"
 
 LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/>'
         '<path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/>'
@@ -19,10 +19,15 @@ ICON_MOON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke=
 
 from i18n_base import L
 import importlib
-LANGS = ["en", "pt", "es", "vi", "id", "de", "th"]
+FULL = ["en", "pt", "es", "vi", "id", "de", "th"]
+LITE = ["fr", "ru", "tr", "ja", "ko", "zh", "hi", "ar", "bn", "km"]
+LANGS = FULL + LITE
 NEW = ["es", "vi", "id", "de", "th"]
 for _c in NEW:
     L[_c] = importlib.import_module("lang_" + _c).T
+for _c in LITE:
+    L[_c] = importlib.import_module("lang_" + _c).T
+    L[_c]["guidesPath"], L[_c]["privacy"], L[_c]["lite"] = "/guides/", "/privacy", True
 L["en"]["langName"], L["en"]["ogLocale"] = "English", "en_US"
 L["pt"]["langName"], L["pt"]["ogLocale"] = "Português", "pt_BR"
 for _c in LANGS:
@@ -30,7 +35,7 @@ for _c in LANGS:
 
 EXT_URL = "https://chromewebstore.google.com/detail/comadcaaonchplkbblkbonkdonhpalcm"
 _EXT = {'en': ('Get2FA for Chrome: your codes one click away, and scan any 2FA QR code with a right-click.', 'Add to Chrome', 'Chrome extension'), 'pt': ('Get2FA para Chrome: seus códigos a um clique, e leia qualquer QR code 2FA com o botão direito.', 'Adicionar ao Chrome', 'Extensão do Chrome'), 'es': ('Get2FA para Chrome: tus códigos a un clic, y lee cualquier código QR 2FA con el botón derecho.', 'Añadir a Chrome', 'Extensión de Chrome'), 'vi': ('Get2FA cho Chrome: lấy mã chỉ với một cú nhấp, quét mọi mã QR 2FA bằng chuột phải.', 'Thêm vào Chrome', 'Tiện ích Chrome'), 'id': ('Get2FA untuk Chrome: kode Anda cukup satu klik, dan pindai kode QR 2FA apa pun dengan klik kanan.', 'Tambahkan ke Chrome', 'Ekstensi Chrome'), 'de': ('Get2FA für Chrome: deine Codes mit einem Klick, und jeden 2FA-QR-Code per Rechtsklick scannen.', 'Zu Chrome hinzufügen', 'Chrome-Erweiterung'), 'th': ('Get2FA สำหรับ Chrome: รับรหัสได้ในคลิกเดียว และสแกนคิวอาร์ 2FA ด้วยการคลิกขวา', 'เพิ่มใน Chrome', 'ส่วนขยาย Chrome')}
-for _c in LANGS:
+for _c in FULL:
     L[_c]["extText"], L[_c]["extBtn"], L[_c]["extLink"] = _EXT[_c]
 
 
@@ -46,7 +51,7 @@ def hreflang(alts):
 
 def head(t, title, desc, canonical, alts, extra=""):
     return f"""<!DOCTYPE html>
-<html lang="{t['lang']}" data-root="/" data-home="{t['path']}">
+<html lang="{t['lang']}"{' dir="rtl"' if t.get('dir') == 'rtl' else ''} data-root="/" data-home="{t['path']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,6 +103,8 @@ def header(t, alts=None):
 </header>"""
 
 from split_tool import SUGGEST
+for _c in LITE:
+    SUGGEST[_c] = L[_c]["suggest"]
 LANG_HINT = "<script>(function(){try{if(localStorage.getItem('q2fa.lh'))return}catch(e){}var S=%s;var cur=(document.documentElement.lang||'en').slice(0,2).toLowerCase();var alts={};Array.prototype.forEach.call(document.querySelectorAll('link[rel=alternate][hreflang]'),function(l){var h=l.getAttribute('hreflang').slice(0,2).toLowerCase();if(h!=='x-')alts[h]=l.getAttribute('href')});var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);for(var i=0;i<pref.length;i++){var c=String(pref[i]).slice(0,2).toLowerCase();if(c===cur)return;if(alts[c]&&S[c]){var d=document.createElement('div');d.className='langhint';d.setAttribute('lang',c);var a=document.createElement('a');a.href=alts[c].replace(/^https:\\/\\/get2fa\\.online/,'');a.textContent=S[c]+' →';var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Close');b.textContent='×';b.onclick=function(){d.remove();try{localStorage.setItem('q2fa.lh','1')}catch(e){}};d.appendChild(a);d.appendChild(b);document.body.appendChild(d);return}}})();</script>" % json.dumps(SUGGEST, ensure_ascii=False)
 
 def footer(t, alts=None):
@@ -129,7 +136,7 @@ def guide_cards(code):
 def page_guides(code):
     t = L[code]
     canonical = SITE + t["guidesPath"]
-    alts = {c: L[c]["guidesPath"] for c in LANGS}
+    alts = {c: L[c]["guidesPath"] for c in FULL}
     title = f"{t['guidesH']} | {BRAND}"
     return head(t, title, t["guidesLead"], canonical, alts) + f"""<body>
 {header(t, alts)}
@@ -159,8 +166,8 @@ def page_article(code, a):
     extra = ('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>\n'
              '<script type="application/ld+json">' + json.dumps(crumbs, ensure_ascii=False) + '</script>')
     more = "".join(f'<li><a href="{gpath(code, b)}">{b[code]["h1"]}</a></li>' for b in ARTICLES if b is not a and b.get(code))
-    alts = {c: gpath(c, a) for c in LANGS if a.get(c)}
-    menu = {c: alts.get(c) or L[c]["guidesPath"] for c in LANGS}
+    alts = {c: gpath(c, a) for c in FULL if a.get(c)}
+    menu = {c: alts.get(c) or L[c]["guidesPath"] for c in FULL}
     return head(t, f"{x['title']} | {BRAND}", x["desc"], canonical, alts, extra) + f"""<body>
 {header(t, menu)}
 <main class="wrap content article">
@@ -249,7 +256,7 @@ def tpl_read(t, u):
 TPL = {"gen": tpl_gen, "check": tpl_check, "read": tpl_read}
 from split_tool import SPLIT, SUGGEST, tpl_split
 _split = {"key": "split", "scripts": ["totp.js", "tools.js"]}
-for _c in LANGS:
+for _c in FULL:
     _d = dict(SPLIT[_c])
     _d["tool"] = (lambda t, u: (lambda: tpl_split(t, u, adv_html)))(L[_c], _d["ui"])
     _split[_c] = _d
@@ -265,15 +272,16 @@ for _c in NEW:
         a[_c] = a.get(_c) or _m.GUIDES.get(a["key"])
 
 def tool_links(t):
-    c = t["code"]
+    c = t["code"] if t["code"] in FULL else "en"
     return "".join(f'<a href="{x[c]["path"]}">{x[c]["card"]}</a>' for x in TOOLS)
 
 def tool_cards(code, skip=None):
     t = L[code]
+    if code not in FULL: code = "en"
     return "".join(f'<a class="feature" href="{x[code]["path"]}" style="text-decoration:none;color:inherit"><b>{x[code]["card"]}</b><span>{x[code]["cardDesc"]}</span><span style="display:block;margin-top:8px;color:var(--accent);font-weight:600">{t["open"]}</span></a>' for x in TOOLS if x["key"] != skip)
 
 def page_tool(code, x):
-    t = L[code]; d = x[code]; alts = {c: x[c]["path"] for c in LANGS}
+    t = L[code]; d = x[code]; alts = {c: x[c]["path"] for c in FULL}
     canonical = SITE + d["path"]
     ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": d["h1"], "url": canonical,
           "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": t["lang"],
@@ -411,14 +419,14 @@ def page_privacy(code):
     t = L[code]; pv = t["pv"]
     canonical = SITE + t["privacy"]
     body = "".join(f"<h2>{a}</h2><p>{b}</p>" for a, b in pv["body"])
-    return head(t, pv["title"], pv["body"][0][1], canonical, {c: L[c]["privacy"] for c in LANGS}, ) + f"""<body>
-{header(t, {c: L[c]["privacy"] for c in LANGS})}
+    return head(t, pv["title"], pv["body"][0][1], canonical, {c: L[c]["privacy"] for c in FULL}, ) + f"""<body>
+{header(t, {c: L[c]["privacy"] for c in FULL})}
 <main class="wrap legal content">
   <h1>{pv['h1']}</h1>
   <p class="lead">{pv['updated']} {UPDATED}</p>
   {body}
 </main>
-{footer(t, {c: L[c]["privacy"] for c in LANGS})}
+{footer(t, {c: L[c]["privacy"] for c in FULL})}
 <script>
 (function(){{var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){{var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{{localStorage.setItem('q2fa.theme',n)}}catch(e){{}}}});}})();
 </script>
@@ -443,7 +451,7 @@ def fname(path):
     p = path.lstrip("/")
     return p + "index.html" if (p == "" or p.endswith("/")) else p + ".html"
 
-for c in LANGS:
+for c in FULL:
     t = L[c]
     w(fname(t["path"]), page_home(c))
     w(fname(t["guidesPath"]), page_guides(c))
@@ -487,13 +495,15 @@ try:
     Image.open(os.path.join(OUT, "assets/icon-192.png")).convert("RGBA").save(os.path.join(OUT, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
 except Exception as e:
     print("favicon skipped:", e)
+for c in LITE:
+    w(fname(L[c]["path"]), page_home(c))
 w("assets/icon.svg", LOGO.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"'))
 w("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 w("ads.txt", "# Replace with your AdSense line, e.g.:\n# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\n")
 
-groups = [({c: L[c]["path"] for c in LANGS}, "1.0")] + [({c: x[c]["path"] for c in LANGS}, "0.9") for x in TOOLS] \
-    + [({c: L[c]["guidesPath"] for c in LANGS}, "0.8")] + [({c: gpath(c, a) for c in LANGS if a.get(c)}, "0.7") for a in ARTICLES] \
-    + [({c: L[c]["privacy"] for c in LANGS}, "0.3")]
+groups = [({c: L[c]["path"] for c in LANGS}, "1.0")] + [({c: x[c]["path"] for c in FULL}, "0.9") for x in TOOLS] \
+    + [({c: L[c]["guidesPath"] for c in FULL}, "0.8")] + [({c: gpath(c, a) for c in FULL if a.get(c)}, "0.7") for a in ARTICLES] \
+    + [({c: L[c]["privacy"] for c in FULL}, "0.3")]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>',
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
 for alts, pr in groups:
@@ -516,7 +526,7 @@ w("manifest.webmanifest", json.dumps({
 
 _SW_FILES = [L[c]["path"] for c in LANGS] + ["/assets/" + f for f in ("style.css", "totp.js", "app.js", "qrread.js", "icon.svg")]
 w("sw.js", """/* Get2FA offline cache. Only static files are cached; secrets are never involved. */
-const V = 'q2fa-v6';
+const V = 'q2fa-v7';
 const FILES = %s;
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== V).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
