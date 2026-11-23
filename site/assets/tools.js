@@ -66,7 +66,7 @@
       $('#gUri').value = u;
       $('#gUriCopy').setAttribute('data-copy', u);
       $('#gQr').innerHTML = window.QR.toSvg(window.QR.encode(u));
-      $('#gOpen').href = (root.getAttribute('data-home') || '/') + '#' + cur;
+      $('#gOpen').href = (root.getAttribute('data-home') || '/') + '#' + encodeURIComponent(u);
       tick(true);
     }
     var last = -1;
@@ -148,7 +148,7 @@
           '<div><span>' + esc(L.account) + '</span><b>' + esc(p.account || p.label || '—') + '</b></div>' +
           '<div><span>' + esc(L.secret) + '</span><code class="k">' + esc(group(e.secret)) + '</code> <button class="btn sm" type="button" data-copy="' + esc(e.secret) + '">' + esc(L.copy) + '</button></div>' +
           '<div><span>' + esc(L.settings) + '</span><b>' + esc((p.algorithm || 'SHA1') + ' · ' + (p.digits || 6) + ' · ' + (p.period || 30) + ' s') + '</b></div>' +
-          '<div class="row"><a class="btn primary sm" href="' + esc(home + '#' + e.secret) + '">' + esc(L.openGen) + '</a>' +
+          '<div class="row"><a class="btn primary sm" href="' + esc(home + '#' + (/^otpauth:/i.test(e.raw) ? encodeURIComponent(e.raw) : e.secret)) + '">' + esc(L.openGen) + '</a>' +
           '<button class="btn sm" type="button" data-copy="' + esc(e.raw) + '">' + esc(L.copyUri) + '</button></div></div>';
       }).join('');
     }
@@ -183,8 +183,8 @@
       ['pipe', 'tab', 'semi', 'colon', 'comma', 'space'].forEach(function (k) {
         var d = DELIMS[k], n = 0;
         lines.slice(0, 50).forEach(function (l) { n += l.split(d).length - 1; });
-        if (k === 'colon') n = Math.floor(n * 0.6);
-        if (k === 'space') n = Math.floor(n * 0.4);
+        if (k === 'colon') n = n * 0.6;
+        if (k === 'space') n = n * 0.4;
         if (n > score) { score = n; best = k; }
       });
       return score > 0 ? best : 'pipe';

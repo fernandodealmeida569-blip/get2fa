@@ -147,16 +147,19 @@
   $('#shareBtn').addEventListener('click', function () {
     var v = entries.filter(function (e) { return !e.error; });
     if (!v.length) { toast(L.noKey); return; }
-    var link = location.origin + location.pathname + '#' + encodeURIComponent(v.map(function (e) { return e.secret; }).join(','));
+    /* otpauth entries keep their name and settings (digits, period, algorithm) in the link */
+    var rich = v.some(function (e) { return /^otpauth:/i.test(e.raw); });
+    var link = location.origin + location.pathname + '#' + encodeURIComponent(v.map(function (e) { return /^otpauth:/i.test(e.raw) ? e.raw : e.secret; }).join(rich ? '\n' : ','));
     copy(link, L.linkCopied);
     $('#shareNote').hidden = false;
   });
 
   /* ---------- #SECRET links (fragment is never sent to the server) ---------- */
   function fromHash() {
-    var h = decodeURIComponent(location.hash.slice(1) || '');
+    var h;
+    try { h = decodeURIComponent(location.hash.slice(1) || ''); } catch (e) { h = location.hash.slice(1); }
     if (!h) return;
-    input.value = h.split(',').join('\n'); render();
+    input.value = /otpauth|\n/i.test(h) ? h : h.split(',').join('\n'); render();
   }
   window.addEventListener('hashchange', fromHash);
 
