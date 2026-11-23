@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" data-root="/" data-home="/es/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo activar el 2FA de Facebook con una app de autenticación</title>
+<meta name="description" content="Guía paso a paso para activar la verificación en dos pasos de Facebook con una app de autenticación, copiar la clave de configuración y obtener el código de 6 dígitos.">
+<link rel="canonical" href="https://get2fa.online/es/guias/activar-2fa-facebook">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/facebook-2fa-authentication-app">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/guias/facebook-autenticacao-dois-fatores">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/guias/activar-2fa-facebook">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/huong-dan/bat-2fa-facebook">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/panduan/cara-mengaktifkan-2fa-facebook">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/anleitungen/facebook-2fa-aktivieren">
+<link rel="alternate" hreflang="th" href="https://get2fa.online/th/khumue/poet-2fa-facebook">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/facebook-2fa-authentication-app">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Cómo activar el 2FA de Facebook con una app de autenticación (y ver la clave) | Get2FA">
+<meta property="og:description" content="Guía paso a paso para activar la verificación en dos pasos de Facebook con una app de autenticación, copiar la clave de configuración y obtener el código de 6 dígitos.">
+<meta property="og:url" content="https://get2fa.online/es/guias/activar-2fa-facebook">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=58ed1886">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cómo activar el 2FA de Facebook con una app de autenticación", "description": "Guía paso a paso para activar la verificación en dos pasos de Facebook con una app de autenticación, copiar la clave de configuración y obtener el código de 6 dígitos.", "inLanguage": "es", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/es/guias/activar-2fa-facebook", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/es/"}, {"@type": "ListItem", "position": 2, "name": "Guías", "item": "https://get2fa.online/es/guias/"}, {"@type": "ListItem", "position": 3, "name": "Cómo activar el 2FA de Facebook con una app de autenticación", "item": "https://get2fa.online/es/guias/activar-2fa-facebook"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/es/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/es/#tools">🧰 <span class="t">Herramientas</span></a>
+    <a class="pill" href="/es/guias/">📘 <span class="t">Guías</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Español</span></summary><div class="langlist"><a href="/guides/facebook-2fa-authentication-app" hreflang="en" lang="en">English</a><a href="/pt/guias/facebook-autenticacao-dois-fatores" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/activar-2fa-facebook" hreflang="es" lang="es" aria-current="true">Español</a><a href="/vi/huong-dan/bat-2fa-facebook" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/cara-mengaktifkan-2fa-facebook" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/facebook-2fa-aktivieren" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/poet-2fa-facebook" hreflang="th" lang="th">ไทย</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/bn/" hreflang="bn" lang="bn">বাংলা</a><a href="/km/" hreflang="km" lang="km">ខ្មែរ</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/es/guias/">← Todas las guías</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">Cómo activar el 2FA de Facebook con una app de autenticación</h1>
+  <p class="lead">Una app de autenticación protege tu cuenta de Facebook mejor que los SMS. Aquí tienes cómo activarla, dónde está la clave secreta y cómo obtener el código cuando no tienes el móvil a mano.</p>
+  <p class="hint">Actualizado 2026-11-23</p>
+  <div class="cta"><b>¿Tienes tu clave secreta? Obtén tu código ahora</b><a class="btn primary" href="/es/">Abrir el generador 2FA</a></div>
+  
+<h2>Paso a paso</h2>
+<ol><li>Abre Facebook y entra en <strong>Configuración y privacidad → Configuración</strong>.</li><li>Elige <strong>Centro de cuentas</strong> y luego <strong>Contraseña y seguridad</strong>.</li><li>Toca <strong>Autenticación en dos pasos</strong> y selecciona tu cuenta de Facebook.</li><li>Elige <strong>App de autenticación</strong> y pulsa <strong>Siguiente</strong>.</li><li>Facebook muestra un código QR y, debajo, una clave en texto. Cópiala y guárdala.</li><li>Añade la clave a tu app de autenticación o pégala en <a href="/es/">Get2FA</a> para ver el código.</li><li>Escribe el código de 6 dígitos en Facebook y pulsa <strong>Siguiente</strong>.</li></ol>
+<p>La clave de Facebook suele tener 32 caracteres en grupos de 4. Los espacios no importan. Después de activarlo, guarda también los <strong>códigos de recuperación</strong> de la misma pantalla: cada uno sirve una sola vez cuando no puedes obtener un código.</p>
+<h2>Guarda una copia de la clave</h2>
+<p>Antes de escanear el código QR, busca la opción para ver la clave en texto y guárdala en tu gestor de contraseñas. Si pierdes o cambias de móvil, basta con pegar esa clave en <a href="/es/">Get2FA</a> o en una app de autenticación nueva para recuperar tus códigos. No compartas la clave ni una captura del QR: quien la tenga puede generar tus códigos.</p>
+<h2>Usar el 2FA en varios dispositivos</h2>
+<p>La misma clave da el mismo código en cualquier dispositivo. Puedes añadirla a un segundo móvil o pegarla en Get2FA en el ordenador para obtener el código sin el teléfono.</p>
+<h2>Problemas habituales</h2>
+<ul><li><strong>El código no es válido</strong>: comprueba que la fecha y la hora del dispositivo estén en automático. Consulta <a href="codigo-2fa-no-funciona">por qué no funciona el código 2FA</a>.</li><li><strong>No encuentro la clave en texto</strong>: consulta <a href="donde-encontrar-clave-secreta-2fa">dónde encontrar la clave secreta 2FA</a>.</li><li><strong>He perdido el móvil</strong>: consulta <a href="perdi-el-movil-autenticador">qué hacer si pierdes el móvil con el autenticador</a>.</li></ul>
+
+  <div class="ad-slot" data-label="Publicidad" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>¿Tienes tu clave secreta? Obtén tu código ahora</b><a class="btn primary" href="/es/">Abrir el generador 2FA</a></div>
+  <h2>Guías</h2>
+  <ul><li><a href="/es/guias/que-es-2fa">¿Qué es 2FA (autenticación de dos factores)?</a></li><li><a href="/es/guias/donde-encontrar-clave-secreta-2fa">Dónde encontrar tu clave secreta 2FA</a></li><li><a href="/es/guias/activar-2fa-instagram">Cómo activar el 2FA de Instagram con una app de autenticación</a></li><li><a href="/es/guias/transferir-google-authenticator-nuevo-movil">Cómo transferir Google Authenticator a un móvil nuevo</a></li><li><a href="/es/guias/codigo-2fa-no-funciona">¿El código 2FA no funciona? Así se soluciona</a></li><li><a href="/es/guias/perdi-el-movil-autenticador">¿Perdiste el móvil con el autenticador? Qué hacer</a></li><li><a href="/es/guias/fortnite-2fa">Fortnite 2FA: cómo activarlo en fortnite.com/2fa</a></li><li><a href="/es/guias/activar-2fa-discord">Cómo activar el 2FA de Discord con una app de autenticación</a></li><li><a href="/es/guias/activar-2fa-x-twitter">Cómo activar el 2FA de X (Twitter) con una app de autenticación</a></li><li><a href="/es/guias/activar-2fa-tiktok">Cómo activar el 2FA de TikTok con una app de autenticación</a></li><li><a href="/es/guias/activar-2fa-microsoft">Cómo activar el 2FA de Microsoft con una app de autenticación</a></li><li><a href="/es/guias/activar-2fa-github">Cómo activar el 2FA de GitHub con una app de autenticación</a></li><li><a href="/es/guias/activar-2fa-binance">Cómo activar el 2FA de Binance con una app de autenticación</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Los códigos se generan en tu dispositivo. Nunca vemos tus claves.</div>
+    <nav><a href="/es/generador-de-clave-2fa">Generador de clave y QR</a><a href="/es/comprobar-codigo-2fa">Comprobador de código 2FA</a><a href="/es/leer-codigo-qr-2fa">Lector de código QR 2FA</a><a href="/es/separar-lineas-de-cuentas">Separador de cuentas</a><a href="/es/guias/">Guías</a><a href="https://chromewebstore.google.com/detail/comadcaaonchplkbblkbonkdonhpalcm" rel="noopener">Extensión de Chrome</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Código abierto</a><a href="/es/privacidad">Política de privacidad</a><a href="mailto:contact@get2fa.online">Contacto</a></nav>
+    <nav class="langs"><a href="/guides/facebook-2fa-authentication-app" hreflang="en" lang="en">English</a><a href="/pt/guias/facebook-autenticacao-dois-fatores" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/vi/huong-dan/bat-2fa-facebook" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/cara-mengaktifkan-2fa-facebook" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/facebook-2fa-aktivieren" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/poet-2fa-facebook" hreflang="th" lang="th">ไทย</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/bn/" hreflang="bn" lang="bn">বাংলা</a><a href="/km/" hreflang="km" lang="km">ខ្មែរ</a></nav>
+  </div>
+</footer>
+<script>(function(){try{if(localStorage.getItem('q2fa.lh'))return}catch(e){}var S={"en": "View this page in English", "pt": "Ver esta página em Português", "es": "Ver esta página en Español", "vi": "Xem trang này bằng Tiếng Việt", "id": "Lihat halaman ini dalam Bahasa Indonesia", "de": "Diese Seite auf Deutsch ansehen", "th": "ดูหน้านี้เป็นภาษาไทย", "fr": "Voir cette page en Français", "ru": "Открыть эту страницу на русском", "tr": "Bu sayfayı Türkçe görüntüle", "ja": "このページを日本語で表示", "ko": "이 페이지를 한국어로 보기", "zh": "以繁體中文檢視此頁面", "hi": "यह पेज हिन्दी में देखें", "ar": "عرض هذه الصفحة بالعربية", "bn": "এই পেজটি বাংলায় দেখুন", "km": "មើលទំព័រនេះជាភាសាខ្មែរ"};var cur=(document.documentElement.lang||'en').slice(0,2).toLowerCase();var alts={};Array.prototype.forEach.call(document.querySelectorAll('link[rel=alternate][hreflang]'),function(l){var h=l.getAttribute('hreflang').slice(0,2).toLowerCase();if(h!=='x-')alts[h]=l.getAttribute('href')});var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);for(var i=0;i<pref.length;i++){var c=String(pref[i]).slice(0,2).toLowerCase();if(c===cur)return;if(alts[c]&&S[c]){var d=document.createElement('div');d.className='langhint';d.setAttribute('lang',c);var a=document.createElement('a');a.href=alts[c].replace(/^https:\/\/get2fa\.online/,'');a.textContent=S[c]+' →';var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Close');b.textContent='×';b.onclick=function(){d.remove();try{localStorage.setItem('q2fa.lh','1')}catch(e){}};d.appendChild(a);d.appendChild(b);document.body.appendChild(d);return}}})();</script>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>
