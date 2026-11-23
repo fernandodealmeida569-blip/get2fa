@@ -5,7 +5,7 @@ CONTACT = "contact@get2fa.online"
 L = {
  "en": {
   "lang": "en", "path": "/", "root": "/", "privacy": "/privacy",
-  "title": "2FA Code Generator – Get Your Authenticator Code Online | Get2FA",
+  "title": "2FA Code Generator – Get Your 2FA Auth Code Online | Get2FA",
   "desc": "Paste your 2FA secret key and get the 6-digit authenticator code instantly. Works with Google, Facebook, Instagram, Microsoft and more. 100% in your browser: your key is never sent.",
   "h1": "Get your 2FA code from a secret key",
   "sub": "Paste a 2FA secret, an <code class=\"k\">otpauth://</code> link or a QR code and get the same 6-digit code your authenticator app shows. Fast, free and computed only on your device.",
@@ -62,6 +62,7 @@ L = {
             ("Discord, X/Twitter, Amazon, GitHub", "When you set up an authenticator app, look for “enter key manually” or “can't scan the code”. That text is your secret key.")],
   "faqH": "Frequently asked questions",
   "faq": [("Is Get2FA free?", "Yes. It's free and needs no sign-up. The site is supported by ads, which never appear inside the generator."),
+          ("What do “2FA auth” and “2FA code” mean?", "2FA auth is short for two-factor authentication: signing in with your password plus a second proof. The 2FA code is that second proof, a 6-digit number that changes every 30 seconds and is calculated from your secret key. Get2FA shows you that code."),
           ("Will the code be the same as in Google Authenticator?", "Yes. Every app that follows the TOTP standard gives the same code for the same key at the same time, including Google Authenticator, Microsoft Authenticator, Authy and 2FAS."),
           ("Why is my code not accepted?", "The most common reason is a wrong device clock. TOTP codes depend on the exact time, so turn on automatic date and time on your device. Also check that you copied the full key and that the site doesn't use 8 digits or a 60-second period (see Advanced settings)."),
           ("Do you save my keys?", "No. Keys exist only in this tab's memory and disappear when you close it. We don't use cookies or storage for keys; only your theme and auto-copy choice are remembered on your device."),

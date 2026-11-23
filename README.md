@@ -58,6 +58,9 @@ lang_*.py        interface texts (ES, VI, ID, DE, TH)
 content_*.py     tool pages and guides (ES, VI, ID, DE, TH)
 new_articles.py  newer multilingual guides
 split_tool.py    account line splitter page (all languages)
+platform_guides.py, platform_guides_more.py   per-platform 2FA guides (vi, th, es, id, de)
+alt_article.py   comparison guide (en, vi)
+lang_fr.py … lang_km.py   home page only for 10 more languages
 articles.py      the 2FA guides
 tests/           test vectors
 ```

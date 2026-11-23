@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generates the Get2FA static site (EN, PT, ES, VI, ID, DE, TH) into ./site"""
-import json, os, html
+import json, os, html, re
 
 SITE = "https://get2fa.online"
 BRAND = "Get2FA"
@@ -49,13 +49,39 @@ def hreflang(alts):
         out.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}{alts["en"]}">')
     return "\n".join(out)
 
+import unicodedata
+def _w(s):
+    """Approximate display width: wide (CJK, Hangul, fullwidth) characters count double."""
+    return sum(2 if unicodedata.east_asian_width(ch) in "WF" else 1 for ch in s)
+
+def fit_title(title, limit=65):
+    """Keep <title> within what search results show: drop the brand, then a trailing
+    parenthetical, then everything after the last dash or colon. Never cuts mid-phrase."""
+    if _w(title) <= limit:
+        return title
+    suffix = " | " + BRAND
+    t = title[:-len(suffix)] if title.endswith(suffix) else title
+    for _ in range(4):
+        if _w(t) <= limit:
+            break
+        m = re.search(r"\s*[(（][^()（）]*[)）]\s*$", t)
+        if m:
+            t = t[:m.start()]
+            continue
+        cut = max(t.rfind(" – "), t.rfind(" - "), t.rfind(": "), t.rfind("? "))
+        if cut > 12:
+            t = t[:cut + (1 if t[cut] == "?" else 0)]
+            continue
+        break
+    return t.strip()
+
 def head(t, title, desc, canonical, alts, extra=""):
     return f"""<!DOCTYPE html>
 <html lang="{t['lang']}"{' dir="rtl"' if t.get('dir') == 'rtl' else ''} data-root="/" data-home="{t['path']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)}</title>
+<title>{html.escape(fit_title(title))}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{canonical}">
 {hreflang(alts)}
@@ -123,7 +149,8 @@ def ad(t, slot):
 
 from articles import ARTICLES
 import new_articles as _na
-ARTICLES = [_na.WHAT_IS] + ARTICLES[:6] + [_na.FB_CODE, _na.FORTNITE, _na.TOTP, _na.MS_AUTH, _na.GOVBR] + ARTICLES[6:]
+from alt_article import ALT
+ARTICLES = [_na.WHAT_IS] + ARTICLES[:6] + [_na.FB_CODE, _na.FORTNITE, _na.TOTP, _na.MS_AUTH, _na.GOVBR, ALT] + ARTICLES[6:]
 
 def gpath(code, a):
     return L[code]["guidesPath"] + a[code]["slug"] if a.get(code) else None
@@ -270,6 +297,13 @@ for _c in NEW:
         x[_c] = d
     for a in ARTICLES:
         a[_c] = a.get(_c) or _m.GUIDES.get(a["key"])
+import platform_guides as _pg
+import platform_guides_more
+for _c in _pg.LANGT:
+    _g = _pg.make(_c)
+    for a in ARTICLES:
+        if not a.get(_c) and a["key"] in _g:
+            a[_c] = _g[a["key"]]
 
 def tool_links(t):
     c = t["code"] if t["code"] in FULL else "en"
