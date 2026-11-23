@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi" data-root="/" data-home="/vi/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cách bật 2FA Discord bằng ứng dụng xác thực (và lấy khóa bí mật)</title>
+<meta name="description" content="Hướng dẫn từng bước bật xác thực hai yếu tố cho Discord bằng ứng dụng xác thực, sao chép khóa thiết lập và lấy mã 6 số khi cần.">
+<link rel="canonical" href="https://get2fa.online/vi/huong-dan/bat-2fa-discord">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/discord-2fa-authenticator-app">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/guias/activar-2fa-discord">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/huong-dan/bat-2fa-discord">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/panduan/cara-mengaktifkan-2fa-discord">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/anleitungen/discord-2fa-aktivieren">
+<link rel="alternate" hreflang="th" href="https://get2fa.online/th/khumue/poet-2fa-discord">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/discord-2fa-authenticator-app">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="Cách bật 2FA Discord bằng ứng dụng xác thực (và lấy khóa bí mật) | Get2FA">
+<meta property="og:description" content="Hướng dẫn từng bước bật xác thực hai yếu tố cho Discord bằng ứng dụng xác thực, sao chép khóa thiết lập và lấy mã 6 số khi cần.">
+<meta property="og:url" content="https://get2fa.online/vi/huong-dan/bat-2fa-discord">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=58ed1886">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Cách bật 2FA Discord bằng ứng dụng xác thực", "description": "Hướng dẫn từng bước bật xác thực hai yếu tố cho Discord bằng ứng dụng xác thực, sao chép khóa thiết lập và lấy mã 6 số khi cần.", "inLanguage": "vi", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/vi/huong-dan/bat-2fa-discord", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/vi/"}, {"@type": "ListItem", "position": 2, "name": "Hướng dẫn", "item": "https://get2fa.online/vi/huong-dan/"}, {"@type": "ListItem", "position": 3, "name": "Cách bật 2FA Discord bằng ứng dụng xác thực", "item": "https://get2fa.online/vi/huong-dan/bat-2fa-discord"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/vi/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/vi/#tools">🧰 <span class="t">Công cụ</span></a>
+    <a class="pill" href="/vi/huong-dan/">📘 <span class="t">Hướng dẫn</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">Tiếng Việt</span></summary><div class="langlist"><a href="/guides/discord-2fa-authenticator-app" hreflang="en" lang="en">English</a><a href="/pt/guias/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/activar-2fa-discord" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/bat-2fa-discord" hreflang="vi" lang="vi" aria-current="true">Tiếng Việt</a><a href="/id/panduan/cara-mengaktifkan-2fa-discord" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/discord-2fa-aktivieren" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/poet-2fa-discord" hreflang="th" lang="th">ไทย</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/bn/" hreflang="bn" lang="bn">বাংলা</a><a href="/km/" hreflang="km" lang="km">ខ្មែរ</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/vi/huong-dan/">← Tất cả hướng dẫn</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">Cách bật 2FA Discord bằng ứng dụng xác thực</h1>
+  <p class="lead">Ứng dụng xác thực là cách bảo vệ tài khoản Discord an toàn hơn tin nhắn SMS. Dưới đây là cách bật, nơi tìm khóa bí mật và cách lấy mã khi bạn không cầm điện thoại.</p>
+  <p class="hint">Cập nhật 2026-11-23</p>
+  <div class="cta"><b>Đã có khóa bí mật? Lấy mã ngay</b><a class="btn primary" href="/vi/">Mở công cụ tạo mã 2FA</a></div>
+  
+<h2>Các bước thực hiện</h2>
+<ol><li>Mở Discord và bấm biểu tượng bánh răng <strong>Cài đặt người dùng</strong> (User Settings).</li><li>Trong mục <strong>Tài khoản của tôi</strong> (My Account), tìm phần mật khẩu và xác thực.</li><li>Bấm <strong>Bật ứng dụng xác thực</strong> (Enable Authenticator App) và nhập mật khẩu.</li><li>Discord hiện mã QR và <strong>khóa 2FA</strong> dạng chữ. Sao chép và lưu khóa.</li><li>Thêm khóa vào ứng dụng xác thực, hoặc dán vào <a href="/vi/">Get2FA</a>.</li><li>Nhập mã 6 số và bấm <strong>Kích hoạt</strong>.</li></ol>
+<p>Ngay sau khi bật, Discord cho bạn tải <strong>mã dự phòng</strong> (backup codes). Hãy tải về: nếu mất cả điện thoại lẫn mã dự phòng, Discord không thể tắt 2FA giúp bạn.</p>
+<h2>Lưu lại khóa bí mật</h2>
+<p>Trước khi quét mã QR, hãy tìm lựa chọn hiển thị khóa dạng chữ và lưu nó vào trình quản lý mật khẩu. Nếu mất hoặc đổi điện thoại, bạn chỉ cần dán khóa đó vào <a href="/vi/">Get2FA</a> hoặc một ứng dụng xác thực mới là có lại mã ngay. Đừng chia sẻ khóa hay ảnh chụp mã QR: ai có nó đều tạo được mã của bạn.</p>
+<h2>Dùng trên nhiều thiết bị</h2>
+<p>Cùng một khóa sẽ cho cùng một mã trên mọi thiết bị. Bạn có thể thêm khóa vào điện thoại thứ hai, hoặc dán vào Get2FA trên máy tính để lấy mã mà không cần điện thoại.</p>
+<h2>Lỗi thường gặp</h2>
+<ul><li><strong>Mã bị báo sai</strong>: kiểm tra ngày giờ trên thiết bị đã để tự động chưa. Xem <a href="ma-2fa-khong-hoat-dong">vì sao mã 2FA không hoạt động</a>.</li><li><strong>Không thấy khóa dạng chữ</strong>: xem <a href="tim-khoa-bi-mat-2fa">cách tìm khóa bí mật 2FA</a>.</li><li><strong>Mất điện thoại</strong>: xem <a href="mat-dien-thoai-ung-dung-xac-thuc">phải làm gì khi mất điện thoại có ứng dụng xác thực</a>.</li></ul>
+
+  <div class="ad-slot" data-label="Quảng cáo" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>Đã có khóa bí mật? Lấy mã ngay</b><a class="btn primary" href="/vi/">Mở công cụ tạo mã 2FA</a></div>
+  <h2>Hướng dẫn</h2>
+  <ul><li><a href="/vi/huong-dan/2fa-la-gi">2FA là gì (xác thực hai yếu tố)?</a></li><li><a href="/vi/huong-dan/tim-khoa-bi-mat-2fa">Tìm khóa bí mật 2FA ở đâu</a></li><li><a href="/vi/huong-dan/bat-2fa-instagram">Cách bật 2FA Instagram bằng ứng dụng xác thực</a></li><li><a href="/vi/huong-dan/bat-2fa-facebook">Cách bật 2FA Facebook bằng ứng dụng xác thực</a></li><li><a href="/vi/huong-dan/chuyen-google-authenticator-sang-dien-thoai-moi">Cách chuyển Google Authenticator sang điện thoại mới</a></li><li><a href="/vi/huong-dan/ma-2fa-khong-hoat-dong">Mã 2FA không hoạt động? Đây là cách khắc phục</a></li><li><a href="/vi/huong-dan/mat-dien-thoai-ung-dung-xac-thuc">Mất điện thoại có ứng dụng xác thực? Cần làm gì</a></li><li><a href="/vi/huong-dan/lay-code-facebook">Lấy code Facebook (mã 2FA 6 số)</a></li><li><a href="/vi/huong-dan/thay-the-2fa-live">Thay thế 2fa.live: Get2FA khác gì?</a></li><li><a href="/vi/huong-dan/bat-2fa-x-twitter">Cách bật 2FA X (Twitter) bằng ứng dụng xác thực</a></li><li><a href="/vi/huong-dan/bat-2fa-tiktok">Cách bật 2FA TikTok bằng ứng dụng xác thực</a></li><li><a href="/vi/huong-dan/bat-2fa-microsoft">Cách bật 2FA Microsoft bằng ứng dụng xác thực</a></li><li><a href="/vi/huong-dan/bat-2fa-github">Cách bật 2FA GitHub bằng ứng dụng xác thực</a></li><li><a href="/vi/huong-dan/bat-2fa-binance">Cách bật 2FA Binance bằng ứng dụng xác thực</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. Mã được tạo trên thiết bị của bạn. Chúng tôi không bao giờ thấy khóa của bạn.</div>
+    <nav><a href="/vi/tao-khoa-2fa">Tạo khóa và mã QR</a><a href="/vi/kiem-tra-ma-2fa">Kiểm tra mã 2FA</a><a href="/vi/doc-ma-qr-2fa">Đọc mã QR 2FA</a><a href="/vi/cat-chuoi-tai-khoan">Cắt chuỗi tài khoản</a><a href="/vi/huong-dan/">Hướng dẫn</a><a href="https://chromewebstore.google.com/detail/comadcaaonchplkbblkbonkdonhpalcm" rel="noopener">Tiện ích Chrome</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">Mã nguồn mở</a><a href="/vi/quyen-rieng-tu">Chính sách quyền riêng tư</a><a href="mailto:contact@get2fa.online">Liên hệ</a></nav>
+    <nav class="langs"><a href="/guides/discord-2fa-authenticator-app" hreflang="en" lang="en">English</a><a href="/pt/guias/" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/activar-2fa-discord" hreflang="es" lang="es">Español</a><a href="/id/panduan/cara-mengaktifkan-2fa-discord" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/discord-2fa-aktivieren" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/poet-2fa-discord" hreflang="th" lang="th">ไทย</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/bn/" hreflang="bn" lang="bn">বাংলা</a><a href="/km/" hreflang="km" lang="km">ខ្មែរ</a></nav>
+  </div>
+</footer>
+<script>(function(){try{if(localStorage.getItem('q2fa.lh'))return}catch(e){}var S={"en": "View this page in English", "pt": "Ver esta página em Português", "es": "Ver esta página en Español", "vi": "Xem trang này bằng Tiếng Việt", "id": "Lihat halaman ini dalam Bahasa Indonesia", "de": "Diese Seite auf Deutsch ansehen", "th": "ดูหน้านี้เป็นภาษาไทย", "fr": "Voir cette page en Français", "ru": "Открыть эту страницу на русском", "tr": "Bu sayfayı Türkçe görüntüle", "ja": "このページを日本語で表示", "ko": "이 페이지를 한국어로 보기", "zh": "以繁體中文檢視此頁面", "hi": "यह पेज हिन्दी में देखें", "ar": "عرض هذه الصفحة بالعربية", "bn": "এই পেজটি বাংলায় দেখুন", "km": "មើលទំព័រនេះជាភាសាខ្មែរ"};var cur=(document.documentElement.lang||'en').slice(0,2).toLowerCase();var alts={};Array.prototype.forEach.call(document.querySelectorAll('link[rel=alternate][hreflang]'),function(l){var h=l.getAttribute('hreflang').slice(0,2).toLowerCase();if(h!=='x-')alts[h]=l.getAttribute('href')});var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);for(var i=0;i<pref.length;i++){var c=String(pref[i]).slice(0,2).toLowerCase();if(c===cur)return;if(alts[c]&&S[c]){var d=document.createElement('div');d.className='langhint';d.setAttribute('lang',c);var a=document.createElement('a');a.href=alts[c].replace(/^https:\/\/get2fa\.online/,'');a.textContent=S[c]+' →';var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Close');b.textContent='×';b.onclick=function(){d.remove();try{localStorage.setItem('q2fa.lh','1')}catch(e){}};d.appendChild(a);d.appendChild(b);document.body.appendChild(d);return}}})();</script>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>

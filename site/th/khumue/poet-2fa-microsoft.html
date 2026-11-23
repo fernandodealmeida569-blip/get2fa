@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th" data-root="/" data-home="/th/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>วิธีเปิด 2FA Microsoft ด้วยแอปยืนยันตัวตน (และดูคีย์ลับ) | Get2FA</title>
+<meta name="description" content="ขั้นตอนเปิดการยืนยันตัวตนสองชั้นของ Microsoft ด้วยแอปยืนยันตัวตน คัดลอกคีย์ตั้งค่า และรับรหัส 6 หลักเมื่อจำเป็น">
+<link rel="canonical" href="https://get2fa.online/th/khumue/poet-2fa-microsoft">
+<link rel="alternate" hreflang="en" href="https://get2fa.online/guides/microsoft-account-2fa-authenticator-app">
+<link rel="alternate" hreflang="pt-BR" href="https://get2fa.online/pt/guias/conta-microsoft-autenticador">
+<link rel="alternate" hreflang="es" href="https://get2fa.online/es/guias/activar-2fa-microsoft">
+<link rel="alternate" hreflang="vi" href="https://get2fa.online/vi/huong-dan/bat-2fa-microsoft">
+<link rel="alternate" hreflang="id" href="https://get2fa.online/id/panduan/cara-mengaktifkan-2fa-microsoft">
+<link rel="alternate" hreflang="de" href="https://get2fa.online/de/anleitungen/microsoft-2fa-aktivieren">
+<link rel="alternate" hreflang="th" href="https://get2fa.online/th/khumue/poet-2fa-microsoft">
+<link rel="alternate" hreflang="x-default" href="https://get2fa.online/guides/microsoft-account-2fa-authenticator-app">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2f5cff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Get2FA">
+<meta property="og:title" content="วิธีเปิด 2FA Microsoft ด้วยแอปยืนยันตัวตน (และดูคีย์ลับ) | Get2FA">
+<meta property="og:description" content="ขั้นตอนเปิดการยืนยันตัวตนสองชั้นของ Microsoft ด้วยแอปยืนยันตัวตน คัดลอกคีย์ตั้งค่า และรับรหัส 6 หลักเมื่อจำเป็น">
+<meta property="og:url" content="https://get2fa.online/th/khumue/poet-2fa-microsoft">
+<meta property="og:image" content="https://get2fa.online/assets/og.png">
+<meta property="og:locale" content="th_TH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/style.css?v=58ed1886">
+<script>try{var t=localStorage.getItem('q2fa.theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<!-- AdSense: paste your <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"> here and add class="ads-on" to <body> -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "วิธีเปิด 2FA Microsoft ด้วยแอปยืนยันตัวตน", "description": "ขั้นตอนเปิดการยืนยันตัวตนสองชั้นของ Microsoft ด้วยแอปยืนยันตัวตน คัดลอกคีย์ตั้งค่า และรับรหัส 6 หลักเมื่อจำเป็น", "inLanguage": "th", "datePublished": "2026-11-23", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "Get2FA", "url": "https://get2fa.online"}, "publisher": {"@type": "Organization", "name": "Get2FA", "logo": {"@type": "ImageObject", "url": "https://get2fa.online/assets/icon-512.png"}}, "mainEntityOfPage": "https://get2fa.online/th/khumue/poet-2fa-microsoft", "image": "https://get2fa.online/assets/og.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Get2FA", "item": "https://get2fa.online/th/"}, {"@type": "ListItem", "position": 2, "name": "คู่มือ", "item": "https://get2fa.online/th/khumue/"}, {"@type": "ListItem", "position": 3, "name": "วิธีเปิด 2FA Microsoft ด้วยแอปยืนยันตัวตน", "item": "https://get2fa.online/th/khumue/poet-2fa-microsoft"}]}</script>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/th/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2f5cff"/><path d="M16 7l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V10z" fill="#fff"/><path d="M12.6 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="#2f5cff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Get2FA</span></a>
+  <nav class="nav">
+    <a class="pill" href="/th/#tools">🧰 <span class="t">เครื่องมือ</span></a>
+    <a class="pill" href="/th/khumue/">📘 <span class="t">คู่มือ</span></a>
+    <details class="langmenu"><summary class="pill" aria-label="Language">🌐 <span class="t">ไทย</span></summary><div class="langlist"><a href="/guides/microsoft-account-2fa-authenticator-app" hreflang="en" lang="en">English</a><a href="/pt/guias/conta-microsoft-autenticador" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/activar-2fa-microsoft" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/bat-2fa-microsoft" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/cara-mengaktifkan-2fa-microsoft" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/microsoft-2fa-aktivieren" hreflang="de" lang="de">Deutsch</a><a href="/th/khumue/poet-2fa-microsoft" hreflang="th" lang="th" aria-current="true">ไทย</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/bn/" hreflang="bn" lang="bn">বাংলা</a><a href="/km/" hreflang="km" lang="km">ខ្មែរ</a></div></details><script>document.addEventListener("click",function(e){var d=document.querySelector(".langmenu");if(d&&d.open&&!d.contains(e.target))d.open=false});</script>
+    <button class="pill" id="themeBtn" type="button" aria-label="Theme"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </nav>
+</header>
+<main class="wrap content article">
+  <p><a href="/th/khumue/">← คู่มือทั้งหมด</a></p>
+  <h1 style="font-size:clamp(26px,4vw,36px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px">วิธีเปิด 2FA Microsoft ด้วยแอปยืนยันตัวตน</h1>
+  <p class="lead">แอปยืนยันตัวตนปกป้องบัญชี Microsoft ได้ปลอดภัยกว่า SMS ด้านล่างคือวิธีเปิดใช้งาน ตำแหน่งของคีย์ลับ และวิธีรับรหัสเมื่อไม่มีโทรศัพท์อยู่กับตัว</p>
+  <p class="hint">อัปเดต 2026-11-23</p>
+  <div class="cta"><b>มีคีย์ลับแล้วใช่ไหม? รับรหัสเลย</b><a class="btn primary" href="/th/">เปิดตัวสร้างรหัส 2FA</a></div>
+  
+<h2>ขั้นตอน</h2>
+<ol><li>เปิด <strong>account.microsoft.com</strong> แล้วเข้าสู่ระบบ</li><li>ไปที่ <strong>ความปลอดภัย</strong> (Security) → <strong>จัดการวิธีการลงชื่อเข้าใช้</strong> (Manage how I sign in)</li><li>กด <strong>เพิ่มวิธีใหม่ในการลงชื่อเข้าใช้หรือยืนยัน</strong> → <strong>ใช้แอป</strong> (Use an app)</li><li>เลือก <strong>ตั้งค่าแอปยืนยันตัวตนอื่น</strong> (set up a different Authenticator app)</li><li>กด <strong>ฉันสแกนบาร์โค้ดไม่ได้</strong> (I can't scan the bar code) เพื่อแสดงคีย์แบบตัวอักษร ให้คัดลอกและเก็บไว้</li><li>เพิ่มคีย์ในแอปยืนยันตัวตนหรือวางใน <a href="/th/">Get2FA</a> แล้วกรอกรหัส 6 หลักเพื่อยืนยัน</li></ol>
+<p>หากไม่เลือก “แอปอื่น” Microsoft จะพาไปใช้ Microsoft Authenticator แบบแจ้งเตือนแทนรหัส 6 หลัก บัญชีที่ทำงานหรือสถานศึกษาตั้งค่าที่ <strong>mysignins.microsoft.com</strong> และผู้ดูแลระบบอาจจำกัดตัวเลือกไว้</p>
+<h2>เก็บคีย์ลับไว้</h2>
+<p>ก่อนสแกน QR Code ให้มองหาตัวเลือกแสดงคีย์เป็นตัวอักษร แล้วบันทึกไว้ในโปรแกรมจัดการรหัสผ่าน หากโทรศัพท์หายหรือเปลี่ยนเครื่อง เพียงวางคีย์นั้นใน <a href="/th/">Get2FA</a> หรือแอปยืนยันตัวตนตัวใหม่ก็จะได้รหัสกลับมาทันที อย่าแชร์คีย์หรือภาพ QR Code ให้ใคร เพราะใครมีคีย์ก็สร้างรหัสของคุณได้</p>
+<h2>ใช้ได้หลายอุปกรณ์</h2>
+<p>คีย์เดียวกันให้รหัสเดียวกันในทุกอุปกรณ์ คุณเพิ่มคีย์ในโทรศัพท์เครื่องที่สองได้ หรือวางใน Get2FA บนคอมพิวเตอร์เพื่อรับรหัสโดยไม่ต้องใช้โทรศัพท์</p>
+<h2>ปัญหาที่พบบ่อย</h2>
+<ul><li><strong>รหัสไม่ถูกต้อง</strong>: ตรวจสอบว่าตั้งวันที่และเวลาของอุปกรณ์เป็นอัตโนมัติแล้ว ดู <a href="code-2fa-chai-mai-dai">ทำไมรหัส 2FA ใช้ไม่ได้</a></li><li><strong>หาคีย์แบบตัวอักษรไม่เจอ</strong>: ดู <a href="ha-key-lap-2fa">วิธีหาคีย์ลับ 2FA</a></li><li><strong>โทรศัพท์หาย</strong>: ดู <a href="mue-thue-hai-2fa">ต้องทำอย่างไรเมื่อโทรศัพท์ที่มีแอปยืนยันตัวตนหาย</a></li></ul>
+
+  <div class="ad-slot" data-label="โฆษณา" data-slot="article"><!-- AdSense unit: article --></div>
+  <div class="cta"><b>มีคีย์ลับแล้วใช่ไหม? รับรหัสเลย</b><a class="btn primary" href="/th/">เปิดตัวสร้างรหัส 2FA</a></div>
+  <h2>คู่มือ</h2>
+  <ul><li><a href="/th/khumue/2fa-khue-arai">2FA คืออะไร (การยืนยันตัวตนแบบสองปัจจัย)?</a></li><li><a href="/th/khumue/ha-key-lap-2fa">หาคีย์ลับ 2FA ได้ที่ไหน</a></li><li><a href="/th/khumue/poet-2fa-instagram">วิธีเปิด 2FA Instagram ด้วยแอปยืนยันตัวตน</a></li><li><a href="/th/khumue/poet-2fa-facebook">วิธีเปิด 2FA Facebook ด้วยแอปยืนยันตัวตน</a></li><li><a href="/th/khumue/code-2fa-chai-mai-dai">รหัส 2FA ใช้ไม่ได้? วิธีแก้</a></li><li><a href="/th/khumue/mue-thue-hai-2fa">มือถือที่มีแอปยืนยันตัวตนหาย? ต้องทำอะไร</a></li><li><a href="/th/khumue/poet-2fa-discord">วิธีเปิด 2FA Discord ด้วยแอปยืนยันตัวตน</a></li><li><a href="/th/khumue/poet-2fa-x-twitter">วิธีเปิด 2FA X (Twitter) ด้วยแอปยืนยันตัวตน</a></li><li><a href="/th/khumue/poet-2fa-tiktok">วิธีเปิด 2FA TikTok ด้วยแอปยืนยันตัวตน</a></li><li><a href="/th/khumue/poet-2fa-github">วิธีเปิด 2FA GitHub ด้วยแอปยืนยันตัวตน</a></li><li><a href="/th/khumue/poet-2fa-binance">วิธีเปิด 2FA Binance ด้วยแอปยืนยันตัวตน</a></li></ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Get2FA. รหัสสร้างบนอุปกรณ์ของคุณ เราไม่เคยเห็นคีย์ของคุณ</div>
+    <nav><a href="/th/sang-key-2fa">สร้างคีย์และคิวอาร์</a><a href="/th/check-code-2fa">เช็กรหัส 2FA</a><a href="/th/an-qr-code-2fa">อ่านคิวอาร์ 2FA</a><a href="/th/yaek-khomun-banchi">แยกข้อมูลบัญชี</a><a href="/th/khumue/">คู่มือ</a><a href="https://chromewebstore.google.com/detail/comadcaaonchplkbblkbonkdonhpalcm" rel="noopener">ส่วนขยาย Chrome</a><a href="https://github.com/fernandodealmeida569-blip/get2fa" rel="noopener">โอเพนซอร์ส</a><a href="/th/privacy">นโยบายความเป็นส่วนตัว</a><a href="mailto:contact@get2fa.online">ติดต่อ</a></nav>
+    <nav class="langs"><a href="/guides/microsoft-account-2fa-authenticator-app" hreflang="en" lang="en">English</a><a href="/pt/guias/conta-microsoft-autenticador" hreflang="pt-BR" lang="pt-BR">Português</a><a href="/es/guias/activar-2fa-microsoft" hreflang="es" lang="es">Español</a><a href="/vi/huong-dan/bat-2fa-microsoft" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/id/panduan/cara-mengaktifkan-2fa-microsoft" hreflang="id" lang="id">Bahasa Indonesia</a><a href="/de/anleitungen/microsoft-2fa-aktivieren" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/ru/" hreflang="ru" lang="ru">Русский</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a><a href="/ar/" hreflang="ar" lang="ar">العربية</a><a href="/bn/" hreflang="bn" lang="bn">বাংলা</a><a href="/km/" hreflang="km" lang="km">ខ្មែរ</a></nav>
+  </div>
+</footer>
+<script>(function(){try{if(localStorage.getItem('q2fa.lh'))return}catch(e){}var S={"en": "View this page in English", "pt": "Ver esta página em Português", "es": "Ver esta página en Español", "vi": "Xem trang này bằng Tiếng Việt", "id": "Lihat halaman ini dalam Bahasa Indonesia", "de": "Diese Seite auf Deutsch ansehen", "th": "ดูหน้านี้เป็นภาษาไทย", "fr": "Voir cette page en Français", "ru": "Открыть эту страницу на русском", "tr": "Bu sayfayı Türkçe görüntüle", "ja": "このページを日本語で表示", "ko": "이 페이지를 한국어로 보기", "zh": "以繁體中文檢視此頁面", "hi": "यह पेज हिन्दी में देखें", "ar": "عرض هذه الصفحة بالعربية", "bn": "এই পেজটি বাংলায় দেখুন", "km": "មើលទំព័រនេះជាភាសាខ្មែរ"};var cur=(document.documentElement.lang||'en').slice(0,2).toLowerCase();var alts={};Array.prototype.forEach.call(document.querySelectorAll('link[rel=alternate][hreflang]'),function(l){var h=l.getAttribute('hreflang').slice(0,2).toLowerCase();if(h!=='x-')alts[h]=l.getAttribute('href')});var pref=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'']);for(var i=0;i<pref.length;i++){var c=String(pref[i]).slice(0,2).toLowerCase();if(c===cur)return;if(alts[c]&&S[c]){var d=document.createElement('div');d.className='langhint';d.setAttribute('lang',c);var a=document.createElement('a');a.href=alts[c].replace(/^https:\/\/get2fa\.online/,'');a.textContent=S[c]+' →';var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Close');b.textContent='×';b.onclick=function(){d.remove();try{localStorage.setItem('q2fa.lh','1')}catch(e){}};d.appendChild(a);d.appendChild(b);document.body.appendChild(d);return}}})();</script>
+<script>
+(function(){var r=document.documentElement;document.getElementById('themeBtn').addEventListener('click',function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=d?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('q2fa.theme',n)}catch(e){}});})();
+</script>
+</body>
+</html>
